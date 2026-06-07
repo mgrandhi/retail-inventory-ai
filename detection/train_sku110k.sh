@@ -11,10 +11,18 @@
 # Writing to a file avoids the scanner entirely. Only short milestone echoes reach the console.
 #
 # Image: pytorch-2-9-cu129-ubuntu-2204-nvidia-580 (Deep Learning VM) — CUDA/driver preinstalled.
-# __BUCKET__ is substituted by launch_vm.sh before upload.
+# Placeholders substituted by launch_vm.sh before upload:
+#   __BUCKET__       e.g. gs://ehc-mgrandhi-bc801a-sku110k-yolo
+#   __MODEL__        e.g. yolov8m.pt    or yolo11m.pt
+#   __TIME_HOURS__   e.g. 9.5           or 8.0
+#   __VARIANT__      e.g. v8            or v11   — subdir under $BUCKET/results/
 set -uo pipefail
 
 BUCKET="__BUCKET__"
+MODEL="__MODEL__"
+TIME_HOURS="__TIME_HOURS__"
+VARIANT="__VARIANT__"
+
 RUN_DIR=/opt/runs
 LOG="$RUN_DIR/train.log"
 mkdir -p "$RUN_DIR"
@@ -24,7 +32,7 @@ mkdir -p "$RUN_DIR"
 cleanup() {
   rc=$?
   echo "=== cleanup (exit code $rc): syncing results to GCS, then deleting VM ==="
-  gsutil -m rsync -r "$RUN_DIR" "$BUCKET/results/" || echo "WARN: gsutil sync failed"
+  gsutil -m rsync -r "$RUN_DIR" "$BUCKET/results/$VARIANT/" || echo "WARN: gsutil sync failed"
   NAME=$(curl -s -H "Metadata-Flavor: Google" \
     http://metadata.google.internal/computeMetadata/v1/instance/name)
   ZONE=$(curl -s -H "Metadata-Flavor: Google" \
@@ -35,6 +43,7 @@ cleanup() {
 trap cleanup EXIT
 
 echo "=== retail-inventory-ai: SKU-110K detection training STARTED ==="
+echo "    model=$MODEL  time=${TIME_HOURS}h  variant=$VARIANT"
 date
 
 # NVIDIA driver is preinstalled on the DLVM — wait until it's ready (short, safe to console).
@@ -55,15 +64,15 @@ export PYTHONUNBUFFERED=1
 
 # --- Train ---------------------------------------------------------------
 # All output to the log file; only the final status reaches the console.
-# time=9.5  -> HARD 9.5h wall-clock cap (auto-scales epochs, auto-stops cleanly).
-# epochs=50 -> upper bound only; the time cap usually stops first.
-# batch=-1  -> auto-batch (~60% VRAM); fits the L4's 24 GB at imgsz=1280.
-echo "=== starting YOLOv8m training (output -> $LOG) ==="
+# time=$TIME_HOURS -> HARD wall-clock cap (auto-scales epochs, auto-stops cleanly).
+# epochs=50        -> upper bound only; the time cap usually stops first.
+# batch=-1         -> auto-batch (~60% VRAM); fits the L4's 24 GB at imgsz=1280.
+echo "=== starting $MODEL training (output -> $LOG) ==="
 yolo detect train \
-  model=yolov8m.pt \
+  model="$MODEL" \
   data=SKU-110K.yaml \
   epochs=50 \
-  time=9.5 \
+  time="$TIME_HOURS" \
   imgsz=1280 \
   batch=-1 \
   cos_lr=True \
