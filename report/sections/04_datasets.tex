@@ -1,0 +1,17 @@
+\section{Dataset Analysis}
+% Source: proposal Section 5.
+\subsection{SKU-110K}
+$\sim$11{,}762 images, $\sim$1.7M bounding boxes, $\sim$147 products/image, all annotated as a
+single \texttt{object} class. Extreme density and occlusion (adjacent-box IoU up to 0.7) make it a
+pure localization benchmark---ideal for training the detection backbone independently. Annotations
+are converted from CSV to YOLO format; images resized to $1280\times1280$ with aspect-preserving
+padding. Training uses the train split ($\sim$8{,}200 images); full val/test splits for evaluation.
+
+\subsection{RPC (Retail Product Checkout)}
+200 fine-grained categories, 53{,}739 train / 24{,}000 test images, COCO-style annotations. Visual
+similarity within brands and moderate class imbalance (common products $3$--$5\times$ rarer ones)
+are addressed with weighted sampling.
+
+\subsection{Pre-training Datasets}
+ImageNet-1K (ResNet-50 init), COCO 2017 (YOLOv8 init), and CLIP's WebImageText (used as-is, no
+fine-tuning).

@@ -1,0 +1,22 @@
+\section{Literature Review}
+% Source: proposal Section 3.
+\subsection{Object Detection in Dense Retail Environments}
+Goldman et al.~\cite{goldman2019sku110k} introduced SKU-110K with a RetinaNet-based architecture,
+soft-IoU loss, and an EM-Merger stage for extreme density. Transformer detectors
+\cite{carion2020detr,zhu2021deformabledetr} replaced NMS with learned bipartite matching. YOLOv8
+\cite{jocher2023yolov8}, anchor-free with an improved backbone, serves as our detection backbone.
+
+\subsection{Fine-Grained Visual Classification}
+Wei et al.~\cite{wei2019rpc} formalized fine-grained retail recognition via the RPC dataset
+(200 categories). Standard backbones (ResNet~\cite{he2016resnet}) require domain-specific
+augmentation and attention-based features.
+
+\subsection{Vision-Language Models}
+CLIP~\cite{radford2021clip} learns joint image-text embeddings enabling zero-shot retrieval;
+LLaVA~\cite{liu2023llava} adds visual instruction tuning for structured extraction of brand,
+category, and visible text---suited to auto-labeling.
+
+\subsection{LLM-Powered Text-to-SQL and Security}
+Schema-aware NL2SQL~\cite{lin2020bridge} and LLM orchestration frameworks enable parameterized SQL.
+Indirect prompt injection~\cite{greshake2023injection} motivates OWASP-aligned guardrails at the
+input, query-generation, and output layers.

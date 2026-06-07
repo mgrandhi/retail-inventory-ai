@@ -1,0 +1,46 @@
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+*.egg-info/
+.ipynb_checkpoints/
+
+# Secrets / env
+.env
+*.key
+*-key.json
+service-account*.json
+
+# Data & model artifacts (large; live on VM / GCS / Colab)
+data/
+*.pt
+*.onnx
+*.npy
+runs/
+detection/results/
+detection/metrics.json
+
+# Datasets auto-downloaded by Ultralytics
+datasets/
+
+# LaTeX build artifacts
+report/*.aux
+report/*.log
+report/*.out
+report/*.toc
+report/*.bbl
+report/*.blg
+report/*.fls
+report/*.fdb_latexmk
+report/*.synctex.gz
+report/main.pdf
+
+# OS
+.DS_Store
+
+# IDE / editor / agent local
+.claude/
+.cursor/
+.idea/
+.vscode/

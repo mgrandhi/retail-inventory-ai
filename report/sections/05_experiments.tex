@@ -1,0 +1,30 @@
+\section{Experimental Setup}
+% Detection training was run on GCP. Keep this in sync with DECISIONS.md / detection/README.md.
+\subsection{Detection Training (Module 1)}
+YOLOv8m was fine-tuned from COCO-pretrained weights on the SKU-110K train split. Key configuration:
+
+\begin{table}[t]
+\centering
+\caption{YOLOv8m / SKU-110K training configuration.}
+\label{tab:train-config}
+\begin{tabular}{ll}
+\toprule
+Setting & Value \\
+\midrule
+Model            & YOLOv8m (COCO-initialized) \\
+Image size       & $1280 \times 1280$ \\
+Batch            & auto ($\sim$60\% VRAM) \\
+LR schedule      & cosine \\
+Epoch budget     & 50 (upper bound) \\
+Wall-clock cap   & 9.5\,h (Ultralytics \texttt{time}) \\
+GPU              & 1$\times$ NVIDIA L4 (24\,GB) \\
+Host             & GCP \texttt{g2-standard-8} \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+Training ran on an on-demand GCP L4 VM that synced all artifacts to Cloud Storage and then
+self-deleted, bounding cost. Evaluation uses the SKU-110K validation split, reporting mAP@0.5,
+mAP@0.5:0.95, precision, and recall.
+
+% TODO: add classification (Module 2), auto-labeling (Module 3), NL-BI (Module 5) setups as built.

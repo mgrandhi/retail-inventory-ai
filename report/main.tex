@@ -1,0 +1,44 @@
+\documentclass[conference]{IEEEtran}
+
+% --- packages ---
+\usepackage{graphicx}
+\usepackage{booktabs}
+\usepackage{amsmath}
+\usepackage{hyperref}
+\usepackage{xcolor}
+\usepackage{url}
+\graphicspath{{figures/}}
+
+% --- metadata ---
+\title{Intelligent Retail Product Detection and Inventory Management\\
+using Computer Vision and LLM-Based Business Intelligence}
+
+\author{\IEEEauthorblockN{Project Team}
+\IEEEauthorblockA{2026}}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+This report presents an end-to-end AI system that automates product detection from retail shelf
+images, maintains a continuously updated inventory database, and exposes a natural-language
+business-intelligence interface. The detection backbone is YOLOv8m fine-tuned on the SKU-110K
+dataset; classification combines a ResNet-50 coarse classifier with CLIP-based fine-grained
+retrieval; unknown products are auto-labeled via LLaVA; and a LangGraph/Ollama pipeline answers
+plain-English inventory queries over a guarded, read-only SQL interface.
+% TODO: finalize abstract with headline results.
+\end{abstract}
+
+% --- sections (each in sections/) ---
+\input{sections/01_problem}
+\input{sections/02_literature}
+\input{sections/03_approach}
+\input{sections/04_datasets}
+\input{sections/05_experiments}
+\input{sections/06_results}
+\input{sections/07_conclusion}
+
+\bibliographystyle{IEEEtran}
+\bibliography{references}
+
+\end{document}

@@ -1,0 +1,40 @@
+\section{Results}
+% Fill mAP numbers from detection/metrics.json once the GCP run completes (see RESULTS.md).
+\subsection{Detection Performance (SKU-110K)}
+
+\begin{table}[t]
+\centering
+\caption{YOLOv8m detection results on SKU-110K vs. proposal targets.}
+\label{tab:det-results}
+\begin{tabular}{lcc}
+\toprule
+Metric & Result & Target \\
+\midrule
+mAP@0.5        & \texttt{TBD} & $\geq 0.70$ \\
+mAP@0.5:0.95   & \texttt{TBD} & --- \\
+Precision      & \texttt{TBD} & $\geq 0.75$ \\
+Recall         & \texttt{TBD} & $\geq 0.70$ \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+Training curves are shown in Fig.~\ref{fig:curves}; qualitative before/after detections
+(COCO-pretrained vs.\ fine-tuned) on identical shelf images are shown in
+Fig.~\ref{fig:before-after}.
+
+\begin{figure}[t]
+\centering
+% \includegraphics[width=\columnwidth]{results.png}
+\caption{Training/validation loss and mAP over epochs (from the GCP run).}
+\label{fig:curves}
+\end{figure}
+
+\begin{figure}[t]
+\centering
+% \includegraphics[width=\columnwidth]{before_after_0.png}
+\caption{Same shelf image: COCO-pretrained YOLOv8m (left) vs.\ SKU-110K fine-tuned (right). The
+fine-tuned model recovers the densely packed product instances the COCO model misses.}
+\label{fig:before-after}
+\end{figure}
+
+% TODO: uncomment \includegraphics once figures are copied into report/figures/.

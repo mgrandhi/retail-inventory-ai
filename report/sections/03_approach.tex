@@ -1,0 +1,28 @@
+\section{Proposed Approach}
+% Source: proposal Section 4. A figure of the system architecture goes in figures/.
+The system is a multi-stage pipeline: Detection, Classification, Inventory Management, and the
+Business-Intelligence Interface, each independently testable behind well-defined API boundaries.
+
+\subsection{Module 1: Product Detection}
+YOLOv8m initialized from COCO weights, fine-tuned on the SKU-110K training split at $1280\times1280$
+with a cosine LR schedule and multi-scale training. NMS and a confidence threshold filter
+predictions. Output: one bounding box per product instance.
+
+\subsection{Module 2: Hierarchical Classification}
+Stage 1 is a ResNet-50 coarse classifier over 200 RPC categories. Stage 2 is CLIP ViT-B/32
+embedding retrieval against a pre-built SKU gallery using cosine similarity, with a confidence
+threshold below which products are routed to auto-labeling.
+
+\subsection{Module 3: Auto-Labeling}
+Below the CLIP threshold, LLaVA extracts brand/type/category/visible-text from the crop; the entry
+is added to the catalog and its embedding appended to the gallery.
+
+\subsection{Module 4: Inventory Backend}
+FastAPI + SQLite with \texttt{products}, \texttt{inventory}, \texttt{alerts} tables. Detection
+outputs POST to \texttt{/ingest}; \texttt{/bill} decrements on checkout; low-stock alerts fire on
+configurable thresholds. All endpoints require API-key auth.
+
+\subsection{Module 5: NL Business-Intelligence Interface}
+LangChain/LangGraph + Ollama (Llama 3.1 8B). Input guardrail $\rightarrow$ query-planning agent
+(schema-aware, parameterized SQL) $\rightarrow$ validation (EXPLAIN QUERY PLAN, SELECT-only
+allowlist, read-only connection) $\rightarrow$ execution $\rightarrow$ output sanitization.
