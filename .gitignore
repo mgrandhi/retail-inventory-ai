@@ -21,6 +21,13 @@ runs/
 detection/results/
 detection/metrics.json
 
+# ...except the three checkpoint artifacts the Colab notebook needs to
+# reproduce the before/after demo without any GCS dependency.
+!detection/artifacts/
+!detection/artifacts/best.pt
+!detection/artifacts/metrics.json
+!detection/artifacts/results.png
+
 # Datasets auto-downloaded by Ultralytics
 datasets/
 
