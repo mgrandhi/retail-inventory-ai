@@ -3,7 +3,7 @@
 > **This is the resume file.** When the user says "resume", read this first, then continue from
 > **Status → Next step**. Keep it current at the end of every session.
 
-Last updated: **2026-06-07**
+Last updated: **2026-06-08**
 
 ---
 
@@ -36,10 +36,17 @@ Last updated: **2026-06-07**
   `best.pt` (49.7 MiB), `last.pt` (49.7 MiB), `metrics.json`, `train.log` (19.9 MiB),
   `sku110k/` (training run dir: results.png, args.yaml, results.csv, curves, batch viz, weights/),
   `sku110k_val/` (final val pass viz).
+- **Cleanup-trap learning:** v8 + v11 both had `gcloud compute instances delete` return
+  success but the VM stayed alive. Trap is now hardened with three layers (gcloud → REST
+  API → scheduled `shutdown -h +5`) so this can't bleed cost in future runs.
+- **Cloud NAT** in `us-central1` is now provisioned (router `nat-router-us-central1`,
+  NAT `nat-config`, auto-allocated IPs, all subnet ranges) — required by the no-public-IP
+  policy. Reused by every future VM in this project.
+
 - **Next step:**
-  1. Run `notebooks/01_detection_checkpoint.ipynb` for before/after panels (downloads `best.pt`).
-  2. Copy `results.png` + before/after panels into `report/figures/`.
-  3. Update `report/sections/06_results.tex` with the numbers above (replace TBDs).
+  1. Run `notebooks/01_detection_checkpoint.ipynb` end-to-end (Colab, personal account).
+  2. Copy v8/v11 `results.png` + the rendered before/after panels into `report/figures/`.
+  3. Update `report/sections/06_results.tex` with both v8 and v11 numbers.
   4. Move on to Module 2 (Week 4 — classification: ResNet-50 + CLIP on RPC).
 
 ## The 8-week arc (from proposal)
@@ -76,9 +83,13 @@ Last updated: **2026-06-07**
 
 ## Latest results
 
-- Detection (YOLOv8m, SKU-110K, imgsz=1280, time=9.5h, AutoBatch=3, COCO init):
-  **mAP@0.5 = 0.9209**, mAP@0.5:0.95 = 0.5937, P = 0.9193, R = 0.8824, epoch 47/50.
-  See `RESULTS.md` for the row + `gs://ehc-mgrandhi-bc801a-sku110k-yolo/results/` for artifacts.
+- **Detection v8** (YOLOv8m, time=9.5h, COCO init): mAP@0.5 = **0.9209**,
+  mAP@0.5:0.95 = 0.5937, P = 0.9193, R = 0.8824, epoch 47/50.
+- **Detection v11** (YOLOv11m, time=8.0h, COCO init): mAP@0.5 = **0.9209**,
+  mAP@0.5:0.95 = **0.5941**, P = **0.9206**, R = 0.8815, epoch 35/50.
+  Same accuracy, 1.5h less wall-clock. **First run with no-public-IP VM** (Cloud NAT egress).
+- Artifacts: `gs://…/results/{v8,v11}/` and `detection/artifacts/{v8,v11}/` (committed in repo).
+- Notebook samples: 10 real SKU-110K test images at `notebooks/samples/shelf_{00..09}.jpg`.
 
 ## How to resume (commands)
 

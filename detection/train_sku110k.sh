@@ -29,16 +29,45 @@ mkdir -p "$RUN_DIR"
 : > "$LOG"
 
 # --- COST-SAFETY TRAP: always sync + self-delete on ANY exit ---------------
+# Self-delete on a no-public-IP VM has been flaky (the gcloud call returns
+# success but the VM stays alive). Three layers of defense, in order:
+#   1) `gcloud compute instances delete` — the normal path.
+#   2) curl -X DELETE against the Compute REST API directly — bypasses any
+#      gcloud-SDK quirks.
+#   3) `at`-scheduled poweroff in 5 min — last-resort kill switch so we
+#      never pay for an idle GPU even if both API calls silently fail.
 cleanup() {
   rc=$?
-  echo "=== cleanup (exit code $rc): syncing results to GCS, then deleting VM ==="
+  echo "=== cleanup (exit code $rc): syncing results to GCS ==="
   gsutil -m rsync -r "$RUN_DIR" "$BUCKET/results/$VARIANT/" || echo "WARN: gsutil sync failed"
-  NAME=$(curl -s -H "Metadata-Flavor: Google" \
+
+  NAME=$(curl -sf -H "Metadata-Flavor: Google" \
     http://metadata.google.internal/computeMetadata/v1/instance/name)
-  ZONE=$(curl -s -H "Metadata-Flavor: Google" \
-    http://metadata.google.internal/computeMetadata/v1/instance/zone | awk -F/ '{print $NF}')
-  echo "=== deleting self: $NAME in $ZONE ==="
-  gcloud compute instances delete "$NAME" --zone "$ZONE" --quiet
+  ZONE_PATH=$(curl -sf -H "Metadata-Flavor: Google" \
+    http://metadata.google.internal/computeMetadata/v1/instance/zone)
+  ZONE=$(echo "$ZONE_PATH" | awk -F/ '{print $NF}')
+  PROJECT=$(curl -sf -H "Metadata-Flavor: Google" \
+    http://metadata.google.internal/computeMetadata/v1/project/project-id)
+  TOKEN=$(curl -sf -H "Metadata-Flavor: Google" \
+    http://metadata.google.internal/computeMetadata/v1/instance/service-accounts/default/token \
+    | python3 -c 'import sys,json;print(json.load(sys.stdin)["access_token"])')
+
+  # Layer 3 belt-and-suspenders: if we're still alive in 5 min, force poweroff.
+  # `shutdown -h +5` is independent of the gcloud / API delete paths.
+  apt-get install -y at >/dev/null 2>&1 || true
+  echo "shutdown -h now" | at now + 5 minutes 2>/dev/null || \
+    (sleep 300 && shutdown -h now) &
+
+  echo "=== deleting self via gcloud: $NAME in $ZONE ==="
+  gcloud compute instances delete "$NAME" --zone "$ZONE" --quiet || \
+    echo "WARN: gcloud delete failed"
+
+  # If still here after 30s, try the REST API directly.
+  sleep 30
+  echo "=== fallback: deleting self via REST API ==="
+  curl -sf -X DELETE -H "Authorization: Bearer $TOKEN" \
+    "https://compute.googleapis.com/compute/v1/projects/$PROJECT/zones/$ZONE/instances/$NAME" \
+    || echo "WARN: REST delete failed"
 }
 trap cleanup EXIT
 
