@@ -30,8 +30,12 @@ detection/metrics.json
 !detection/artifacts/**/metrics.json
 !detection/artifacts/**/results.png
 
-# Datasets auto-downloaded by Ultralytics
-datasets/
+# Datasets auto-downloaded locally for one-off testing.
+# (datasets/ in the repo holds infra scripts only; never raw data.)
+datasets/cache/
+datasets/extracted/
+datasets/*.tar.gz
+datasets/*.zip
 
 # LaTeX build artifacts
 report/*.aux

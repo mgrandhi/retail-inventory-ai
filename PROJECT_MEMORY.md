@@ -11,7 +11,23 @@ Last updated: **2026-06-08**
 
 - **Project ID:** `ehc-mgrandhi-bc801a` · account `mgrandhi@salesforce.com`
 - **Region/Zone:** `us-central1` / `us-central1-a`
-- **Bucket:** `gs://ehc-mgrandhi-bc801a-sku110k-yolo`
+- **Buckets:**
+  - `gs://ehc-mgrandhi-bc801a-sku110k-yolo` — training results (per-variant subdirs)
+  - `gs://ehc-mgrandhi-bc801a-datasets` — pre-downloaded dataset cache (see `datasets/README.md`)
+- **Cloud NAT** in `us-central1` — required because all VMs are no-public-IP.
+
+## Datasets cache
+
+Pre-downloaded once into `gs://ehc-mgrandhi-bc801a-datasets`. Future training VMs
+`gsutil cp` from it instead of re-downloading from public CDNs through Cloud NAT.
+
+| Dataset    | Module          | Bucket prefix | Status       |
+|------------|-----------------|---------------|--------------|
+| SKU-110K   | Detection (W3)  | `sku110k/`    | _pending fetch_ |
+| COCO 2017  | Detection (W3+) | `coco2017/`   | _pending fetch_ |
+| RPC        | Classification (W4) | `rpc/`    | _pending fetch_ (Kaggle token required, see `datasets/README.md`) |
+
+See `datasets/README.md` for the layout, fetcher pattern, and how to add a new dataset.
 
 ## Status
 
