@@ -32,11 +32,9 @@ gs://<project>-datasets/
 
 | Dataset    | Module          | Source (primary)                                                         | Approx size | Bucket prefix | Status     |
 |------------|-----------------|--------------------------------------------------------------------------|-------------|---------------|------------|
-| SKU-110K   | Detection (W3)  | `http://trax-geometry.s3.amazonaws.com/cvpr_challenge/SKU110K_fixed.tar.gz` | ~13.6 GB   | `sku110k/`    | _pending fetch_ |
-| COCO 2017  | Detection (W3+) | `http://images.cocodataset.org/zips/*.zip`                               | ~25 GB     | `coco2017/`   | _pending fetch_ |
-| RPC        | Classification (W4) | Kaggle mirror `diyer22/retail-product-checkout-dataset` (token required) | ~30 GB     | `rpc/`        | _pending fetch_ |
-
-Update the **Status** column to "fetched YYYY-MM-DD" after each fetcher run.
+| SKU-110K   | Detection (W3)  | `http://trax-geometry.s3.amazonaws.com/cvpr_challenge/SKU110K_fixed.tar.gz` | ~13.6 GB   | `sku110k/`    | **fetched 2026-06-08** (tarball + extracted tree, 23.5 GiB total) |
+| COCO 2017  | Detection (W3+) | `http://images.cocodataset.org/zips/*.zip`                               | ~25 GB     | `coco2017/`   | **fetched 2026-06-08** (5 zips authoritative, 46.8 GiB total; `extracted/{train2017,test2017}/` only — `val2017` + `annotations` should be unzipped on demand from `zips/`) |
+| RPC        | Classification (W4) | Kaggle mirror `diyer22/retail-product-checkout-dataset` (token required) | ~30 GB     | `rpc/`        | _pending fetch_ — needs `_secrets/kaggle.json` (see below) |
 
 ## How to fetch a dataset
 

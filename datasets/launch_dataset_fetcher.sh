@@ -19,6 +19,15 @@ INSTANCE="${INSTANCE:-dataset-fetcher-${DATASET}}"
 PROJECT_NUMBER="$(gcloud projects describe "$PROJECT_ID" --format='value(projectNumber)')"
 SERVICE_ACCOUNT="${SERVICE_ACCOUNT:-${PROJECT_NUMBER}-compute@developer.gserviceaccount.com}"
 
+# Per-dataset machine type. Most fetchers are I/O-bound and fine on e2-small.
+# COCO 2017 has 164k tiny files; the upload is CPU-bound serializing them, so it
+# needs the parallelism of a bigger machine to finish in <30 min instead of ~5 h.
+case "$DATASET" in
+  coco2017) MACHINE_TYPE_DEFAULT=e2-standard-8 ;;
+  *)        MACHINE_TYPE_DEFAULT=e2-small ;;
+esac
+MACHINE_TYPE="${MACHINE_TYPE:-$MACHINE_TYPE_DEFAULT}"
+
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 PAYLOAD="$SCRIPT_DIR/fetch_${DATASET}.sh"
 LIB="$SCRIPT_DIR/_fetcher_lib.sh"
@@ -71,10 +80,11 @@ Zone / Region  : $ZONE / $REGION
 Datasets bucket: $DATASETS_BUCKET
 Instance       : $INSTANCE
 Dataset        : $DATASET
+Machine type   : $MACHINE_TYPE
 Service account: $SERVICE_ACCOUNT
 External IP    : NONE  (--no-address; egress via Cloud NAT)
 EOF
-echo "Creating fetcher VM (e2-small, ubuntu-2204-lts)..."
+echo "Creating fetcher VM ($MACHINE_TYPE, ubuntu-2204-lts)..."
 
 gcloud compute instances create "$INSTANCE" \
   --project="$PROJECT_ID" \
@@ -82,7 +92,7 @@ gcloud compute instances create "$INSTANCE" \
   --subnet=default \
   --no-address \
   --service-account="$SERVICE_ACCOUNT" \
-  --machine-type=e2-small \
+  --machine-type="$MACHINE_TYPE" \
   --image-family=ubuntu-2204-lts \
   --image-project=ubuntu-os-cloud \
   --boot-disk-size=80GB \

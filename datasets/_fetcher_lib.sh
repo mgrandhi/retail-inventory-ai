@@ -24,12 +24,18 @@ _setup_logging() {
 #   $1 — GCS bucket URI (gs://...)
 #   $2 — path to local log file to upload before destruction
 #   $3 — bucket subpath where the log should land (e.g. "sku110k/fetch.log")
+#
+# The trap closure fires under `set -u`, so we promote the args to global
+# variables (a `local` inside _setup_cleanup wouldn't survive into cleanup()
+# when EXIT triggers it).
 _setup_cleanup() {
-  local bucket="$1" log="$2" log_dest="$3"
+  CLEANUP_BUCKET="$1"
+  CLEANUP_LOG="$2"
+  CLEANUP_LOG_DEST="$3"
   cleanup() {
     local rc=$?
     echo "=== cleanup (exit code $rc): syncing log to GCS ==="
-    gsutil cp "$log" "$bucket/$log_dest" || echo "WARN: log upload failed"
+    gsutil cp "$CLEANUP_LOG" "$CLEANUP_BUCKET/$CLEANUP_LOG_DEST" || echo "WARN: log upload failed"
 
     local NAME ZONE PROJECT TOKEN
     NAME=$(curl -sf -H "Metadata-Flavor: Google" \
