@@ -28,33 +28,34 @@ DL=/var/tmp/dl
 mkdir -p "$DL/raw" "$DL/extracted"
 cd "$DL/raw"
 
-# --- Source 1: Kaggle mirror via the kaggle CLI -----------------------------
+# --- Source 1: Kaggle REST API via curl (NOT the kaggle CLI) ----------------
+# History: the `kaggle` CLI buffers the whole response in memory on large
+# datasets; on an 83 GB download that triggers the kernel OOM-killer, which
+# hard-kills the VM before any userspace trap/log can run (3 crashes, 0 logs).
+# curl streams straight to disk at constant memory — the memory-safe path.
+SLUG="diyer22/retail-product-checkout-dataset"
 echo "=== probing Kaggle source ==="
 if gsutil -q stat "$BUCKET/_secrets/kaggle.json"; then
-  echo "Kaggle token found in $BUCKET/_secrets/kaggle.json — using Kaggle CLI"
-  pip install --quiet kaggle
-  mkdir -p ~/.kaggle
-  gsutil cp "$BUCKET/_secrets/kaggle.json" ~/.kaggle/kaggle.json
-  chmod 600 ~/.kaggle/kaggle.json
+  echo "Kaggle token found — downloading via Kaggle REST API with curl (streamed to disk)"
+  gsutil cp "$BUCKET/_secrets/kaggle.json" /tmp/kaggle.json
+  KUSER=$(python3 -c 'import json;print(json.load(open("/tmp/kaggle.json"))["username"])')
+  KKEY=$(python3 -c 'import json;print(json.load(open("/tmp/kaggle.json"))["key"])')
 
-  # IMPORTANT: download WITHOUT --unzip. The --unzip flag streams decompression
-  # through memory and OOM-killed the e2-small. We download the zip to disk,
-  # upload the raw zip to GCS first (so the data is safe even if extraction
-  # later fails), then unzip from disk to disk.
-  # RPC is ~83 GB. We DOWNLOAD ONLY and upload the raw archive — we do NOT
-  # extract on the fetcher (extracting would need ~2x the disk). Training VMs
-  # unzip on demand from rpc/raw/, same contract as coco2017/zips/.
-  echo "=== downloading RPC zip (download-only, no extract) ==="
-  if kaggle datasets download -d diyer22/retail-product-checkout-dataset \
-       --path "$DL/raw" 2>&1 | tee /tmp/kaggle.log; then
-    echo "Kaggle download succeeded"
-    ls -lh "$DL/raw"
-
-    echo "=== uploading raw archive(s) -> $DEST/raw/ ==="
-    gsutil -m cp "$DL/raw"/*.zip "$DEST/raw/"
-    echo "RPC raw archive cached. (Extraction is deferred to training time.)"
+  ZIP="$DL/raw/rpc.zip"
+  API="https://www.kaggle.com/api/v1/datasets/download/${SLUG}"
+  echo "=== streaming $API -> $ZIP ==="
+  # -L follows the redirect to GCS/S3; --output streams to disk; -C - resumes
+  # if a retry kicks in. Constant memory regardless of archive size.
+  if curl --fail --location --retry 8 --retry-delay 10 --retry-all-errors \
+        -C - -u "${KUSER}:${KKEY}" -o "$ZIP" "$API"; then
+    echo "download OK"
+    ls -lh "$ZIP"
+    df -h "$DL" | tail -1
+    echo "=== uploading raw archive -> $DEST/raw/ ==="
+    gsutil -m cp "$ZIP" "$DEST/raw/rpc.zip"
+    echo "RPC raw archive cached. (Extraction deferred to training time.)"
   else
-    echo "WARN: Kaggle download failed; trying secondary source"
+    echo "WARN: curl download failed; trying secondary source"
     rm -rf "${DL:?}/raw"/* "${DL:?}/extracted"/*
   fi
 else

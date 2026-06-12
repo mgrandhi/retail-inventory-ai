@@ -101,6 +101,7 @@ gcloud compute instances create "$INSTANCE" \
   --image-project=ubuntu-os-cloud \
   --boot-disk-size="${DISK_SIZE}GB" \
   --boot-disk-type=pd-balanced \
+  --metadata=serial-port-logging-enable=true \
   --metadata-from-file=startup-script="$STARTUP" \
   --scopes=https://www.googleapis.com/auth/cloud-platform
 
