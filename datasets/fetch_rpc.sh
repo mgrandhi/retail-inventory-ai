@@ -41,21 +41,18 @@ if gsutil -q stat "$BUCKET/_secrets/kaggle.json"; then
   # through memory and OOM-killed the e2-small. We download the zip to disk,
   # upload the raw zip to GCS first (so the data is safe even if extraction
   # later fails), then unzip from disk to disk.
-  echo "=== downloading RPC zip (no --unzip) ==="
+  # RPC is ~83 GB. We DOWNLOAD ONLY and upload the raw archive — we do NOT
+  # extract on the fetcher (extracting would need ~2x the disk). Training VMs
+  # unzip on demand from rpc/raw/, same contract as coco2017/zips/.
+  echo "=== downloading RPC zip (download-only, no extract) ==="
   if kaggle datasets download -d diyer22/retail-product-checkout-dataset \
        --path "$DL/raw" 2>&1 | tee /tmp/kaggle.log; then
     echo "Kaggle download succeeded"
     ls -lh "$DL/raw"
 
-    # Safety net: stash the raw archive(s) in the bucket before extracting.
     echo "=== uploading raw archive(s) -> $DEST/raw/ ==="
-    gsutil -m cp "$DL/raw"/*.zip "$DEST/raw/" 2>/dev/null || true
-
-    echo "=== extracting on disk ==="
-    for z in "$DL/raw"/*.zip; do
-      echo "unzip $z"
-      unzip -q -o "$z" -d "$DL/extracted"
-    done
+    gsutil -m cp "$DL/raw"/*.zip "$DEST/raw/"
+    echo "RPC raw archive cached. (Extraction is deferred to training time.)"
   else
     echo "WARN: Kaggle download failed; trying secondary source"
     rm -rf "${DL:?}/raw"/* "${DL:?}/extracted"/*
@@ -90,11 +87,12 @@ EOF
   fi
 fi
 
-echo "=== uploading raw -> $DEST/raw/ ==="
-gsutil -m cp -r "$DL/raw/." "$DEST/raw/" 2>/dev/null || true
-
-echo "=== uploading extracted -> $DEST/extracted/ ==="
-gsutil -m cp -r "$DL/extracted/." "$DEST/extracted/"
+# Upload the extracted tree only if a fallback source produced one (the Kaggle
+# path is download-only). Empty extracted/ is fine — raw/ is authoritative.
+if [[ -n "$(ls -A "$DL/extracted" 2>/dev/null)" ]]; then
+  echo "=== uploading extracted -> $DEST/extracted/ ==="
+  gsutil -m cp -r "$DL/extracted/." "$DEST/extracted/"
+fi
 
 echo "=== writing manifest ==="
 gsutil ls -l -r "$DEST/**" > /tmp/manifest.txt

@@ -22,12 +22,14 @@ SERVICE_ACCOUNT="${SERVICE_ACCOUNT:-${PROJECT_NUMBER}-compute@developer.gservice
 # Per-dataset machine type. Most fetchers are I/O-bound and fine on e2-small.
 # COCO 2017 has 164k tiny files; the upload is CPU-bound serializing them, so it
 # needs the parallelism of a bigger machine to finish in <30 min instead of ~5 h.
+# Per-dataset machine type + boot disk. Defaults sized from real fetch runs.
 case "$DATASET" in
-  coco2017) MACHINE_TYPE_DEFAULT=e2-standard-8 ;;   # 164k tiny files, upload CPU-bound
-  rpc)      MACHINE_TYPE_DEFAULT=e2-standard-4 ;;    # ~30 GB zip; needs RAM for unzip (e2-small OOM'd)
-  *)        MACHINE_TYPE_DEFAULT=e2-small ;;
+  coco2017) MACHINE_TYPE_DEFAULT=e2-standard-8; DISK_DEFAULT=80  ;;  # 164k tiny files, upload CPU-bound
+  rpc)      MACHINE_TYPE_DEFAULT=e2-standard-4; DISK_DEFAULT=200 ;;  # ~83 GB archive; download-only (no extract)
+  *)        MACHINE_TYPE_DEFAULT=e2-small;      DISK_DEFAULT=80  ;;
 esac
 MACHINE_TYPE="${MACHINE_TYPE:-$MACHINE_TYPE_DEFAULT}"
+DISK_SIZE="${DISK_SIZE:-$DISK_DEFAULT}"
 
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 PAYLOAD="$SCRIPT_DIR/fetch_${DATASET}.sh"
@@ -82,6 +84,7 @@ Datasets bucket: $DATASETS_BUCKET
 Instance       : $INSTANCE
 Dataset        : $DATASET
 Machine type   : $MACHINE_TYPE
+Boot disk      : ${DISK_SIZE}GB
 Service account: $SERVICE_ACCOUNT
 External IP    : NONE  (--no-address; egress via Cloud NAT)
 EOF
@@ -96,7 +99,7 @@ gcloud compute instances create "$INSTANCE" \
   --machine-type="$MACHINE_TYPE" \
   --image-family=ubuntu-2204-lts \
   --image-project=ubuntu-os-cloud \
-  --boot-disk-size=80GB \
+  --boot-disk-size="${DISK_SIZE}GB" \
   --boot-disk-type=pd-balanced \
   --metadata-from-file=startup-script="$STARTUP" \
   --scopes=https://www.googleapis.com/auth/cloud-platform
