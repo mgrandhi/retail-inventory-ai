@@ -25,7 +25,7 @@ Pre-downloaded once into `gs://ehc-mgrandhi-bc801a-datasets`. Future training VM
 |------------|-----------------|---------------|--------------|
 | SKU-110K   | Detection (W3)  | `sku110k/`    | **fetched 2026-06-08** (23.5 GiB; tarball + full extracted tree) |
 | COCO 2017  | Detection (W3+) | `coco2017/`   | **fetched 2026-06-08** (46.8 GiB; all 5 zips + extracted train2017/test2017 — val/annotations unzip from `zips/` on demand) |
-| RPC        | Classification (W4) | `rpc/`    | _pending fetch_ — needs Kaggle token at `gs://…-datasets/_secrets/kaggle.json` |
+| RPC        | Classification (W4) | `rpc/`    | **fetched 2026-06-12** (25.3 GiB; `rpc/raw/rpc.zip`, unzip on demand) |
 
 See `datasets/README.md` for the layout, fetcher pattern, and how to add a new dataset.
 

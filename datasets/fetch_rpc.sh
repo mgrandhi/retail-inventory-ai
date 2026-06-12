@@ -62,8 +62,11 @@ else
   echo "no Kaggle token at $BUCKET/_secrets/kaggle.json — skipping Kaggle source"
 fi
 
-# --- Source 2: github release fallback (small subset, may not be full dataset) -
-if [[ -z "$(ls -A "$DL/extracted" 2>/dev/null)" ]]; then
+# --- Source 2: github release fallback ---------------------------------------
+# Only runs if Source 1 produced NOTHING. The Kaggle path is download-only, so
+# gate on the presence of the raw zip (NOT on extracted/, which is intentionally
+# empty after a successful Kaggle download).
+if [[ -z "$(ls -A "$DL/raw" 2>/dev/null)" ]]; then
   echo "=== attempting github fallback ==="
   # The original RPC release page links to raw zips on the public github release
   # for github.com/RetailAI/RPC-Dataset (canonical author release).

@@ -34,7 +34,7 @@ gs://<project>-datasets/
 |------------|-----------------|--------------------------------------------------------------------------|-------------|---------------|------------|
 | SKU-110K   | Detection (W3)  | `http://trax-geometry.s3.amazonaws.com/cvpr_challenge/SKU110K_fixed.tar.gz` | ~13.6 GB   | `sku110k/`    | **fetched 2026-06-08** (tarball + extracted tree, 23.5 GiB total) |
 | COCO 2017  | Detection (W3+) | `http://images.cocodataset.org/zips/*.zip`                               | ~25 GB     | `coco2017/`   | **fetched 2026-06-08** (5 zips authoritative, 46.8 GiB total; `extracted/{train2017,test2017}/` only — `val2017` + `annotations` should be unzipped on demand from `zips/`) |
-| RPC        | Classification (W4) | Kaggle mirror `diyer22/retail-product-checkout-dataset` (token required) | ~30 GB     | `rpc/`        | _pending fetch_ — needs `_secrets/kaggle.json` (see below) |
+| RPC        | Classification (W4) | Kaggle mirror `diyer22/retail-product-checkout-dataset` (token required) | 25.3 GB    | `rpc/`        | **fetched 2026-06-12** (`rpc/raw/rpc.zip`, 25.3 GiB; download-only, unzip on demand at training time) |
 
 ## How to fetch a dataset
 
