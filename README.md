@@ -29,9 +29,9 @@ LaTeX report** — we assemble the report *from* them, not from memory.
 
 | Path | Module | Week | Status |
 |---|---|---|---|
-| `detection/` | M1 — YOLOv8 detection (SKU-110K) | 3 | 🚧 in progress |
-| `classification/` | M2 — ResNet-50 + CLIP (RPC) | 4 | ⬜ not started |
-| `autolabel/` | M3 — LLaVA auto-labeling | 5 | ⬜ not started |
+| `detection/` | M1 — YOLOv8 detection (SKU-110K) | 3 | ✅ done (mAP@0.5≈0.92) |
+| `classification/` | M2 — confidence-gated cat/subcat classifier (SKU-110K crops) | 4 | 🚧 scaffolded |
+| `autolabel/` | M2/M3 — CLIP + GCP VLM (Vertex Gemini / Gemma) labeling & fallback | 4–5 | 🚧 scaffolded |
 | `backend/` | M4 — FastAPI + SQLite | 5 | ⬜ not started |
 | `bi_interface/` | M5 — LangGraph + Ollama NL→SQL | 6 | ⬜ not started |
 | `frontend/` | M7 — Streamlit dashboard | 7 | ⬜ not started |

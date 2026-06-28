@@ -30,6 +30,30 @@ detection/metrics.json
 !detection/artifacts/**/metrics.json
 !detection/artifacts/**/results.png
 
+# Module 2 generated outputs (large / reproducible; live on GCS).
+# Generated label CSVs + usage logs from the autolabelers, and gated-inference predictions.
+autolabel/labels_*.csv
+autolabel/*.usage.json
+autolabel/label_agreement_report.md
+classification/preds*.csv
+
+# ...but DO commit the chosen Gemini teacher-label CSVs (small; the notebook + training reference
+# them, and the teammate wants them in the repo). The rejected CLIP labels stay out (GCS only).
+!classification/labels/
+!classification/labels/labels_gemini_*.csv
+
+# ...except the per-variant classifier artifacts the Module-2 notebook needs to reproduce the
+# results/inference demo without any GCS dependency. The big classifier.pt is tracked via Git LFS
+# (see .gitattributes); the small JSON/log files commit normally. Mirrors detection/artifacts/.
+!classification/artifacts/
+!classification/artifacts/**/
+!classification/artifacts/**/classifier.pt
+!classification/artifacts/**/label_maps.json
+!classification/artifacts/**/metrics.json
+!classification/artifacts/**/gate_sweep.json
+!classification/artifacts/**/train.log
+!classification/artifacts/**/gate.log
+
 # Datasets auto-downloaded locally for one-off testing.
 # (datasets/ in the repo holds infra scripts only; never raw data.)
 datasets/cache/

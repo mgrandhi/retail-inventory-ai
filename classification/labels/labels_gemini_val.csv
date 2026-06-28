@@ -1,0 +1,2001 @@
+filename,normalized_category,normalized_subcategory,confidence,source
+val_0_det105_crop.jpg,Other / Unclear,Unclear / Generic Product,1.0,gemini
+val_0_det102_crop.jpg,Personal Care & Beauty,Bath & Body Wash,1.0,gemini
+val_0_det106_crop.jpg,Personal Care & Beauty,Bath & Body Wash,1.0,gemini
+val_0_det100_crop.jpg,Personal Care & Beauty,Bath & Body Wash,1.0,gemini
+val_0_det103_crop.jpg,Personal Care & Beauty,Bath & Body Wash,1.0,gemini
+val_0_det104_crop.jpg,Personal Care & Beauty,Bath & Body Wash,1.0,gemini
+val_0_det0_crop.jpg,Personal Care & Beauty,Bath & Body Wash,1.0,gemini
+val_0_det101_crop.jpg,Other / Unclear,Unclear / Generic Product,1.0,gemini
+val_0_det107_crop.jpg,Personal Care & Beauty,Bath & Body Wash,1.0,gemini
+val_0_det108_crop.jpg,Other / Unclear,Unclear / Generic Product,1.0,gemini
+val_0_det10_crop.jpg,Personal Care & Beauty,Bath & Body Wash,1.0,gemini
+val_0_det112_crop.jpg,Snacks & Confectionery,Candy & Chocolate,1.0,gemini
+val_0_det109_crop.jpg,Snacks & Confectionery,Candy & Chocolate,1.0,gemini
+val_0_det113_crop.jpg,Other / Unclear,Unclear / Generic Product,1.0,gemini
+val_0_det111_crop.jpg,Health & Wellness,Medicine & First Aid,1.0,gemini
+val_0_det110_crop.jpg,Other / Unclear,Unclear / Generic Product,1.0,gemini
+val_0_det115_crop.jpg,Personal Care & Beauty,Bath & Body Wash,1.0,gemini
+val_0_det114_crop.jpg,Personal Care & Beauty,Bath & Body Wash,1.0,gemini
+val_0_det119_crop.jpg,Other / Unclear,Unclear / Generic Product,1.0,gemini
+val_0_det118_crop.jpg,Personal Care & Beauty,Bath & Body Wash,1.0,gemini
+val_0_det116_crop.jpg,Other / Unclear,Unclear / Generic Product,1.0,gemini
+val_0_det11_crop.jpg,Other / Unclear,Unclear / Generic Product,1.0,gemini
+val_0_det120_crop.jpg,Personal Care & Beauty,Deodorant,1.0,gemini
+val_0_det117_crop.jpg,Other / Unclear,Unclear / Generic Product,1.0,gemini
+val_0_det121_crop.jpg,Personal Care & Beauty,Bath & Body Wash,1.0,gemini
+val_0_det122_crop.jpg,Other / Unclear,Unclear / Generic Product,1.0,gemini
+val_0_det123_crop.jpg,Other / Unclear,Unclear / Generic Product,1.0,gemini
+val_0_det125_crop.jpg,Other / Unclear,Unclear / Generic Product,1.0,gemini
+val_0_det124_crop.jpg,Other / Unclear,Unclear / Generic Product,1.0,gemini
+val_0_det126_crop.jpg,Personal Care & Beauty,Skin Care,1.0,gemini
+val_0_det129_crop.jpg,Other / Unclear,Unclear / Generic Product,1.0,gemini
+val_0_det127_crop.jpg,Other / Unclear,Unclear / Generic Product,1.0,gemini
+val_0_det128_crop.jpg,Personal Care & Beauty,Bath & Body Wash,1.0,gemini
+val_0_det12_crop.jpg,Personal Care & Beauty,Bath & Body Wash,1.0,gemini
+val_0_det131_crop.jpg,Other / Unclear,Unclear / Generic Product,1.0,gemini
+val_0_det130_crop.jpg,Other / Unclear,Unclear / Generic Product,1.0,gemini
+val_0_det133_crop.jpg,Other / Unclear,Unclear / Generic Product,1.0,gemini
+val_0_det132_crop.jpg,Personal Care & Beauty,Skin Care,1.0,gemini
+val_0_det137_crop.jpg,Other / Unclear,Unclear / Generic Product,1.0,gemini
+val_0_det134_crop.jpg,Other / Unclear,Unclear / Generic Product,1.0,gemini
+val_0_det135_crop.jpg,Personal Care & Beauty,Bath & Body Wash,1.0,gemini
+val_0_det136_crop.jpg,Tobacco / Restricted,Tobacco Products,1.0,gemini
+val_0_det138_crop.jpg,Other / Unclear,Unclear / Generic Product,1.0,gemini
+val_0_det139_crop.jpg,Personal Care & Beauty,Bath & Body Wash,1.0,gemini
+val_0_det13_crop.jpg,Personal Care & Beauty,Bath & Body Wash,1.0,gemini
+val_0_det140_crop.jpg,Other / Unclear,Unclear / Generic Product,1.0,gemini
+val_0_det141_crop.jpg,Other / Unclear,Unclear / Generic Product,1.0,gemini
+val_0_det142_crop.jpg,Personal Care & Beauty,Bath & Body Wash,1.0,gemini
+val_0_det144_crop.jpg,Other / Unclear,Unclear / Generic Product,1.0,gemini
+val_0_det143_crop.jpg,Other / Unclear,Unclear / Generic Product,1.0,gemini
+val_0_det147_crop.jpg,Other / Unclear,Unclear / Generic Product,1.0,gemini
+val_0_det145_crop.jpg,Other / Unclear,Unclear / Generic Product,1.0,gemini
+val_0_det146_crop.jpg,Other / Unclear,Unclear / Generic Product,1.0,gemini
+val_0_det15_crop.jpg,Personal Care & Beauty,Skin Care,1.0,gemini
+val_0_det14_crop.jpg,Personal Care & Beauty,Bath & Body Wash,1.0,gemini
+val_0_det16_crop.jpg,Personal Care & Beauty,Bath & Body Wash,1.0,gemini
+val_0_det17_crop.jpg,Personal Care & Beauty,Bath & Body Wash,1.0,gemini
+val_0_det18_crop.jpg,Personal Care & Beauty,Bath & Body Wash,1.0,gemini
+val_0_det1_crop.jpg,Other / Unclear,Unclear / Generic Product,1.0,gemini
+val_0_det22_crop.jpg,Personal Care & Beauty,Bath & Body Wash,1.0,gemini
+val_0_det20_crop.jpg,Personal Care & Beauty,Personal Care Other,1.0,gemini
+val_0_det21_crop.jpg,Personal Care & Beauty,Bath & Body Wash,1.0,gemini
+val_0_det19_crop.jpg,Personal Care & Beauty,Bath & Body Wash,1.0,gemini
+val_0_det24_crop.jpg,Personal Care & Beauty,Personal Care Other,1.0,gemini
+val_0_det26_crop.jpg,Personal Care & Beauty,Bath & Body Wash,1.0,gemini
+val_0_det23_crop.jpg,Personal Care & Beauty,Bath & Body Wash,1.0,gemini
+val_0_det25_crop.jpg,Personal Care & Beauty,Personal Care Other,1.0,gemini
+val_0_det27_crop.jpg,Personal Care & Beauty,Bath & Body Wash,1.0,gemini
+val_0_det29_crop.jpg,Personal Care & Beauty,Bath & Body Wash,1.0,gemini
+val_0_det28_crop.jpg,Personal Care & Beauty,Bath & Body Wash,1.0,gemini
+val_0_det2_crop.jpg,Personal Care & Beauty,Bath & Body Wash,1.0,gemini
+val_0_det31_crop.jpg,Personal Care & Beauty,Bath & Body Wash,1.0,gemini
+val_0_det32_crop.jpg,Personal Care & Beauty,Bath & Body Wash,1.0,gemini
+val_0_det30_crop.jpg,Personal Care & Beauty,Bath & Body Wash,1.0,gemini
+val_0_det33_crop.jpg,Personal Care & Beauty,Bath & Body Wash,1.0,gemini
+val_0_det35_crop.jpg,Personal Care & Beauty,Bath & Body Wash,1.0,gemini
+val_0_det36_crop.jpg,Personal Care & Beauty,Bath & Body Wash,1.0,gemini
+val_0_det38_crop.jpg,Other / Unclear,Unclear / Generic Product,1.0,gemini
+val_0_det39_crop.jpg,Personal Care & Beauty,Bath & Body Wash,1.0,gemini
+val_0_det3_crop.jpg,Other / Unclear,Unclear / Generic Product,1.0,gemini
+val_0_det37_crop.jpg,Personal Care & Beauty,Bath & Body Wash,1.0,gemini
+val_0_det40_crop.jpg,Personal Care & Beauty,Personal Care Other,1.0,gemini
+val_0_det34_crop.jpg,Personal Care & Beauty,Bath & Body Wash,1.0,gemini
+val_0_det42_crop.jpg,Personal Care & Beauty,Bath & Body Wash,1.0,gemini
+val_0_det41_crop.jpg,Personal Care & Beauty,Bath & Body Wash,1.0,gemini
+val_0_det44_crop.jpg,Personal Care & Beauty,Bath & Body Wash,1.0,gemini
+val_0_det43_crop.jpg,Personal Care & Beauty,Bath & Body Wash,1.0,gemini
+val_0_det45_crop.jpg,Personal Care & Beauty,Bath & Body Wash,1.0,gemini
+val_0_det47_crop.jpg,Personal Care & Beauty,Bath & Body Wash,1.0,gemini
+val_0_det46_crop.jpg,Personal Care & Beauty,Personal Care Other,1.0,gemini
+val_0_det4_crop.jpg,Other / Unclear,Unclear / Generic Product,1.0,gemini
+val_0_det49_crop.jpg,Personal Care & Beauty,Personal Care Other,1.0,gemini
+val_0_det50_crop.jpg,Personal Care & Beauty,Bath & Body Wash,1.0,gemini
+val_0_det48_crop.jpg,Personal Care & Beauty,Bath & Body Wash,1.0,gemini
+val_0_det52_crop.jpg,Personal Care & Beauty,Bath & Body Wash,1.0,gemini
+val_0_det55_crop.jpg,Household Cleaning & Laundry,Household Cleaners,1.0,gemini
+val_0_det51_crop.jpg,Personal Care & Beauty,Personal Care Other,1.0,gemini
+val_0_det54_crop.jpg,Personal Care & Beauty,Bath & Body Wash,1.0,gemini
+val_0_det56_crop.jpg,Other / Unclear,Unclear / Generic Product,1.0,gemini
+val_0_det53_crop.jpg,Personal Care & Beauty,Bath & Body Wash,1.0,gemini
+val_0_det58_crop.jpg,Personal Care & Beauty,Bath & Body Wash,1.0,gemini
+val_0_det57_crop.jpg,Personal Care & Beauty,Bath & Body Wash,1.0,gemini
+val_0_det59_crop.jpg,Personal Care & Beauty,Bath & Body Wash,1.0,gemini
+val_0_det61_crop.jpg,Personal Care & Beauty,Bath & Body Wash,1.0,gemini
+val_0_det5_crop.jpg,Personal Care & Beauty,Personal Care Other,1.0,gemini
+val_0_det63_crop.jpg,Personal Care & Beauty,Bath & Body Wash,1.0,gemini
+val_0_det62_crop.jpg,Personal Care & Beauty,Personal Care Other,1.0,gemini
+val_0_det60_crop.jpg,Personal Care & Beauty,Bath & Body Wash,1.0,gemini
+val_0_det64_crop.jpg,Personal Care & Beauty,Bath & Body Wash,1.0,gemini
+val_0_det66_crop.jpg,Personal Care & Beauty,Personal Care Other,1.0,gemini
+val_0_det65_crop.jpg,Personal Care & Beauty,Bath & Body Wash,1.0,gemini
+val_0_det68_crop.jpg,Personal Care & Beauty,Bath & Body Wash,1.0,gemini
+val_0_det67_crop.jpg,Personal Care & Beauty,Bath & Body Wash,1.0,gemini
+val_0_det6_crop.jpg,Personal Care & Beauty,Bath & Body Wash,1.0,gemini
+val_0_det70_crop.jpg,Personal Care & Beauty,Bath & Body Wash,1.0,gemini
+val_0_det69_crop.jpg,Personal Care & Beauty,Skin Care,1.0,gemini
+val_0_det71_crop.jpg,Personal Care & Beauty,Bath & Body Wash,1.0,gemini
+val_0_det73_crop.jpg,Personal Care & Beauty,Bath & Body Wash,1.0,gemini
+val_0_det74_crop.jpg,Personal Care & Beauty,Bath & Body Wash,1.0,gemini
+val_0_det75_crop.jpg,Personal Care & Beauty,Bath & Body Wash,1.0,gemini
+val_0_det76_crop.jpg,Personal Care & Beauty,Bath & Body Wash,1.0,gemini
+val_0_det72_crop.jpg,Personal Care & Beauty,Bath & Body Wash,1.0,gemini
+val_0_det78_crop.jpg,Personal Care & Beauty,Bath & Body Wash,1.0,gemini
+val_0_det77_crop.jpg,Personal Care & Beauty,Personal Care Other,1.0,gemini
+val_0_det79_crop.jpg,Personal Care & Beauty,Bath & Body Wash,1.0,gemini
+val_0_det82_crop.jpg,Hair Care,Shampoo & Conditioner,1.0,gemini
+val_0_det83_crop.jpg,Personal Care & Beauty,Bath & Body Wash,1.0,gemini
+val_0_det7_crop.jpg,Personal Care & Beauty,Bath & Body Wash,1.0,gemini
+val_0_det81_crop.jpg,Personal Care & Beauty,Bath & Body Wash,1.0,gemini
+val_0_det80_crop.jpg,Personal Care & Beauty,Bath & Body Wash,1.0,gemini
+val_0_det85_crop.jpg,Other / Unclear,Unclear / Generic Product,1.0,gemini
+val_0_det87_crop.jpg,Personal Care & Beauty,Bath & Body Wash,1.0,gemini
+val_0_det86_crop.jpg,Personal Care & Beauty,Bath & Body Wash,1.0,gemini
+val_0_det84_crop.jpg,Personal Care & Beauty,Bath & Body Wash,1.0,gemini
+val_0_det8_crop.jpg,Personal Care & Beauty,Bath & Body Wash,1.0,gemini
+val_0_det89_crop.jpg,Personal Care & Beauty,Skin Care,1.0,gemini
+val_0_det88_crop.jpg,Personal Care & Beauty,Bath & Body Wash,1.0,gemini
+val_0_det90_crop.jpg,Personal Care & Beauty,Personal Care Other,1.0,gemini
+val_0_det91_crop.jpg,Household Cleaning & Laundry,Household Cleaners,1.0,gemini
+val_0_det93_crop.jpg,Other / Unclear,Unclear / Generic Product,1.0,gemini
+val_0_det92_crop.jpg,Personal Care & Beauty,Bath & Body Wash,1.0,gemini
+val_0_det97_crop.jpg,Personal Care & Beauty,Bath & Body Wash,1.0,gemini
+val_0_det94_crop.jpg,Personal Care & Beauty,Bath & Body Wash,1.0,gemini
+val_0_det95_crop.jpg,Personal Care & Beauty,Bath & Body Wash,1.0,gemini
+val_0_det96_crop.jpg,Personal Care & Beauty,Bath & Body Wash,1.0,gemini
+val_0_det99_crop.jpg,Personal Care & Beauty,Bath & Body Wash,1.0,gemini
+val_0_det98_crop.jpg,Other / Unclear,Unclear / Generic Product,1.0,gemini
+val_0_det9_crop.jpg,Personal Care & Beauty,Bath & Body Wash,1.0,gemini
+val_100_det0_crop.jpg,Beverages,Energy & Sports Drinks,1.0,gemini
+val_100_det100_crop.jpg,Beverages,Soft Drinks,1.0,gemini
+val_100_det102_crop.jpg,Beverages,Energy & Sports Drinks,1.0,gemini
+val_100_det103_crop.jpg,Beverages,Energy & Sports Drinks,1.0,gemini
+val_100_det101_crop.jpg,Beverages,Soft Drinks,1.0,gemini
+val_100_det104_crop.jpg,Beverages,Energy & Sports Drinks,1.0,gemini
+val_100_det106_crop.jpg,Beverages,Energy & Sports Drinks,1.0,gemini
+val_100_det105_crop.jpg,Beverages,Energy & Sports Drinks,1.0,gemini
+val_100_det107_crop.jpg,Beverages,Water,1.0,gemini
+val_100_det108_crop.jpg,Beverages,Energy & Sports Drinks,1.0,gemini
+val_100_det109_crop.jpg,Beverages,Energy & Sports Drinks,1.0,gemini
+val_100_det111_crop.jpg,Beverages,Energy & Sports Drinks,1.0,gemini
+val_100_det112_crop.jpg,Beverages,Energy & Sports Drinks,1.0,gemini
+val_100_det110_crop.jpg,Beverages,Energy & Sports Drinks,1.0,gemini
+val_100_det113_crop.jpg,Beverages,Energy & Sports Drinks,1.0,gemini
+val_100_det116_crop.jpg,Beverages,Energy & Sports Drinks,1.0,gemini
+val_100_det114_crop.jpg,Beverages,Energy & Sports Drinks,1.0,gemini
+val_100_det10_crop.jpg,Beverages,Energy & Sports Drinks,1.0,gemini
+val_100_det115_crop.jpg,Beverages,Energy & Sports Drinks,1.0,gemini
+val_100_det118_crop.jpg,Beverages,Water,1.0,gemini
+val_100_det119_crop.jpg,Other / Unclear,Unclear / Generic Product,1.0,gemini
+val_100_det117_crop.jpg,Beverages,Energy & Sports Drinks,1.0,gemini
+val_100_det121_crop.jpg,Beverages,Water,1.0,gemini
+val_100_det11_crop.jpg,Beverages,Energy & Sports Drinks,1.0,gemini
+val_100_det122_crop.jpg,Beverages,Energy & Sports Drinks,1.0,gemini
+val_100_det123_crop.jpg,Beverages,Juice,1.0,gemini
+val_100_det120_crop.jpg,Beverages,Water,1.0,gemini
+val_100_det125_crop.jpg,Beverages,Energy & Sports Drinks,1.0,gemini
+val_100_det124_crop.jpg,Beverages,Water,1.0,gemini
+val_100_det127_crop.jpg,Other / Unclear,Unclear / Generic Product,1.0,gemini
+val_100_det126_crop.jpg,Beverages,Water,1.0,gemini
+val_100_det129_crop.jpg,Beverages,Energy & Sports Drinks,1.0,gemini
+val_100_det128_crop.jpg,Beverages,Energy & Sports Drinks,1.0,gemini
+val_100_det130_crop.jpg,Beverages,Energy & Sports Drinks,1.0,gemini
+val_100_det131_crop.jpg,Other / Unclear,Unclear / Generic Product,1.0,gemini
+val_100_det132_crop.jpg,Beverages,Energy & Sports Drinks,1.0,gemini
+val_100_det12_crop.jpg,Beverages,Energy & Sports Drinks,1.0,gemini
+val_100_det135_crop.jpg,Other / Unclear,Unclear / Generic Product,1.0,gemini
+val_100_det133_crop.jpg,Beverages,Energy & Sports Drinks,1.0,gemini
+val_100_det134_crop.jpg,Beverages,Energy & Sports Drinks,1.0,gemini
+val_100_det139_crop.jpg,Beverages,Juice,1.0,gemini
+val_100_det13_crop.jpg,Beverages,Energy & Sports Drinks,1.0,gemini
+val_100_det137_crop.jpg,Beverages,Energy & Sports Drinks,1.0,gemini
+val_100_det136_crop.jpg,Beverages,Energy & Sports Drinks,1.0,gemini
+val_100_det138_crop.jpg,Beverages,Energy & Sports Drinks,1.0,gemini
+val_100_det142_crop.jpg,Other / Unclear,Unclear / Generic Product,1.0,gemini
+val_100_det140_crop.jpg,Beverages,Energy & Sports Drinks,1.0,gemini
+val_100_det141_crop.jpg,Other / Unclear,Unclear / Generic Product,1.0,gemini
+val_100_det143_crop.jpg,Other / Unclear,Unclear / Generic Product,1.0,gemini
+val_100_det146_crop.jpg,Beverages,Energy & Sports Drinks,1.0,gemini
+val_100_det145_crop.jpg,Other / Unclear,Unclear / Generic Product,1.0,gemini
+val_100_det144_crop.jpg,Beverages,Energy & Sports Drinks,1.0,gemini
+val_100_det147_crop.jpg,Other / Unclear,Unclear / Generic Product,1.0,gemini
+val_100_det149_crop.jpg,Other / Unclear,Unclear / Generic Product,1.0,gemini
+val_100_det14_crop.jpg,Other / Unclear,Unclear / Generic Product,1.0,gemini
+val_100_det150_crop.jpg,Other / Unclear,Unclear / Generic Product,1.0,gemini
+val_100_det148_crop.jpg,Other / Unclear,Unclear / Generic Product,1.0,gemini
+val_100_det151_crop.jpg,Other / Unclear,Unclear / Generic Product,1.0,gemini
+val_100_det15_crop.jpg,Beverages,Energy & Sports Drinks,1.0,gemini
+val_100_det16_crop.jpg,Beverages,Energy & Sports Drinks,1.0,gemini
+val_100_det17_crop.jpg,Beverages,Energy & Sports Drinks,1.0,gemini
+val_100_det18_crop.jpg,Beverages,Energy & Sports Drinks,1.0,gemini
+val_100_det19_crop.jpg,Beverages,Energy & Sports Drinks,1.0,gemini
+val_100_det20_crop.jpg,Beverages,Energy & Sports Drinks,1.0,gemini
+val_100_det1_crop.jpg,Beverages,Energy & Sports Drinks,1.0,gemini
+val_100_det21_crop.jpg,Beverages,Energy & Sports Drinks,1.0,gemini
+val_100_det23_crop.jpg,Beverages,Coffee & Creamers,1.0,gemini
+val_100_det22_crop.jpg,Beverages,Energy & Sports Drinks,1.0,gemini
+val_100_det24_crop.jpg,Beverages,Energy & Sports Drinks,1.0,gemini
+val_100_det25_crop.jpg,Beverages,Energy & Sports Drinks,1.0,gemini
+val_100_det26_crop.jpg,Beverages,Coffee & Creamers,1.0,gemini
+val_100_det28_crop.jpg,Beverages,Energy & Sports Drinks,1.0,gemini
+val_100_det29_crop.jpg,Beverages,Coffee & Creamers,1.0,gemini
+val_100_det27_crop.jpg,Beverages,Coffee & Creamers,1.0,gemini
+val_100_det2_crop.jpg,Other / Unclear,Unclear / Generic Product,1.0,gemini
+val_100_det30_crop.jpg,Beverages,Energy & Sports Drinks,1.0,gemini
+val_100_det31_crop.jpg,Beverages,Energy & Sports Drinks,1.0,gemini
+val_100_det32_crop.jpg,Beverages,Coffee & Creamers,1.0,gemini
+val_100_det33_crop.jpg,Beverages,Energy & Sports Drinks,1.0,gemini
+val_100_det34_crop.jpg,Beverages,Energy & Sports Drinks,1.0,gemini
+val_100_det37_crop.jpg,Other / Unclear,Unclear / Generic Product,1.0,gemini
+val_100_det35_crop.jpg,Beverages,Energy & Sports Drinks,1.0,gemini
+val_100_det36_crop.jpg,Beverages,Coffee & Creamers,1.0,gemini
+val_100_det38_crop.jpg,Beverages,Energy & Sports Drinks,1.0,gemini
+val_100_det39_crop.jpg,Beverages,Energy & Sports Drinks,1.0,gemini
+val_100_det3_crop.jpg,Beverages,Energy & Sports Drinks,1.0,gemini
+val_100_det40_crop.jpg,Beverages,Soft Drinks,1.0,gemini
+val_100_det41_crop.jpg,Beverages,Energy & Sports Drinks,1.0,gemini
+val_100_det42_crop.jpg,Beverages,Energy & Sports Drinks,1.0,gemini
+val_100_det43_crop.jpg,Beverages,Energy & Sports Drinks,1.0,gemini
+val_100_det44_crop.jpg,Beverages,Energy & Sports Drinks,1.0,gemini
+val_100_det46_crop.jpg,Beverages,Energy & Sports Drinks,1.0,gemini
+val_100_det47_crop.jpg,Beverages,Energy & Sports Drinks,1.0,gemini
+val_100_det49_crop.jpg,Beverages,Coffee & Creamers,1.0,gemini
+val_100_det45_crop.jpg,Beverages,Energy & Sports Drinks,1.0,gemini
+val_100_det48_crop.jpg,Beverages,Energy & Sports Drinks,1.0,gemini
+val_100_det51_crop.jpg,Beverages,Energy & Sports Drinks,1.0,gemini
+val_100_det4_crop.jpg,Beverages,Energy & Sports Drinks,1.0,gemini
+val_100_det50_crop.jpg,Beverages,Energy & Sports Drinks,1.0,gemini
+val_100_det54_crop.jpg,Beverages,Energy & Sports Drinks,1.0,gemini
+val_100_det53_crop.jpg,Beverages,Coffee & Creamers,1.0,gemini
+val_100_det52_crop.jpg,Beverages,Coffee & Creamers,1.0,gemini
+val_100_det55_crop.jpg,Beverages,Soft Drinks,1.0,gemini
+val_100_det56_crop.jpg,Beverages,Energy & Sports Drinks,1.0,gemini
+val_100_det58_crop.jpg,Beverages,Energy & Sports Drinks,1.0,gemini
+val_100_det57_crop.jpg,Beverages,Energy & Sports Drinks,1.0,gemini
+val_100_det59_crop.jpg,Beverages,Energy & Sports Drinks,1.0,gemini
+val_100_det60_crop.jpg,Other / Unclear,Unclear / Generic Product,1.0,gemini
+val_100_det5_crop.jpg,Beverages,Energy & Sports Drinks,1.0,gemini
+val_100_det62_crop.jpg,Beverages,Energy & Sports Drinks,1.0,gemini
+val_100_det61_crop.jpg,Beverages,Energy & Sports Drinks,1.0,gemini
+val_100_det63_crop.jpg,Beverages,Coffee & Creamers,1.0,gemini
+val_100_det64_crop.jpg,Beverages,Energy & Sports Drinks,1.0,gemini
+val_100_det66_crop.jpg,Beverages,Energy & Sports Drinks,1.0,gemini
+val_100_det67_crop.jpg,Beverages,Energy & Sports Drinks,1.0,gemini
+val_100_det65_crop.jpg,Beverages,Energy & Sports Drinks,1.0,gemini
+val_100_det68_crop.jpg,Beverages,Energy & Sports Drinks,1.0,gemini
+val_100_det72_crop.jpg,Beverages,Energy & Sports Drinks,1.0,gemini
+val_100_det70_crop.jpg,Beverages,Soft Drinks,1.0,gemini
+val_100_det71_crop.jpg,Beverages,Energy & Sports Drinks,1.0,gemini
+val_100_det69_crop.jpg,Beverages,Energy & Sports Drinks,1.0,gemini
+val_100_det6_crop.jpg,Beverages,Soft Drinks,1.0,gemini
+val_100_det73_crop.jpg,Beverages,Energy & Sports Drinks,1.0,gemini
+val_100_det74_crop.jpg,Snacks & Confectionery,Candy & Chocolate,1.0,gemini
+val_100_det75_crop.jpg,Beverages,Energy & Sports Drinks,1.0,gemini
+val_100_det77_crop.jpg,Beverages,Energy & Sports Drinks,1.0,gemini
+val_100_det76_crop.jpg,Beverages,Energy & Sports Drinks,1.0,gemini
+val_100_det7_crop.jpg,Beverages,Energy & Sports Drinks,1.0,gemini
+val_100_det78_crop.jpg,Beverages,Energy & Sports Drinks,1.0,gemini
+val_100_det79_crop.jpg,Beverages,Energy & Sports Drinks,1.0,gemini
+val_100_det80_crop.jpg,Beverages,Water,1.0,gemini
+val_100_det82_crop.jpg,Beverages,Energy & Sports Drinks,1.0,gemini
+val_100_det81_crop.jpg,Beverages,Energy & Sports Drinks,1.0,gemini
+val_100_det84_crop.jpg,Beverages,Energy & Sports Drinks,1.0,gemini
+val_100_det83_crop.jpg,Beverages,Energy & Sports Drinks,1.0,gemini
+val_100_det85_crop.jpg,Beverages,Energy & Sports Drinks,1.0,gemini
+val_100_det87_crop.jpg,Beverages,Energy & Sports Drinks,1.0,gemini
+val_100_det8_crop.jpg,Beverages,Energy & Sports Drinks,1.0,gemini
+val_100_det88_crop.jpg,Beverages,Energy & Sports Drinks,1.0,gemini
+val_100_det86_crop.jpg,Beverages,Energy & Sports Drinks,1.0,gemini
+val_100_det90_crop.jpg,Beverages,Energy & Sports Drinks,1.0,gemini
+val_100_det89_crop.jpg,Beverages,Energy & Sports Drinks,1.0,gemini
+val_100_det91_crop.jpg,Beverages,Energy & Sports Drinks,1.0,gemini
+val_100_det92_crop.jpg,Beverages,Energy & Sports Drinks,1.0,gemini
+val_100_det96_crop.jpg,Other / Unclear,Unclear / Generic Product,1.0,gemini
+val_100_det93_crop.jpg,Beverages,Coffee & Creamers,1.0,gemini
+val_100_det94_crop.jpg,Beverages,Energy & Sports Drinks,1.0,gemini
+val_100_det95_crop.jpg,Beverages,Energy & Sports Drinks,1.0,gemini
+val_100_det97_crop.jpg,Beverages,Energy & Sports Drinks,1.0,gemini
+val_100_det98_crop.jpg,Beverages,Coffee & Creamers,1.0,gemini
+val_100_det99_crop.jpg,Beverages,Soft Drinks,1.0,gemini
+val_101_det0_crop.jpg,Paper & Hygiene,Feminine Hygiene,1.0,gemini
+val_101_det101_crop.jpg,Paper & Hygiene,Feminine Hygiene,1.0,gemini
+val_101_det100_crop.jpg,Paper & Hygiene,Feminine Hygiene,1.0,gemini
+val_100_det9_crop.jpg,Beverages,Energy & Sports Drinks,1.0,gemini
+val_101_det103_crop.jpg,Paper & Hygiene,Feminine Hygiene,1.0,gemini
+val_101_det102_crop.jpg,Paper & Hygiene,Feminine Hygiene,1.0,gemini
+val_101_det104_crop.jpg,Paper & Hygiene,Feminine Hygiene,1.0,gemini
+val_101_det105_crop.jpg,Paper & Hygiene,Feminine Hygiene,1.0,gemini
+val_101_det106_crop.jpg,Paper & Hygiene,Feminine Hygiene,1.0,gemini
+val_101_det107_crop.jpg,Paper & Hygiene,Feminine Hygiene,1.0,gemini
+val_101_det109_crop.jpg,Paper & Hygiene,Feminine Hygiene,1.0,gemini
+val_101_det108_crop.jpg,Paper & Hygiene,Feminine Hygiene,1.0,gemini
+val_101_det111_crop.jpg,Other / Unclear,Unclear / Generic Product,1.0,gemini
+val_101_det10_crop.jpg,Paper & Hygiene,Feminine Hygiene,1.0,gemini
+val_101_det110_crop.jpg,Paper & Hygiene,Feminine Hygiene,1.0,gemini
+val_101_det112_crop.jpg,Other / Unclear,Unclear / Generic Product,1.0,gemini
+val_101_det113_crop.jpg,Paper & Hygiene,Feminine Hygiene,1.0,gemini
+val_101_det116_crop.jpg,Paper & Hygiene,Feminine Hygiene,1.0,gemini
+val_101_det115_crop.jpg,Paper & Hygiene,Feminine Hygiene,1.0,gemini
+val_101_det117_crop.jpg,Paper & Hygiene,Feminine Hygiene,1.0,gemini
+val_101_det114_crop.jpg,Other / Unclear,Unclear / Generic Product,1.0,gemini
+val_101_det118_crop.jpg,Other / Unclear,Unclear / Generic Product,1.0,gemini
+val_101_det119_crop.jpg,Paper & Hygiene,Feminine Hygiene,1.0,gemini
+val_101_det11_crop.jpg,Paper & Hygiene,Feminine Hygiene,1.0,gemini
+val_101_det120_crop.jpg,Paper & Hygiene,Feminine Hygiene,1.0,gemini
+val_101_det121_crop.jpg,Paper & Hygiene,Feminine Hygiene,1.0,gemini
+val_101_det122_crop.jpg,Paper & Hygiene,Feminine Hygiene,1.0,gemini
+val_101_det123_crop.jpg,Other / Unclear,Unclear / Generic Product,1.0,gemini
+val_101_det126_crop.jpg,Other / Unclear,Unclear / Generic Product,1.0,gemini
+val_101_det125_crop.jpg,Paper & Hygiene,Feminine Hygiene,1.0,gemini
+val_101_det124_crop.jpg,Paper & Hygiene,Feminine Hygiene,1.0,gemini
+val_101_det128_crop.jpg,Paper & Hygiene,Feminine Hygiene,1.0,gemini
+val_101_det129_crop.jpg,Paper & Hygiene,Feminine Hygiene,1.0,gemini
+val_101_det127_crop.jpg,Paper & Hygiene,Feminine Hygiene,1.0,gemini
+val_101_det130_crop.jpg,Paper & Hygiene,Feminine Hygiene,1.0,gemini
+val_101_det12_crop.jpg,Paper & Hygiene,Feminine Hygiene,1.0,gemini
+val_101_det13_crop.jpg,Paper & Hygiene,Feminine Hygiene,1.0,gemini
+val_101_det15_crop.jpg,Paper & Hygiene,Feminine Hygiene,1.0,gemini
+val_101_det16_crop.jpg,Paper & Hygiene,Feminine Hygiene,1.0,gemini
+val_101_det14_crop.jpg,Paper & Hygiene,Feminine Hygiene,1.0,gemini
+val_101_det17_crop.jpg,Paper & Hygiene,Feminine Hygiene,1.0,gemini
+val_101_det19_crop.jpg,Paper & Hygiene,Feminine Hygiene,1.0,gemini
+val_101_det18_crop.jpg,Paper & Hygiene,Feminine Hygiene,1.0,gemini
+val_101_det1_crop.jpg,Paper & Hygiene,Feminine Hygiene,1.0,gemini
+val_101_det20_crop.jpg,Paper & Hygiene,Feminine Hygiene,1.0,gemini
+val_101_det22_crop.jpg,Paper & Hygiene,Feminine Hygiene,1.0,gemini
+val_101_det23_crop.jpg,Paper & Hygiene,Feminine Hygiene,1.0,gemini
+val_101_det21_crop.jpg,Paper & Hygiene,Feminine Hygiene,1.0,gemini
+val_101_det24_crop.jpg,Paper & Hygiene,Feminine Hygiene,1.0,gemini
+val_101_det25_crop.jpg,Paper & Hygiene,Feminine Hygiene,1.0,gemini
+val_101_det28_crop.jpg,Paper & Hygiene,Feminine Hygiene,1.0,gemini
+val_101_det26_crop.jpg,Paper & Hygiene,Feminine Hygiene,1.0,gemini
+val_101_det27_crop.jpg,Paper & Hygiene,Feminine Hygiene,1.0,gemini
+val_101_det2_crop.jpg,Paper & Hygiene,Feminine Hygiene,1.0,gemini
+val_101_det29_crop.jpg,Paper & Hygiene,Feminine Hygiene,1.0,gemini
+val_101_det30_crop.jpg,Paper & Hygiene,Feminine Hygiene,1.0,gemini
+val_101_det32_crop.jpg,Paper & Hygiene,Feminine Hygiene,1.0,gemini
+val_101_det31_crop.jpg,Paper & Hygiene,Feminine Hygiene,1.0,gemini
+val_101_det33_crop.jpg,Paper & Hygiene,Feminine Hygiene,1.0,gemini
+val_101_det34_crop.jpg,Paper & Hygiene,Feminine Hygiene,1.0,gemini
+val_101_det36_crop.jpg,Paper & Hygiene,Feminine Hygiene,1.0,gemini
+val_101_det35_crop.jpg,Paper & Hygiene,Feminine Hygiene,1.0,gemini
+val_101_det37_crop.jpg,Paper & Hygiene,Feminine Hygiene,1.0,gemini
+val_101_det39_crop.jpg,Paper & Hygiene,Feminine Hygiene,1.0,gemini
+val_101_det38_crop.jpg,Paper & Hygiene,Feminine Hygiene,1.0,gemini
+val_101_det3_crop.jpg,Paper & Hygiene,Feminine Hygiene,1.0,gemini
+val_101_det40_crop.jpg,Paper & Hygiene,Feminine Hygiene,1.0,gemini
+val_101_det41_crop.jpg,Paper & Hygiene,Feminine Hygiene,1.0,gemini
+val_101_det42_crop.jpg,Paper & Hygiene,Feminine Hygiene,1.0,gemini
+val_101_det43_crop.jpg,Paper & Hygiene,Feminine Hygiene,1.0,gemini
+val_101_det44_crop.jpg,Paper & Hygiene,Feminine Hygiene,1.0,gemini
+val_101_det45_crop.jpg,Paper & Hygiene,Feminine Hygiene,1.0,gemini
+val_101_det47_crop.jpg,Paper & Hygiene,Feminine Hygiene,1.0,gemini
+val_101_det46_crop.jpg,Paper & Hygiene,Feminine Hygiene,1.0,gemini
+val_101_det48_crop.jpg,Paper & Hygiene,Feminine Hygiene,1.0,gemini
+val_101_det49_crop.jpg,Paper & Hygiene,Feminine Hygiene,1.0,gemini
+val_101_det50_crop.jpg,Paper & Hygiene,Feminine Hygiene,1.0,gemini
+val_101_det4_crop.jpg,Paper & Hygiene,Feminine Hygiene,1.0,gemini
+val_101_det51_crop.jpg,Paper & Hygiene,Feminine Hygiene,1.0,gemini
+val_101_det53_crop.jpg,Paper & Hygiene,Feminine Hygiene,1.0,gemini
+val_101_det52_crop.jpg,Paper & Hygiene,Feminine Hygiene,1.0,gemini
+val_101_det55_crop.jpg,Paper & Hygiene,Feminine Hygiene,1.0,gemini
+val_101_det54_crop.jpg,Paper & Hygiene,Feminine Hygiene,1.0,gemini
+val_101_det56_crop.jpg,Paper & Hygiene,Feminine Hygiene,1.0,gemini
+val_101_det59_crop.jpg,Paper & Hygiene,Feminine Hygiene,1.0,gemini
+val_101_det58_crop.jpg,Paper & Hygiene,Feminine Hygiene,1.0,gemini
+val_101_det57_crop.jpg,Paper & Hygiene,Feminine Hygiene,1.0,gemini
+val_101_det60_crop.jpg,Paper & Hygiene,Feminine Hygiene,1.0,gemini
+val_101_det5_crop.jpg,Paper & Hygiene,Feminine Hygiene,1.0,gemini
+val_101_det62_crop.jpg,Paper & Hygiene,Feminine Hygiene,1.0,gemini
+val_101_det64_crop.jpg,Paper & Hygiene,Feminine Hygiene,1.0,gemini
+val_101_det61_crop.jpg,Paper & Hygiene,Feminine Hygiene,1.0,gemini
+val_101_det63_crop.jpg,Paper & Hygiene,Feminine Hygiene,1.0,gemini
+val_101_det65_crop.jpg,Paper & Hygiene,Feminine Hygiene,1.0,gemini
+val_101_det66_crop.jpg,Paper & Hygiene,Feminine Hygiene,1.0,gemini
+val_101_det67_crop.jpg,Paper & Hygiene,Feminine Hygiene,1.0,gemini
+val_101_det68_crop.jpg,Paper & Hygiene,Feminine Hygiene,1.0,gemini
+val_101_det71_crop.jpg,Paper & Hygiene,Feminine Hygiene,1.0,gemini
+val_101_det69_crop.jpg,Paper & Hygiene,Feminine Hygiene,1.0,gemini
+val_101_det72_crop.jpg,Paper & Hygiene,Feminine Hygiene,1.0,gemini
+val_101_det70_crop.jpg,Paper & Hygiene,Feminine Hygiene,1.0,gemini
+val_101_det6_crop.jpg,Paper & Hygiene,Feminine Hygiene,1.0,gemini
+val_101_det74_crop.jpg,Paper & Hygiene,Feminine Hygiene,1.0,gemini
+val_101_det75_crop.jpg,Paper & Hygiene,Feminine Hygiene,1.0,gemini
+val_101_det73_crop.jpg,Paper & Hygiene,Feminine Hygiene,1.0,gemini
+val_101_det76_crop.jpg,Paper & Hygiene,Feminine Hygiene,1.0,gemini
+val_101_det77_crop.jpg,Paper & Hygiene,Feminine Hygiene,1.0,gemini
+val_101_det78_crop.jpg,Paper & Hygiene,Feminine Hygiene,1.0,gemini
+val_101_det79_crop.jpg,Paper & Hygiene,Feminine Hygiene,1.0,gemini
+val_101_det80_crop.jpg,Paper & Hygiene,Feminine Hygiene,1.0,gemini
+val_101_det81_crop.jpg,Paper & Hygiene,Feminine Hygiene,1.0,gemini
+val_101_det7_crop.jpg,Paper & Hygiene,Feminine Hygiene,1.0,gemini
+val_101_det82_crop.jpg,Paper & Hygiene,Feminine Hygiene,1.0,gemini
+val_101_det83_crop.jpg,Paper & Hygiene,Feminine Hygiene,1.0,gemini
+val_101_det85_crop.jpg,Paper & Hygiene,Feminine Hygiene,1.0,gemini
+val_101_det87_crop.jpg,Paper & Hygiene,Feminine Hygiene,1.0,gemini
+val_101_det86_crop.jpg,Paper & Hygiene,Feminine Hygiene,1.0,gemini
+val_101_det84_crop.jpg,Paper & Hygiene,Feminine Hygiene,1.0,gemini
+val_101_det88_crop.jpg,Paper & Hygiene,Feminine Hygiene,1.0,gemini
+val_101_det89_crop.jpg,Paper & Hygiene,Feminine Hygiene,1.0,gemini
+val_101_det8_crop.jpg,Paper & Hygiene,Feminine Hygiene,1.0,gemini
+val_101_det90_crop.jpg,Paper & Hygiene,Feminine Hygiene,1.0,gemini
+val_101_det91_crop.jpg,Baby Care,Diapers & Baby Care,1.0,gemini
+val_101_det93_crop.jpg,Paper & Hygiene,Feminine Hygiene,1.0,gemini
+val_101_det94_crop.jpg,Other / Unclear,Unclear / Generic Product,1.0,gemini
+val_101_det92_crop.jpg,Paper & Hygiene,Feminine Hygiene,1.0,gemini
+val_101_det96_crop.jpg,Paper & Hygiene,Feminine Hygiene,1.0,gemini
+val_101_det95_crop.jpg,Paper & Hygiene,Feminine Hygiene,1.0,gemini
+val_101_det97_crop.jpg,Paper & Hygiene,Feminine Hygiene,1.0,gemini
+val_101_det98_crop.jpg,Paper & Hygiene,Feminine Hygiene,1.0,gemini
+val_101_det99_crop.jpg,Paper & Hygiene,Feminine Hygiene,1.0,gemini
+val_102_det100_crop.jpg,Personal Care & Beauty,Skin Care,1.0,gemini
+val_102_det0_crop.jpg,Personal Care & Beauty,Skin Care,1.0,gemini
+val_102_det102_crop.jpg,Personal Care & Beauty,Skin Care,1.0,gemini
+val_102_det101_crop.jpg,Other / Unclear,Unclear / Generic Product,1.0,gemini
+val_102_det104_crop.jpg,Personal Care & Beauty,Skin Care,1.0,gemini
+val_101_det9_crop.jpg,Paper & Hygiene,Feminine Hygiene,1.0,gemini
+val_102_det103_crop.jpg,Personal Care & Beauty,Skin Care,1.0,gemini
+val_102_det106_crop.jpg,Other / Unclear,Unclear / Generic Product,1.0,gemini
+val_102_det105_crop.jpg,Personal Care & Beauty,Skin Care,1.0,gemini
+val_102_det107_crop.jpg,Personal Care & Beauty,Skin Care,1.0,gemini
+val_102_det108_crop.jpg,Other / Unclear,Unclear / Generic Product,1.0,gemini
+val_102_det109_crop.jpg,Other / Unclear,Unclear / Generic Product,1.0,gemini
+val_102_det111_crop.jpg,Personal Care & Beauty,Skin Care,1.0,gemini
+val_102_det110_crop.jpg,Personal Care & Beauty,Skin Care,1.0,gemini
+val_102_det10_crop.jpg,Personal Care & Beauty,Skin Care,1.0,gemini
+val_102_det112_crop.jpg,Personal Care & Beauty,Skin Care,1.0,gemini
+val_102_det113_crop.jpg,Personal Care & Beauty,Skin Care,1.0,gemini
+val_102_det115_crop.jpg,Other / Unclear,Unclear / Generic Product,1.0,gemini
+val_102_det119_crop.jpg,Other / Unclear,Unclear / Generic Product,1.0,gemini
+val_102_det117_crop.jpg,Personal Care & Beauty,Skin Care,1.0,gemini
+val_102_det114_crop.jpg,Other / Unclear,Unclear / Generic Product,1.0,gemini
+val_102_det116_crop.jpg,Personal Care & Beauty,Skin Care,1.0,gemini
+val_102_det118_crop.jpg,Personal Care & Beauty,Skin Care,1.0,gemini
+val_102_det120_crop.jpg,Other / Unclear,Unclear / Generic Product,1.0,gemini
+val_102_det11_crop.jpg,Personal Care & Beauty,Skin Care,1.0,gemini
+val_102_det121_crop.jpg,Personal Care & Beauty,Skin Care,1.0,gemini
+val_102_det123_crop.jpg,Personal Care & Beauty,Skin Care,1.0,gemini
+val_102_det122_crop.jpg,Other / Unclear,Unclear / Generic Product,1.0,gemini
+val_102_det125_crop.jpg,Other / Unclear,Unclear / Generic Product,1.0,gemini
+val_102_det127_crop.jpg,Other / Unclear,Unclear / Generic Product,1.0,gemini
+val_102_det126_crop.jpg,Personal Care & Beauty,Skin Care,1.0,gemini
+val_102_det124_crop.jpg,Other / Unclear,Unclear / Generic Product,1.0,gemini
+val_102_det128_crop.jpg,Other / Unclear,Unclear / Generic Product,1.0,gemini
+val_102_det129_crop.jpg,Other / Unclear,Unclear / Generic Product,1.0,gemini
+val_102_det131_crop.jpg,Other / Unclear,Unclear / Generic Product,1.0,gemini
+val_102_det12_crop.jpg,Personal Care & Beauty,Skin Care,1.0,gemini
+val_102_det130_crop.jpg,Other / Unclear,Unclear / Generic Product,1.0,gemini
+val_102_det133_crop.jpg,Other / Unclear,Unclear / Generic Product,1.0,gemini
+val_102_det132_crop.jpg,Electronics,Electronics & Accessories,1.0,gemini
+val_102_det134_crop.jpg,Other / Unclear,Unclear / Generic Product,1.0,gemini
+val_102_det137_crop.jpg,Other / Unclear,Unclear / Generic Product,1.0,gemini
+val_102_det136_crop.jpg,Other / Unclear,Unclear / Generic Product,1.0,gemini
+val_102_det138_crop.jpg,Other / Unclear,Unclear / Generic Product,1.0,gemini
+val_102_det135_crop.jpg,Personal Care & Beauty,Skin Care,1.0,gemini
+val_102_det13_crop.jpg,Personal Care & Beauty,Skin Care,1.0,gemini
+val_102_det15_crop.jpg,Personal Care & Beauty,Skin Care,1.0,gemini
+val_102_det14_crop.jpg,Personal Care & Beauty,Skin Care,1.0,gemini
+val_102_det16_crop.jpg,Personal Care & Beauty,Skin Care,1.0,gemini
+val_102_det18_crop.jpg,Personal Care & Beauty,Skin Care,1.0,gemini
+val_102_det17_crop.jpg,Personal Care & Beauty,Skin Care,1.0,gemini
+val_102_det1_crop.jpg,Personal Care & Beauty,Skin Care,1.0,gemini
+val_102_det19_crop.jpg,Personal Care & Beauty,Skin Care,1.0,gemini
+val_102_det20_crop.jpg,Personal Care & Beauty,Skin Care,1.0,gemini
+val_102_det21_crop.jpg,Personal Care & Beauty,Skin Care,1.0,gemini
+val_102_det22_crop.jpg,Personal Care & Beauty,Skin Care,1.0,gemini
+val_102_det24_crop.jpg,Personal Care & Beauty,Skin Care,1.0,gemini
+val_102_det23_crop.jpg,Personal Care & Beauty,Skin Care,1.0,gemini
+val_102_det25_crop.jpg,Personal Care & Beauty,Skin Care,1.0,gemini
+val_102_det26_crop.jpg,Personal Care & Beauty,Skin Care,1.0,gemini
+val_102_det27_crop.jpg,Personal Care & Beauty,Skin Care,1.0,gemini
+val_102_det28_crop.jpg,Personal Care & Beauty,Skin Care,1.0,gemini
+val_102_det29_crop.jpg,Personal Care & Beauty,Skin Care,1.0,gemini
+val_102_det2_crop.jpg,Personal Care & Beauty,Skin Care,1.0,gemini
+val_102_det31_crop.jpg,Personal Care & Beauty,Skin Care,1.0,gemini
+val_102_det33_crop.jpg,Personal Care & Beauty,Skin Care,1.0,gemini
+val_102_det32_crop.jpg,Personal Care & Beauty,Skin Care,1.0,gemini
+val_102_det30_crop.jpg,Personal Care & Beauty,Skin Care,1.0,gemini
+val_102_det35_crop.jpg,Personal Care & Beauty,Skin Care,1.0,gemini
+val_102_det34_crop.jpg,Personal Care & Beauty,Skin Care,1.0,gemini
+val_102_det37_crop.jpg,Personal Care & Beauty,Skin Care,1.0,gemini
+val_102_det36_crop.jpg,Personal Care & Beauty,Skin Care,1.0,gemini
+val_102_det3_crop.jpg,Personal Care & Beauty,Skin Care,1.0,gemini
+val_102_det39_crop.jpg,Personal Care & Beauty,Skin Care,1.0,gemini
+val_102_det40_crop.jpg,Personal Care & Beauty,Skin Care,1.0,gemini
+val_102_det38_crop.jpg,Personal Care & Beauty,Skin Care,1.0,gemini
+val_102_det42_crop.jpg,Personal Care & Beauty,Skin Care,1.0,gemini
+val_102_det41_crop.jpg,Personal Care & Beauty,Skin Care,1.0,gemini
+val_102_det43_crop.jpg,Personal Care & Beauty,Skin Care,1.0,gemini
+val_102_det44_crop.jpg,Other / Unclear,Unclear / Generic Product,1.0,gemini
+val_102_det45_crop.jpg,Personal Care & Beauty,Skin Care,1.0,gemini
+val_102_det46_crop.jpg,Personal Care & Beauty,Skin Care,1.0,gemini
+val_102_det47_crop.jpg,Personal Care & Beauty,Skin Care,1.0,gemini
+val_102_det48_crop.jpg,Personal Care & Beauty,Skin Care,1.0,gemini
+val_102_det49_crop.jpg,Personal Care & Beauty,Skin Care,1.0,gemini
+val_102_det50_crop.jpg,Personal Care & Beauty,Skin Care,1.0,gemini
+val_102_det4_crop.jpg,Personal Care & Beauty,Skin Care,1.0,gemini
+val_102_det52_crop.jpg,Personal Care & Beauty,Skin Care,1.0,gemini
+val_102_det51_crop.jpg,Personal Care & Beauty,Skin Care,1.0,gemini
+val_102_det53_crop.jpg,Personal Care & Beauty,Skin Care,1.0,gemini
+val_102_det54_crop.jpg,Personal Care & Beauty,Skin Care,1.0,gemini
+val_102_det55_crop.jpg,Personal Care & Beauty,Skin Care,1.0,gemini
+val_102_det56_crop.jpg,Personal Care & Beauty,Skin Care,1.0,gemini
+val_102_det57_crop.jpg,Personal Care & Beauty,Skin Care,1.0,gemini
+val_102_det58_crop.jpg,Personal Care & Beauty,Skin Care,1.0,gemini
+val_102_det60_crop.jpg,Personal Care & Beauty,Skin Care,1.0,gemini
+val_102_det5_crop.jpg,Personal Care & Beauty,Skin Care,1.0,gemini
+val_102_det59_crop.jpg,Personal Care & Beauty,Skin Care,1.0,gemini
+val_102_det63_crop.jpg,Other / Unclear,Unclear / Generic Product,1.0,gemini
+val_102_det62_crop.jpg,Personal Care & Beauty,Skin Care,1.0,gemini
+val_102_det61_crop.jpg,Personal Care & Beauty,Skin Care,1.0,gemini
+val_102_det65_crop.jpg,Personal Care & Beauty,Skin Care,1.0,gemini
+val_102_det69_crop.jpg,Personal Care & Beauty,Bath & Body Wash,1.0,gemini
+val_102_det66_crop.jpg,Personal Care & Beauty,Skin Care,1.0,gemini
+val_102_det64_crop.jpg,Personal Care & Beauty,Skin Care,1.0,gemini
+val_102_det67_crop.jpg,Personal Care & Beauty,Skin Care,1.0,gemini
+val_102_det68_crop.jpg,Personal Care & Beauty,Skin Care,1.0,gemini
+val_102_det70_crop.jpg,Personal Care & Beauty,Skin Care,1.0,gemini
+val_102_det6_crop.jpg,Personal Care & Beauty,Skin Care,1.0,gemini
+val_102_det71_crop.jpg,Personal Care & Beauty,Skin Care,1.0,gemini
+val_102_det72_crop.jpg,Personal Care & Beauty,Skin Care,1.0,gemini
+val_102_det73_crop.jpg,Personal Care & Beauty,Skin Care,1.0,gemini
+val_102_det74_crop.jpg,Personal Care & Beauty,Skin Care,1.0,gemini
+val_102_det77_crop.jpg,Personal Care & Beauty,Skin Care,1.0,gemini
+val_102_det76_crop.jpg,Personal Care & Beauty,Skin Care,1.0,gemini
+val_102_det75_crop.jpg,Personal Care & Beauty,Skin Care,1.0,gemini
+val_102_det7_crop.jpg,Personal Care & Beauty,Skin Care,1.0,gemini
+val_102_det78_crop.jpg,Personal Care & Beauty,Skin Care,1.0,gemini
+val_102_det79_crop.jpg,Personal Care & Beauty,Skin Care,1.0,gemini
+val_102_det80_crop.jpg,Personal Care & Beauty,Skin Care,1.0,gemini
+val_102_det81_crop.jpg,Personal Care & Beauty,Skin Care,1.0,gemini
+val_102_det83_crop.jpg,Personal Care & Beauty,Skin Care,1.0,gemini
+val_102_det82_crop.jpg,Other / Unclear,Unclear / Generic Product,1.0,gemini
+val_102_det84_crop.jpg,Other / Unclear,Unclear / Generic Product,1.0,gemini
+val_102_det85_crop.jpg,Personal Care & Beauty,Skin Care,1.0,gemini
+val_102_det88_crop.jpg,Personal Care & Beauty,Skin Care,1.0,gemini
+val_102_det90_crop.jpg,Personal Care & Beauty,Skin Care,1.0,gemini
+val_102_det87_crop.jpg,Personal Care & Beauty,Skin Care,1.0,gemini
+val_102_det89_crop.jpg,Personal Care & Beauty,Personal Care Other,1.0,gemini
+val_102_det91_crop.jpg,Personal Care & Beauty,Skin Care,1.0,gemini
+val_102_det8_crop.jpg,Personal Care & Beauty,Skin Care,1.0,gemini
+val_102_det86_crop.jpg,Personal Care & Beauty,Skin Care,1.0,gemini
+val_102_det92_crop.jpg,Personal Care & Beauty,Skin Care,1.0,gemini
+val_102_det93_crop.jpg,Personal Care & Beauty,Skin Care,1.0,gemini
+val_102_det94_crop.jpg,Personal Care & Beauty,Skin Care,1.0,gemini
+val_102_det96_crop.jpg,Personal Care & Beauty,Personal Care Other,1.0,gemini
+val_102_det97_crop.jpg,Other / Unclear,Unclear / Generic Product,1.0,gemini
+val_102_det95_crop.jpg,Personal Care & Beauty,Skin Care,1.0,gemini
+val_102_det99_crop.jpg,Personal Care & Beauty,Skin Care,1.0,gemini
+val_102_det98_crop.jpg,Personal Care & Beauty,Skin Care,1.0,gemini
+val_102_det9_crop.jpg,Personal Care & Beauty,Skin Care,1.0,gemini
+val_103_det0_crop.jpg,Personal Care & Beauty,Deodorant,1.0,gemini
+val_103_det100_crop.jpg,Personal Care & Beauty,Deodorant,1.0,gemini
+val_103_det101_crop.jpg,Other / Unclear,Unclear / Generic Product,1.0,gemini
+val_103_det104_crop.jpg,Beverages,Soft Drinks,1.0,gemini
+val_103_det102_crop.jpg,Personal Care & Beauty,Deodorant,1.0,gemini
+val_103_det103_crop.jpg,Personal Care & Beauty,Deodorant,1.0,gemini
+val_103_det105_crop.jpg,Other / Unclear,Unclear / Generic Product,1.0,gemini
+val_103_det106_crop.jpg,Other / Unclear,Unclear / Generic Product,1.0,gemini
+val_103_det109_crop.jpg,Other / Unclear,Unclear / Generic Product,1.0,gemini
+val_103_det107_crop.jpg,Personal Care & Beauty,Deodorant,1.0,gemini
+val_103_det111_crop.jpg,Other / Unclear,Unclear / Generic Product,1.0,gemini
+val_103_det110_crop.jpg,Other / Unclear,Unclear / Generic Product,1.0,gemini
+val_103_det10_crop.jpg,Personal Care & Beauty,Deodorant,1.0,gemini
+val_103_det108_crop.jpg,Other / Unclear,Unclear / Generic Product,1.0,gemini
+val_103_det112_crop.jpg,Other / Unclear,Unclear / Generic Product,1.0,gemini
+val_103_det115_crop.jpg,Other / Unclear,Unclear / Generic Product,1.0,gemini
+val_103_det113_crop.jpg,Other / Unclear,Unclear / Generic Product,1.0,gemini
+val_103_det114_crop.jpg,Other / Unclear,Unclear / Generic Product,1.0,gemini
+val_103_det116_crop.jpg,Other / Unclear,Unclear / Generic Product,1.0,gemini
+val_103_det117_crop.jpg,Other / Unclear,Unclear / Generic Product,1.0,gemini
+val_103_det118_crop.jpg,Other / Unclear,Unclear / Generic Product,1.0,gemini
+val_103_det11_crop.jpg,Personal Care & Beauty,Deodorant,1.0,gemini
+val_103_det119_crop.jpg,Other / Unclear,Unclear / Generic Product,1.0,gemini
+val_103_det120_crop.jpg,Other / Unclear,Unclear / Generic Product,1.0,gemini
+val_103_det121_crop.jpg,Other / Unclear,Unclear / Generic Product,1.0,gemini
+val_103_det122_crop.jpg,Other / Unclear,Unclear / Generic Product,1.0,gemini
+val_103_det123_crop.jpg,Other / Unclear,Unclear / Generic Product,1.0,gemini
+val_103_det125_crop.jpg,Other / Unclear,Unclear / Generic Product,1.0,gemini
+val_103_det126_crop.jpg,Other / Unclear,Unclear / Generic Product,1.0,gemini
+val_103_det127_crop.jpg,Other / Unclear,Unclear / Generic Product,1.0,gemini
+val_103_det124_crop.jpg,Other / Unclear,Unclear / Generic Product,1.0,gemini
+val_103_det128_crop.jpg,Other / Unclear,Unclear / Generic Product,1.0,gemini
+val_103_det12_crop.jpg,Personal Care & Beauty,Deodorant,1.0,gemini
+val_103_det14_crop.jpg,Other / Unclear,Unclear / Generic Product,1.0,gemini
+val_103_det129_crop.jpg,Other / Unclear,Unclear / Generic Product,1.0,gemini
+val_103_det13_crop.jpg,Personal Care & Beauty,Deodorant,1.0,gemini
+val_103_det17_crop.jpg,Other / Unclear,Unclear / Generic Product,1.0,gemini
+val_103_det16_crop.jpg,Personal Care & Beauty,Deodorant,1.0,gemini
+val_103_det15_crop.jpg,Other / Unclear,Unclear / Generic Product,1.0,gemini
+val_103_det18_crop.jpg,Personal Care & Beauty,Deodorant,1.0,gemini
+val_103_det19_crop.jpg,Personal Care & Beauty,Deodorant,1.0,gemini
+val_103_det1_crop.jpg,Personal Care & Beauty,Deodorant,1.0,gemini
+val_103_det21_crop.jpg,Personal Care & Beauty,Deodorant,1.0,gemini
+val_103_det20_crop.jpg,Personal Care & Beauty,Deodorant,1.0,gemini
+val_103_det23_crop.jpg,Personal Care & Beauty,Deodorant,1.0,gemini
+val_103_det25_crop.jpg,Personal Care & Beauty,Deodorant,1.0,gemini
+val_103_det28_crop.jpg,Household Cleaning & Laundry,Air Fresheners,1.0,gemini
+val_103_det24_crop.jpg,Personal Care & Beauty,Deodorant,1.0,gemini
+val_103_det26_crop.jpg,Personal Care & Beauty,Deodorant,1.0,gemini
+val_103_det22_crop.jpg,Personal Care & Beauty,Deodorant,1.0,gemini
+val_103_det29_crop.jpg,Other / Unclear,Unclear / Generic Product,1.0,gemini
+val_103_det27_crop.jpg,Personal Care & Beauty,Deodorant,1.0,gemini
+val_103_det2_crop.jpg,Personal Care & Beauty,Deodorant,1.0,gemini
+val_103_det31_crop.jpg,Other / Unclear,Unclear / Generic Product,1.0,gemini
+val_103_det33_crop.jpg,Personal Care & Beauty,Deodorant,1.0,gemini
+val_103_det36_crop.jpg,Personal Care & Beauty,Deodorant,1.0,gemini
+val_103_det32_crop.jpg,Other / Unclear,Unclear / Generic Product,1.0,gemini
+val_103_det30_crop.jpg,Personal Care & Beauty,Deodorant,1.0,gemini
+val_103_det34_crop.jpg,Personal Care & Beauty,Deodorant,1.0,gemini
+val_103_det35_crop.jpg,Other / Unclear,Unclear / Generic Product,1.0,gemini
+val_103_det38_crop.jpg,Personal Care & Beauty,Deodorant,1.0,gemini
+val_103_det37_crop.jpg,Personal Care & Beauty,Deodorant,1.0,gemini
+val_103_det39_crop.jpg,Other / Unclear,Unclear / Generic Product,1.0,gemini
+val_103_det40_crop.jpg,Other / Unclear,Unclear / Generic Product,1.0,gemini
+val_103_det3_crop.jpg,Personal Care & Beauty,Deodorant,1.0,gemini
+val_103_det41_crop.jpg,Personal Care & Beauty,Deodorant,1.0,gemini
+val_103_det42_crop.jpg,Personal Care & Beauty,Personal Care Other,1.0,gemini
+val_103_det44_crop.jpg,Other / Unclear,Unclear / Generic Product,1.0,gemini
+val_103_det43_crop.jpg,Personal Care & Beauty,Deodorant,1.0,gemini
+val_103_det47_crop.jpg,Personal Care & Beauty,Deodorant,1.0,gemini
+val_103_det45_crop.jpg,Personal Care & Beauty,Personal Care Other,1.0,gemini
+val_103_det50_crop.jpg,Personal Care & Beauty,Deodorant,1.0,gemini
+val_103_det46_crop.jpg,Personal Care & Beauty,Personal Care Other,1.0,gemini
+val_103_det48_crop.jpg,Personal Care & Beauty,Deodorant,1.0,gemini
+val_103_det51_crop.jpg,Other / Unclear,Unclear / Generic Product,1.0,gemini
+val_103_det4_crop.jpg,Personal Care & Beauty,Deodorant,1.0,gemini
+val_103_det49_crop.jpg,Personal Care & Beauty,Deodorant,1.0,gemini
+val_103_det53_crop.jpg,Personal Care & Beauty,Deodorant,1.0,gemini
+val_103_det56_crop.jpg,Personal Care & Beauty,Deodorant,1.0,gemini
+val_103_det52_crop.jpg,Other / Unclear,Unclear / Generic Product,1.0,gemini
+val_103_det54_crop.jpg,Personal Care & Beauty,Deodorant,1.0,gemini
+val_103_det55_crop.jpg,Personal Care & Beauty,Deodorant,1.0,gemini
+val_103_det57_crop.jpg,Household Cleaning & Laundry,Laundry Detergent,1.0,gemini
+val_103_det59_crop.jpg,Personal Care & Beauty,Deodorant,1.0,gemini
+val_103_det58_crop.jpg,Personal Care & Beauty,Deodorant,1.0,gemini
+val_103_det62_crop.jpg,Personal Care & Beauty,Deodorant,1.0,gemini
+val_103_det63_crop.jpg,Personal Care & Beauty,Deodorant,1.0,gemini
+val_103_det60_crop.jpg,Personal Care & Beauty,Deodorant,1.0,gemini
+val_103_det61_crop.jpg,Personal Care & Beauty,Deodorant,1.0,gemini
+val_103_det5_crop.jpg,Personal Care & Beauty,Deodorant,1.0,gemini
+val_103_det64_crop.jpg,Personal Care & Beauty,Deodorant,1.0,gemini
+val_103_det66_crop.jpg,Personal Care & Beauty,Deodorant,1.0,gemini
+val_103_det67_crop.jpg,Personal Care & Beauty,Deodorant,1.0,gemini
+val_103_det65_crop.jpg,Other / Unclear,Unclear / Generic Product,1.0,gemini
+val_103_det69_crop.jpg,Personal Care & Beauty,Deodorant,1.0,gemini
+val_103_det68_crop.jpg,Personal Care & Beauty,Deodorant,1.0,gemini
+val_103_det6_crop.jpg,Personal Care & Beauty,Deodorant,1.0,gemini
+val_103_det71_crop.jpg,Other / Unclear,Unclear / Generic Product,1.0,gemini
+val_103_det73_crop.jpg,Other / Unclear,Unclear / Generic Product,1.0,gemini
+val_103_det70_crop.jpg,Personal Care & Beauty,Deodorant,1.0,gemini
+val_103_det74_crop.jpg,Personal Care & Beauty,Deodorant,1.0,gemini
+val_103_det72_crop.jpg,Personal Care & Beauty,Deodorant,1.0,gemini
+val_103_det76_crop.jpg,Other / Unclear,Unclear / Generic Product,1.0,gemini
+val_103_det75_crop.jpg,Household Cleaning & Laundry,Laundry Detergent,1.0,gemini
+val_103_det78_crop.jpg,Other / Unclear,Unclear / Generic Product,1.0,gemini
+val_103_det77_crop.jpg,Snacks & Confectionery,Chips & Savory Snacks,1.0,gemini
+val_103_det7_crop.jpg,Other / Unclear,Unclear / Generic Product,1.0,gemini
+val_103_det80_crop.jpg,Pet Care,Pet Food & Supplies,1.0,gemini
+val_103_det79_crop.jpg,Other / Unclear,Unclear / Generic Product,1.0,gemini
+val_103_det81_crop.jpg,Other / Unclear,Unclear / Generic Product,1.0,gemini
+val_103_det83_crop.jpg,Personal Care & Beauty,Deodorant,1.0,gemini
+val_103_det82_crop.jpg,Personal Care & Beauty,Deodorant,1.0,gemini
+val_103_det84_crop.jpg,Other / Unclear,Unclear / Generic Product,1.0,gemini
+val_103_det85_crop.jpg,Personal Care & Beauty,Deodorant,1.0,gemini
+val_103_det86_crop.jpg,Other / Unclear,Unclear / Generic Product,1.0,gemini
+val_103_det87_crop.jpg,Other / Unclear,Unclear / Generic Product,1.0,gemini
+val_103_det89_crop.jpg,Other / Unclear,Unclear / Generic Product,1.0,gemini
+val_103_det88_crop.jpg,Personal Care & Beauty,Deodorant,1.0,gemini
+val_103_det91_crop.jpg,Personal Care & Beauty,Deodorant,1.0,gemini
+val_103_det8_crop.jpg,Personal Care & Beauty,Deodorant,1.0,gemini
+val_103_det92_crop.jpg,Personal Care & Beauty,Deodorant,1.0,gemini
+val_103_det93_crop.jpg,Other / Unclear,Unclear / Generic Product,1.0,gemini
+val_103_det90_crop.jpg,Personal Care & Beauty,Deodorant,1.0,gemini
+val_103_det94_crop.jpg,Personal Care & Beauty,Deodorant,1.0,gemini
+val_103_det96_crop.jpg,Other / Unclear,Unclear / Generic Product,1.0,gemini
+val_103_det95_crop.jpg,Other / Unclear,Unclear / Generic Product,1.0,gemini
+val_103_det97_crop.jpg,Other / Unclear,Unclear / Generic Product,1.0,gemini
+val_103_det9_crop.jpg,Personal Care & Beauty,Deodorant,1.0,gemini
+val_103_det99_crop.jpg,Other / Unclear,Unclear / Generic Product,1.0,gemini
+val_103_det98_crop.jpg,Other / Unclear,Unclear / Generic Product,1.0,gemini
+val_104_det100_crop.jpg,Health & Wellness,Medicine & First Aid,1.0,gemini
+val_104_det0_crop.jpg,Health & Wellness,Medicine & First Aid,1.0,gemini
+val_104_det101_crop.jpg,Health & Wellness,Medicine & First Aid,1.0,gemini
+val_104_det103_crop.jpg,Health & Wellness,Pain Relief,1.0,gemini
+val_104_det102_crop.jpg,Snacks & Confectionery,Candy & Chocolate,1.0,gemini
+val_104_det105_crop.jpg,Health & Wellness,Medicine & First Aid,1.0,gemini
+val_104_det104_crop.jpg,Health & Wellness,Medicine & First Aid,1.0,gemini
+val_104_det107_crop.jpg,Health & Wellness,Medicine & First Aid,1.0,gemini
+val_104_det108_crop.jpg,Health & Wellness,Medicine & First Aid,1.0,gemini
+val_104_det106_crop.jpg,Health & Wellness,Pain Relief,1.0,gemini
+val_104_det109_crop.jpg,Health & Wellness,Pain Relief,1.0,gemini
+val_104_det10_crop.jpg,Health & Wellness,Medicine & First Aid,1.0,gemini
+val_104_det111_crop.jpg,Health & Wellness,Medicine & First Aid,1.0,gemini
+val_104_det112_crop.jpg,Health & Wellness,Medicine & First Aid,1.0,gemini
+val_104_det110_crop.jpg,Health & Wellness,Pain Relief,1.0,gemini
+val_104_det113_crop.jpg,Health & Wellness,Medicine & First Aid,1.0,gemini
+val_104_det115_crop.jpg,Health & Wellness,Medicine & First Aid,1.0,gemini
+val_104_det114_crop.jpg,Health & Wellness,Medicine & First Aid,1.0,gemini
+val_104_det117_crop.jpg,Other / Unclear,Unclear / Generic Product,1.0,gemini
+val_104_det116_crop.jpg,Health & Wellness,Pain Relief,1.0,gemini
+val_104_det118_crop.jpg,Health & Wellness,Pain Relief,1.0,gemini
+val_104_det119_crop.jpg,Health & Wellness,Medicine & First Aid,1.0,gemini
+val_104_det11_crop.jpg,Health & Wellness,Medicine & First Aid,1.0,gemini
+val_104_det121_crop.jpg,Snacks & Confectionery,Candy & Chocolate,1.0,gemini
+val_104_det120_crop.jpg,Health & Wellness,Pain Relief,1.0,gemini
+val_104_det123_crop.jpg,Health & Wellness,Medicine & First Aid,1.0,gemini
+val_104_det122_crop.jpg,Health & Wellness,Medicine & First Aid,1.0,gemini
+val_104_det124_crop.jpg,Health & Wellness,Medicine & First Aid,1.0,gemini
+val_104_det125_crop.jpg,Other / Unclear,Unclear / Generic Product,1.0,gemini
+val_104_det126_crop.jpg,Health & Wellness,Medicine & First Aid,1.0,gemini
+val_104_det129_crop.jpg,Health & Wellness,Medicine & First Aid,1.0,gemini
+val_104_det127_crop.jpg,Health & Wellness,Medicine & First Aid,1.0,gemini
+val_104_det128_crop.jpg,Snacks & Confectionery,Candy & Chocolate,1.0,gemini
+val_104_det12_crop.jpg,Health & Wellness,Medicine & First Aid,1.0,gemini
+val_104_det131_crop.jpg,Snacks & Confectionery,Candy & Chocolate,1.0,gemini
+val_104_det132_crop.jpg,Health & Wellness,Medicine & First Aid,1.0,gemini
+val_104_det130_crop.jpg,Health & Wellness,Medicine & First Aid,1.0,gemini
+val_104_det133_crop.jpg,Health & Wellness,Medicine & First Aid,1.0,gemini
+val_104_det135_crop.jpg,Health & Wellness,Medicine & First Aid,1.0,gemini
+val_104_det134_crop.jpg,Snacks & Confectionery,Candy & Chocolate,1.0,gemini
+val_104_det136_crop.jpg,Health & Wellness,Medicine & First Aid,1.0,gemini
+val_104_det138_crop.jpg,Health & Wellness,Pain Relief,1.0,gemini
+val_104_det139_crop.jpg,Health & Wellness,Medicine & First Aid,1.0,gemini
+val_104_det13_crop.jpg,Health & Wellness,Medicine & First Aid,1.0,gemini
+val_104_det137_crop.jpg,Health & Wellness,Medicine & First Aid,1.0,gemini
+val_104_det143_crop.jpg,Health & Wellness,Medicine & First Aid,1.0,gemini
+val_104_det141_crop.jpg,Other / Unclear,Unclear / Generic Product,1.0,gemini
+val_104_det142_crop.jpg,Health & Wellness,Pain Relief,1.0,gemini
+val_104_det140_crop.jpg,Health & Wellness,Medicine & First Aid,1.0,gemini
+val_104_det144_crop.jpg,Other / Unclear,Unclear / Generic Product,1.0,gemini
+val_104_det145_crop.jpg,Health & Wellness,Medicine & First Aid,1.0,gemini
+val_104_det147_crop.jpg,Other / Unclear,Unclear / Generic Product,1.0,gemini
+val_104_det149_crop.jpg,Other / Unclear,Unclear / Generic Product,1.0,gemini
+val_104_det146_crop.jpg,Other / Unclear,Unclear / Generic Product,1.0,gemini
+val_104_det148_crop.jpg,Health & Wellness,Medicine & First Aid,1.0,gemini
+val_104_det14_crop.jpg,Health & Wellness,Medicine & First Aid,1.0,gemini
+val_104_det151_crop.jpg,Other / Unclear,Unclear / Generic Product,1.0,gemini
+val_104_det152_crop.jpg,Other / Unclear,Unclear / Generic Product,1.0,gemini
+val_104_det150_crop.jpg,Health & Wellness,Pain Relief,1.0,gemini
+val_104_det153_crop.jpg,Health & Wellness,Medicine & First Aid,1.0,gemini
+val_104_det154_crop.jpg,Beverages,Energy & Sports Drinks,1.0,gemini
+val_104_det155_crop.jpg,Health & Wellness,Medicine & First Aid,1.0,gemini
+val_104_det156_crop.jpg,Other / Unclear,Unclear / Generic Product,1.0,gemini
+val_104_det157_crop.jpg,Other / Unclear,Unclear / Generic Product,1.0,gemini
+val_104_det158_crop.jpg,Health & Wellness,Medicine & First Aid,1.0,gemini
+val_104_det159_crop.jpg,Other / Unclear,Unclear / Generic Product,1.0,gemini
+val_104_det15_crop.jpg,Health & Wellness,Medicine & First Aid,1.0,gemini
+val_104_det160_crop.jpg,Health & Wellness,Medicine & First Aid,1.0,gemini
+val_104_det161_crop.jpg,Snacks & Confectionery,Candy & Chocolate,1.0,gemini
+val_104_det164_crop.jpg,Other / Unclear,Unclear / Generic Product,1.0,gemini
+val_104_det162_crop.jpg,Other / Unclear,Unclear / Generic Product,1.0,gemini
+val_104_det165_crop.jpg,Other / Unclear,Unclear / Generic Product,1.0,gemini
+val_104_det166_crop.jpg,Snacks & Confectionery,Candy & Chocolate,1.0,gemini
+val_104_det163_crop.jpg,Health & Wellness,Pain Relief,1.0,gemini
+val_104_det167_crop.jpg,Other / Unclear,Unclear / Generic Product,1.0,gemini
+val_104_det169_crop.jpg,Other / Unclear,Unclear / Generic Product,1.0,gemini
+val_104_det170_crop.jpg,Other / Unclear,Unclear / Generic Product,1.0,gemini
+val_104_det16_crop.jpg,Health & Wellness,Medicine & First Aid,1.0,gemini
+val_104_det168_crop.jpg,Other / Unclear,Unclear / Generic Product,1.0,gemini
+val_104_det171_crop.jpg,Other / Unclear,Unclear / Generic Product,1.0,gemini
+val_104_det17_crop.jpg,Health & Wellness,Medicine & First Aid,1.0,gemini
+val_104_det18_crop.jpg,Health & Wellness,Medicine & First Aid,1.0,gemini
+val_104_det19_crop.jpg,Health & Wellness,Medicine & First Aid,1.0,gemini
+val_104_det1_crop.jpg,Health & Wellness,Medicine & First Aid,1.0,gemini
+val_104_det20_crop.jpg,Health & Wellness,Medicine & First Aid,1.0,gemini
+val_104_det22_crop.jpg,Health & Wellness,Medicine & First Aid,1.0,gemini
+val_104_det21_crop.jpg,Health & Wellness,Medicine & First Aid,1.0,gemini
+val_104_det23_crop.jpg,Health & Wellness,Medicine & First Aid,1.0,gemini
+val_104_det24_crop.jpg,Health & Wellness,Medicine & First Aid,1.0,gemini
+val_104_det25_crop.jpg,Health & Wellness,Medicine & First Aid,1.0,gemini
+val_104_det26_crop.jpg,Health & Wellness,Medicine & First Aid,1.0,gemini
+val_104_det29_crop.jpg,Health & Wellness,Medicine & First Aid,1.0,gemini
+val_104_det27_crop.jpg,Health & Wellness,Medicine & First Aid,1.0,gemini
+val_104_det28_crop.jpg,Health & Wellness,Medicine & First Aid,1.0,gemini
+val_104_det30_crop.jpg,Health & Wellness,Pain Relief,1.0,gemini
+val_104_det2_crop.jpg,Health & Wellness,Medicine & First Aid,1.0,gemini
+val_104_det31_crop.jpg,Health & Wellness,Medicine & First Aid,1.0,gemini
+val_104_det33_crop.jpg,Health & Wellness,Medicine & First Aid,1.0,gemini
+val_104_det32_crop.jpg,Health & Wellness,Medicine & First Aid,1.0,gemini
+val_104_det35_crop.jpg,Health & Wellness,Medicine & First Aid,1.0,gemini
+val_104_det34_crop.jpg,Health & Wellness,Medicine & First Aid,1.0,gemini
+val_104_det36_crop.jpg,Health & Wellness,Medicine & First Aid,1.0,gemini
+val_104_det39_crop.jpg,Health & Wellness,Medicine & First Aid,1.0,gemini
+val_104_det37_crop.jpg,Health & Wellness,Medicine & First Aid,1.0,gemini
+val_104_det38_crop.jpg,Health & Wellness,Pain Relief,1.0,gemini
+val_104_det40_crop.jpg,Health & Wellness,Medicine & First Aid,1.0,gemini
+val_104_det3_crop.jpg,Health & Wellness,Medicine & First Aid,1.0,gemini
+val_104_det41_crop.jpg,Health & Wellness,Medicine & First Aid,1.0,gemini
+val_104_det42_crop.jpg,Health & Wellness,Medicine & First Aid,1.0,gemini
+val_104_det45_crop.jpg,Health & Wellness,Medicine & First Aid,1.0,gemini
+val_104_det43_crop.jpg,Health & Wellness,Medicine & First Aid,1.0,gemini
+val_104_det46_crop.jpg,Health & Wellness,Medicine & First Aid,1.0,gemini
+val_104_det44_crop.jpg,Health & Wellness,Medicine & First Aid,1.0,gemini
+val_104_det47_crop.jpg,Snacks & Confectionery,Candy & Chocolate,1.0,gemini
+val_104_det48_crop.jpg,Health & Wellness,Medicine & First Aid,1.0,gemini
+val_104_det49_crop.jpg,Health & Wellness,Medicine & First Aid,1.0,gemini
+val_104_det4_crop.jpg,Health & Wellness,Medicine & First Aid,1.0,gemini
+val_104_det50_crop.jpg,Health & Wellness,Pain Relief,1.0,gemini
+val_104_det51_crop.jpg,Health & Wellness,Medicine & First Aid,1.0,gemini
+val_104_det52_crop.jpg,Health & Wellness,Medicine & First Aid,1.0,gemini
+val_104_det53_crop.jpg,Health & Wellness,Medicine & First Aid,1.0,gemini
+val_104_det56_crop.jpg,Health & Wellness,Medicine & First Aid,1.0,gemini
+val_104_det54_crop.jpg,Health & Wellness,Medicine & First Aid,1.0,gemini
+val_104_det55_crop.jpg,Health & Wellness,Medicine & First Aid,1.0,gemini
+val_104_det57_crop.jpg,Health & Wellness,Medicine & First Aid,1.0,gemini
+val_104_det59_crop.jpg,Health & Wellness,Medicine & First Aid,1.0,gemini
+val_104_det5_crop.jpg,Health & Wellness,Medicine & First Aid,1.0,gemini
+val_104_det58_crop.jpg,Health & Wellness,Medicine & First Aid,1.0,gemini
+val_104_det60_crop.jpg,Health & Wellness,Medicine & First Aid,1.0,gemini
+val_104_det61_crop.jpg,Health & Wellness,Medicine & First Aid,1.0,gemini
+val_104_det62_crop.jpg,Health & Wellness,Pain Relief,1.0,gemini
+val_104_det63_crop.jpg,Health & Wellness,Medicine & First Aid,1.0,gemini
+val_104_det66_crop.jpg,Health & Wellness,Medicine & First Aid,1.0,gemini
+val_104_det65_crop.jpg,Health & Wellness,Medicine & First Aid,1.0,gemini
+val_104_det64_crop.jpg,Health & Wellness,Medicine & First Aid,1.0,gemini
+val_104_det67_crop.jpg,Health & Wellness,Medicine & First Aid,1.0,gemini
+val_104_det6_crop.jpg,Health & Wellness,Medicine & First Aid,1.0,gemini
+val_104_det68_crop.jpg,Health & Wellness,Medicine & First Aid,1.0,gemini
+val_104_det69_crop.jpg,Health & Wellness,Medicine & First Aid,1.0,gemini
+val_104_det70_crop.jpg,Health & Wellness,Medicine & First Aid,1.0,gemini
+val_104_det71_crop.jpg,Health & Wellness,Medicine & First Aid,1.0,gemini
+val_104_det73_crop.jpg,Health & Wellness,Medicine & First Aid,1.0,gemini
+val_104_det74_crop.jpg,Health & Wellness,Medicine & First Aid,1.0,gemini
+val_104_det75_crop.jpg,Health & Wellness,Medicine & First Aid,1.0,gemini
+val_104_det72_crop.jpg,Health & Wellness,Medicine & First Aid,1.0,gemini
+val_104_det77_crop.jpg,Health & Wellness,Medicine & First Aid,1.0,gemini
+val_104_det78_crop.jpg,Health & Wellness,Medicine & First Aid,1.0,gemini
+val_104_det76_crop.jpg,Health & Wellness,Medicine & First Aid,1.0,gemini
+val_104_det79_crop.jpg,Health & Wellness,Medicine & First Aid,1.0,gemini
+val_104_det7_crop.jpg,Health & Wellness,Medicine & First Aid,1.0,gemini
+val_104_det80_crop.jpg,Health & Wellness,Medicine & First Aid,1.0,gemini
+val_104_det82_crop.jpg,Health & Wellness,Medicine & First Aid,1.0,gemini
+val_104_det81_crop.jpg,Health & Wellness,Medicine & First Aid,1.0,gemini
+val_104_det83_crop.jpg,Health & Wellness,Medicine & First Aid,1.0,gemini
+val_104_det84_crop.jpg,Health & Wellness,Pain Relief,1.0,gemini
+val_104_det85_crop.jpg,Health & Wellness,Medicine & First Aid,1.0,gemini
+val_104_det87_crop.jpg,Health & Wellness,Medicine & First Aid,1.0,gemini
+val_104_det86_crop.jpg,Health & Wellness,Medicine & First Aid,1.0,gemini
+val_104_det88_crop.jpg,Health & Wellness,Medicine & First Aid,1.0,gemini
+val_104_det90_crop.jpg,Health & Wellness,Medicine & First Aid,1.0,gemini
+val_104_det8_crop.jpg,Health & Wellness,Medicine & First Aid,1.0,gemini
+val_104_det89_crop.jpg,Health & Wellness,Medicine & First Aid,1.0,gemini
+val_104_det91_crop.jpg,Health & Wellness,Medicine & First Aid,1.0,gemini
+val_104_det92_crop.jpg,Health & Wellness,Pain Relief,1.0,gemini
+val_104_det94_crop.jpg,Health & Wellness,Medicine & First Aid,1.0,gemini
+val_104_det93_crop.jpg,Health & Wellness,Pain Relief,1.0,gemini
+val_104_det96_crop.jpg,Health & Wellness,Medicine & First Aid,1.0,gemini
+val_104_det95_crop.jpg,Health & Wellness,Medicine & First Aid,1.0,gemini
+val_104_det99_crop.jpg,Other / Unclear,Unclear / Generic Product,1.0,gemini
+val_104_det97_crop.jpg,Health & Wellness,Medicine & First Aid,1.0,gemini
+val_104_det98_crop.jpg,Snacks & Confectionery,Candy & Chocolate,1.0,gemini
+val_105_det100_crop.jpg,Personal Care & Beauty,Bath & Body Wash,1.0,gemini
+val_104_det9_crop.jpg,Health & Wellness,Medicine & First Aid,1.0,gemini
+val_105_det101_crop.jpg,Personal Care & Beauty,Bath & Body Wash,1.0,gemini
+val_105_det102_crop.jpg,Personal Care & Beauty,Bath & Body Wash,1.0,gemini
+val_105_det0_crop.jpg,Personal Care & Beauty,Bath & Body Wash,1.0,gemini
+val_105_det103_crop.jpg,Personal Care & Beauty,Bath & Body Wash,1.0,gemini
+val_105_det104_crop.jpg,Other / Unclear,Unclear / Generic Product,1.0,gemini
+val_105_det105_crop.jpg,Other / Unclear,Unclear / Generic Product,1.0,gemini
+val_105_det107_crop.jpg,Other / Unclear,Unclear / Generic Product,1.0,gemini
+val_105_det106_crop.jpg,Personal Care & Beauty,Bath & Body Wash,1.0,gemini
+val_105_det111_crop.jpg,Other / Unclear,Unclear / Generic Product,1.0,gemini
+val_105_det109_crop.jpg,Other / Unclear,Unclear / Generic Product,1.0,gemini
+val_105_det108_crop.jpg,Other / Unclear,Unclear / Generic Product,1.0,gemini
+val_105_det10_crop.jpg,Personal Care & Beauty,Personal Care Other,1.0,gemini
+val_105_det110_crop.jpg,Personal Care & Beauty,Bath & Body Wash,1.0,gemini
+val_105_det112_crop.jpg,Other / Unclear,Unclear / Generic Product,1.0,gemini
+val_105_det113_crop.jpg,Other / Unclear,Unclear / Generic Product,1.0,gemini
+val_105_det114_crop.jpg,Personal Care & Beauty,Bath & Body Wash,1.0,gemini
+val_105_det117_crop.jpg,Personal Care & Beauty,Bath & Body Wash,1.0,gemini
+val_105_det115_crop.jpg,Personal Care & Beauty,Bath & Body Wash,1.0,gemini
+val_105_det118_crop.jpg,Other / Unclear,Unclear / Generic Product,1.0,gemini
+val_105_det11_crop.jpg,Personal Care & Beauty,Bath & Body Wash,1.0,gemini
+val_105_det116_crop.jpg,Personal Care & Beauty,Bath & Body Wash,1.0,gemini
+val_105_det119_crop.jpg,Personal Care & Beauty,Bath & Body Wash,1.0,gemini
+val_105_det122_crop.jpg,Other / Unclear,Unclear / Generic Product,1.0,gemini
+val_105_det120_crop.jpg,Hair Care,Shampoo & Conditioner,1.0,gemini
+val_105_det123_crop.jpg,Personal Care & Beauty,Bath & Body Wash,1.0,gemini
+val_105_det124_crop.jpg,Other / Unclear,Unclear / Generic Product,1.0,gemini
+val_105_det121_crop.jpg,Personal Care & Beauty,Bath & Body Wash,1.0,gemini
+val_105_det125_crop.jpg,Personal Care & Beauty,Bath & Body Wash,1.0,gemini
+val_105_det126_crop.jpg,Personal Care & Beauty,Bath & Body Wash,1.0,gemini
+val_105_det127_crop.jpg,Personal Care & Beauty,Bath & Body Wash,1.0,gemini
+val_105_det129_crop.jpg,Other / Unclear,Unclear / Generic Product,1.0,gemini
+val_105_det128_crop.jpg,Other / Unclear,Unclear / Generic Product,1.0,gemini
+val_105_det12_crop.jpg,Personal Care & Beauty,Bath & Body Wash,1.0,gemini
+val_105_det130_crop.jpg,Personal Care & Beauty,Bath & Body Wash,1.0,gemini
+val_105_det131_crop.jpg,Other / Unclear,Unclear / Generic Product,1.0,gemini
+val_105_det134_crop.jpg,Other / Unclear,Unclear / Generic Product,1.0,gemini
+val_105_det133_crop.jpg,Personal Care & Beauty,Bath & Body Wash,1.0,gemini
+val_105_det135_crop.jpg,Personal Care & Beauty,Bath & Body Wash,1.0,gemini
+val_105_det132_crop.jpg,Personal Care & Beauty,Bath & Body Wash,1.0,gemini
+val_105_det136_crop.jpg,Personal Care & Beauty,Bath & Body Wash,1.0,gemini
+val_105_det14_crop.jpg,Personal Care & Beauty,Bath & Body Wash,1.0,gemini
+val_105_det13_crop.jpg,Personal Care & Beauty,Bath & Body Wash,1.0,gemini
+val_105_det15_crop.jpg,Personal Care & Beauty,Bath & Body Wash,1.0,gemini
+val_105_det16_crop.jpg,Personal Care & Beauty,Bath & Body Wash,1.0,gemini
+val_105_det1_crop.jpg,Personal Care & Beauty,Bath & Body Wash,1.0,gemini
+val_105_det18_crop.jpg,Personal Care & Beauty,Bath & Body Wash,1.0,gemini
+val_105_det19_crop.jpg,Personal Care & Beauty,Bath & Body Wash,1.0,gemini
+val_105_det17_crop.jpg,Personal Care & Beauty,Bath & Body Wash,1.0,gemini
+val_105_det21_crop.jpg,Personal Care & Beauty,Bath & Body Wash,1.0,gemini
+val_105_det20_crop.jpg,Personal Care & Beauty,Bath & Body Wash,1.0,gemini
+val_105_det22_crop.jpg,Personal Care & Beauty,Bath & Body Wash,1.0,gemini
+val_105_det23_crop.jpg,Personal Care & Beauty,Bath & Body Wash,1.0,gemini
+val_105_det24_crop.jpg,Personal Care & Beauty,Bath & Body Wash,1.0,gemini
+val_105_det25_crop.jpg,Personal Care & Beauty,Bath & Body Wash,1.0,gemini
+val_105_det27_crop.jpg,Personal Care & Beauty,Bath & Body Wash,1.0,gemini
+val_105_det2_crop.jpg,Personal Care & Beauty,Bath & Body Wash,1.0,gemini
+val_105_det26_crop.jpg,Personal Care & Beauty,Bath & Body Wash,1.0,gemini
+val_105_det28_crop.jpg,Personal Care & Beauty,Bath & Body Wash,1.0,gemini
+val_105_det29_crop.jpg,Personal Care & Beauty,Bath & Body Wash,1.0,gemini
+val_105_det30_crop.jpg,Personal Care & Beauty,Bath & Body Wash,1.0,gemini
+val_105_det31_crop.jpg,Personal Care & Beauty,Bath & Body Wash,1.0,gemini
+val_105_det32_crop.jpg,Personal Care & Beauty,Bath & Body Wash,1.0,gemini
+val_105_det34_crop.jpg,Personal Care & Beauty,Bath & Body Wash,1.0,gemini
+val_105_det33_crop.jpg,Personal Care & Beauty,Bath & Body Wash,1.0,gemini
+val_105_det35_crop.jpg,Personal Care & Beauty,Bath & Body Wash,1.0,gemini
+val_105_det38_crop.jpg,Personal Care & Beauty,Bath & Body Wash,1.0,gemini
+val_105_det37_crop.jpg,Personal Care & Beauty,Skin Care,1.0,gemini
+val_105_det36_crop.jpg,Personal Care & Beauty,Bath & Body Wash,1.0,gemini
+val_105_det39_crop.jpg,Personal Care & Beauty,Bath & Body Wash,1.0,gemini
+val_105_det3_crop.jpg,Personal Care & Beauty,Skin Care,1.0,gemini
+val_105_det42_crop.jpg,Personal Care & Beauty,Skin Care,1.0,gemini
+val_105_det41_crop.jpg,Personal Care & Beauty,Bath & Body Wash,1.0,gemini
+val_105_det43_crop.jpg,Personal Care & Beauty,Bath & Body Wash,1.0,gemini
+val_105_det40_crop.jpg,Personal Care & Beauty,Bath & Body Wash,1.0,gemini
+val_105_det45_crop.jpg,Other / Unclear,Unclear / Generic Product,1.0,gemini
+val_105_det44_crop.jpg,Hair Care,Shampoo & Conditioner,1.0,gemini
+val_105_det47_crop.jpg,Personal Care & Beauty,Bath & Body Wash,1.0,gemini
+val_105_det48_crop.jpg,Personal Care & Beauty,Bath & Body Wash,1.0,gemini
+val_105_det4_crop.jpg,Personal Care & Beauty,Bath & Body Wash,1.0,gemini
+val_105_det49_crop.jpg,Personal Care & Beauty,Bath & Body Wash,1.0,gemini
+val_105_det46_crop.jpg,Hair Care,Shampoo & Conditioner,1.0,gemini
+val_105_det51_crop.jpg,Personal Care & Beauty,Bath & Body Wash,1.0,gemini
+val_105_det50_crop.jpg,Personal Care & Beauty,Bath & Body Wash,1.0,gemini
+val_105_det53_crop.jpg,Personal Care & Beauty,Bath & Body Wash,1.0,gemini
+val_105_det54_crop.jpg,Personal Care & Beauty,Bath & Body Wash,1.0,gemini
+val_105_det52_crop.jpg,Personal Care & Beauty,Bath & Body Wash,1.0,gemini
+val_105_det56_crop.jpg,Personal Care & Beauty,Bath & Body Wash,1.0,gemini
+val_105_det55_crop.jpg,Personal Care & Beauty,Bath & Body Wash,1.0,gemini
+val_105_det57_crop.jpg,Hair Care,Shampoo & Conditioner,1.0,gemini
+val_105_det5_crop.jpg,Personal Care & Beauty,Skin Care,1.0,gemini
+val_105_det58_crop.jpg,Personal Care & Beauty,Bath & Body Wash,1.0,gemini
+val_105_det60_crop.jpg,Personal Care & Beauty,Skin Care,1.0,gemini
+val_105_det59_crop.jpg,Personal Care & Beauty,Bath & Body Wash,1.0,gemini
+val_105_det61_crop.jpg,Other / Unclear,Unclear / Generic Product,1.0,gemini
+val_105_det62_crop.jpg,Personal Care & Beauty,Bath & Body Wash,1.0,gemini
+val_105_det64_crop.jpg,Personal Care & Beauty,Skin Care,1.0,gemini
+val_105_det63_crop.jpg,Personal Care & Beauty,Bath & Body Wash,1.0,gemini
+val_105_det65_crop.jpg,Personal Care & Beauty,Skin Care,1.0,gemini
+val_105_det67_crop.jpg,Personal Care & Beauty,Bath & Body Wash,1.0,gemini
+val_105_det66_crop.jpg,Personal Care & Beauty,Skin Care,1.0,gemini
+val_105_det68_crop.jpg,Personal Care & Beauty,Bath & Body Wash,1.0,gemini
+val_105_det70_crop.jpg,Personal Care & Beauty,Skin Care,1.0,gemini
+val_105_det69_crop.jpg,Personal Care & Beauty,Bath & Body Wash,1.0,gemini
+val_105_det6_crop.jpg,Personal Care & Beauty,Bath & Body Wash,1.0,gemini
+val_105_det71_crop.jpg,Personal Care & Beauty,Bath & Body Wash,1.0,gemini
+val_105_det72_crop.jpg,Personal Care & Beauty,Bath & Body Wash,1.0,gemini
+val_105_det73_crop.jpg,Personal Care & Beauty,Bath & Body Wash,1.0,gemini
+val_105_det74_crop.jpg,Personal Care & Beauty,Bath & Body Wash,1.0,gemini
+val_105_det76_crop.jpg,Personal Care & Beauty,Bath & Body Wash,1.0,gemini
+val_105_det77_crop.jpg,Personal Care & Beauty,Bath & Body Wash,1.0,gemini
+val_105_det75_crop.jpg,Personal Care & Beauty,Bath & Body Wash,1.0,gemini
+val_105_det79_crop.jpg,Personal Care & Beauty,Bath & Body Wash,1.0,gemini
+val_105_det78_crop.jpg,Personal Care & Beauty,Bath & Body Wash,1.0,gemini
+val_105_det7_crop.jpg,Personal Care & Beauty,Bath & Body Wash,1.0,gemini
+val_105_det80_crop.jpg,Personal Care & Beauty,Bath & Body Wash,1.0,gemini
+val_105_det82_crop.jpg,Personal Care & Beauty,Skin Care,1.0,gemini
+val_105_det85_crop.jpg,Personal Care & Beauty,Skin Care,1.0,gemini
+val_105_det81_crop.jpg,Personal Care & Beauty,Bath & Body Wash,1.0,gemini
+val_105_det84_crop.jpg,Personal Care & Beauty,Bath & Body Wash,1.0,gemini
+val_105_det83_crop.jpg,Other / Unclear,Unclear / Generic Product,1.0,gemini
+val_105_det86_crop.jpg,Personal Care & Beauty,Bath & Body Wash,1.0,gemini
+val_105_det87_crop.jpg,Personal Care & Beauty,Bath & Body Wash,1.0,gemini
+val_105_det88_crop.jpg,Personal Care & Beauty,Skin Care,1.0,gemini
+val_105_det90_crop.jpg,Personal Care & Beauty,Skin Care,1.0,gemini
+val_105_det92_crop.jpg,Personal Care & Beauty,Bath & Body Wash,1.0,gemini
+val_105_det8_crop.jpg,Personal Care & Beauty,Bath & Body Wash,1.0,gemini
+val_105_det89_crop.jpg,Personal Care & Beauty,Bath & Body Wash,1.0,gemini
+val_105_det91_crop.jpg,Personal Care & Beauty,Bath & Body Wash,1.0,gemini
+val_105_det93_crop.jpg,Personal Care & Beauty,Bath & Body Wash,1.0,gemini
+val_105_det94_crop.jpg,Personal Care & Beauty,Bath & Body Wash,1.0,gemini
+val_105_det95_crop.jpg,Other / Unclear,Unclear / Generic Product,1.0,gemini
+val_105_det98_crop.jpg,Other / Unclear,Unclear / Generic Product,1.0,gemini
+val_105_det97_crop.jpg,Personal Care & Beauty,Bath & Body Wash,1.0,gemini
+val_105_det99_crop.jpg,Personal Care & Beauty,Bath & Body Wash,1.0,gemini
+val_105_det96_crop.jpg,Other / Unclear,Unclear / Generic Product,1.0,gemini
+val_105_det9_crop.jpg,Personal Care & Beauty,Bath & Body Wash,1.0,gemini
+val_106_det0_crop.jpg,Personal Care & Beauty,Bath & Body Wash,1.0,gemini
+val_106_det100_crop.jpg,Hair Care,Hair Styling,1.0,gemini
+val_106_det102_crop.jpg,Personal Care & Beauty,Skin Care,1.0,gemini
+val_106_det103_crop.jpg,Personal Care & Beauty,Skin Care,1.0,gemini
+val_106_det101_crop.jpg,Personal Care & Beauty,Skin Care,1.0,gemini
+val_106_det105_crop.jpg,Other / Unclear,Unclear / Generic Product,1.0,gemini
+val_106_det104_crop.jpg,Personal Care & Beauty,Skin Care,1.0,gemini
+val_106_det107_crop.jpg,Other / Unclear,Unclear / Generic Product,1.0,gemini
+val_106_det106_crop.jpg,Health & Wellness,Medicine & First Aid,1.0,gemini
+val_106_det109_crop.jpg,Other / Unclear,Unclear / Generic Product,1.0,gemini
+val_106_det108_crop.jpg,Personal Care & Beauty,Skin Care,1.0,gemini
+val_106_det110_crop.jpg,Personal Care & Beauty,Skin Care,1.0,gemini
+val_106_det112_crop.jpg,Other / Unclear,Unclear / Generic Product,1.0,gemini
+val_106_det111_crop.jpg,Personal Care & Beauty,Skin Care,1.0,gemini
+val_106_det10_crop.jpg,Personal Care & Beauty,Skin Care,1.0,gemini
+val_106_det113_crop.jpg,Hair Care,Hair Color,1.0,gemini
+val_106_det115_crop.jpg,Other / Unclear,Unclear / Generic Product,1.0,gemini
+val_106_det114_crop.jpg,Hair Care,Shampoo & Conditioner,1.0,gemini
+val_106_det116_crop.jpg,Other / Unclear,Unclear / Generic Product,1.0,gemini
+val_106_det119_crop.jpg,Other / Unclear,Unclear / Generic Product,1.0,gemini
+val_106_det118_crop.jpg,Other / Unclear,Unclear / Generic Product,1.0,gemini
+val_106_det117_crop.jpg,Other / Unclear,Unclear / Generic Product,1.0,gemini
+val_106_det11_crop.jpg,Other / Unclear,Unclear / Generic Product,1.0,gemini
+val_106_det120_crop.jpg,Other / Unclear,Unclear / Generic Product,1.0,gemini
+val_106_det121_crop.jpg,Other / Unclear,Unclear / Generic Product,1.0,gemini
+val_106_det122_crop.jpg,Other / Unclear,Unclear / Generic Product,1.0,gemini
+val_106_det123_crop.jpg,Personal Care & Beauty,Skin Care,1.0,gemini
+val_106_det125_crop.jpg,Other / Unclear,Unclear / Generic Product,1.0,gemini
+val_106_det124_crop.jpg,Personal Care & Beauty,Skin Care,1.0,gemini
+val_106_det128_crop.jpg,Personal Care & Beauty,Skin Care,1.0,gemini
+val_106_det126_crop.jpg,Other / Unclear,Unclear / Generic Product,1.0,gemini
+val_106_det127_crop.jpg,Other / Unclear,Unclear / Generic Product,1.0,gemini
+val_106_det129_crop.jpg,Other / Unclear,Unclear / Generic Product,1.0,gemini
+val_106_det12_crop.jpg,Other / Unclear,Unclear / Generic Product,1.0,gemini
+val_106_det130_crop.jpg,Personal Care & Beauty,Skin Care,1.0,gemini
+val_106_det132_crop.jpg,Other / Unclear,Unclear / Generic Product,1.0,gemini
+val_106_det133_crop.jpg,Other / Unclear,Unclear / Generic Product,1.0,gemini
+val_106_det134_crop.jpg,Personal Care & Beauty,Skin Care,1.0,gemini
+val_106_det131_crop.jpg,Other / Unclear,Unclear / Generic Product,1.0,gemini
+val_106_det135_crop.jpg,Other / Unclear,Unclear / Generic Product,1.0,gemini
+val_106_det136_crop.jpg,Other / Unclear,Unclear / Generic Product,1.0,gemini
+val_106_det137_crop.jpg,Personal Care & Beauty,Skin Care,1.0,gemini
+val_106_det138_crop.jpg,Other / Unclear,Unclear / Generic Product,1.0,gemini
+val_106_det139_crop.jpg,Personal Care & Beauty,Skin Care,1.0,gemini
+val_106_det140_crop.jpg,Personal Care & Beauty,Skin Care,1.0,gemini
+val_106_det13_crop.jpg,Personal Care & Beauty,Skin Care,1.0,gemini
+val_106_det141_crop.jpg,Personal Care & Beauty,Skin Care,1.0,gemini
+val_106_det142_crop.jpg,Personal Care & Beauty,Skin Care,1.0,gemini
+val_106_det143_crop.jpg,Other / Unclear,Unclear / Generic Product,1.0,gemini
+val_106_det144_crop.jpg,Personal Care & Beauty,Skin Care,1.0,gemini
+val_106_det145_crop.jpg,Other / Unclear,Unclear / Generic Product,1.0,gemini
+val_106_det15_crop.jpg,Personal Care & Beauty,Bath & Body Wash,1.0,gemini
+val_106_det14_crop.jpg,Personal Care & Beauty,Skin Care,1.0,gemini
+val_106_det146_crop.jpg,Personal Care & Beauty,Skin Care,1.0,gemini
+val_106_det16_crop.jpg,Other / Unclear,Unclear / Generic Product,1.0,gemini
+val_106_det17_crop.jpg,Personal Care & Beauty,Skin Care,1.0,gemini
+val_106_det147_crop.jpg,Other / Unclear,Unclear / Generic Product,1.0,gemini
+val_106_det19_crop.jpg,Personal Care & Beauty,Bath & Body Wash,1.0,gemini
+val_106_det18_crop.jpg,Personal Care & Beauty,Skin Care,1.0,gemini
+val_106_det21_crop.jpg,Other / Unclear,Unclear / Generic Product,1.0,gemini
+val_106_det1_crop.jpg,Personal Care & Beauty,Skin Care,1.0,gemini
+val_106_det20_crop.jpg,Personal Care & Beauty,Skin Care,1.0,gemini
+val_106_det22_crop.jpg,Personal Care & Beauty,Skin Care,1.0,gemini
+val_106_det23_crop.jpg,Personal Care & Beauty,Skin Care,1.0,gemini
+val_106_det24_crop.jpg,Personal Care & Beauty,Skin Care,1.0,gemini
+val_106_det27_crop.jpg,Personal Care & Beauty,Skin Care,1.0,gemini
+val_106_det26_crop.jpg,Personal Care & Beauty,Skin Care,1.0,gemini
+val_106_det25_crop.jpg,Personal Care & Beauty,Skin Care,1.0,gemini
+val_106_det28_crop.jpg,Personal Care & Beauty,Skin Care,1.0,gemini
+val_106_det29_crop.jpg,Personal Care & Beauty,Skin Care,1.0,gemini
+val_106_det2_crop.jpg,Other / Unclear,Unclear / Generic Product,1.0,gemini
+val_106_det30_crop.jpg,Personal Care & Beauty,Skin Care,1.0,gemini
+val_106_det35_crop.jpg,Personal Care & Beauty,Skin Care,1.0,gemini
+val_106_det31_crop.jpg,Personal Care & Beauty,Skin Care,1.0,gemini
+val_106_det33_crop.jpg,Personal Care & Beauty,Skin Care,1.0,gemini
+val_106_det34_crop.jpg,Personal Care & Beauty,Skin Care,1.0,gemini
+val_106_det37_crop.jpg,Personal Care & Beauty,Skin Care,1.0,gemini
+val_106_det32_crop.jpg,Personal Care & Beauty,Skin Care,1.0,gemini
+val_106_det38_crop.jpg,Personal Care & Beauty,Skin Care,1.0,gemini
+val_106_det36_crop.jpg,Personal Care & Beauty,Skin Care,1.0,gemini
+val_106_det39_crop.jpg,Personal Care & Beauty,Skin Care,1.0,gemini
+val_106_det42_crop.jpg,Personal Care & Beauty,Skin Care,1.0,gemini
+val_106_det3_crop.jpg,Personal Care & Beauty,Bath & Body Wash,1.0,gemini
+val_106_det40_crop.jpg,Personal Care & Beauty,Skin Care,1.0,gemini
+val_106_det41_crop.jpg,Hair Care,Shampoo & Conditioner,1.0,gemini
+val_106_det44_crop.jpg,Personal Care & Beauty,Skin Care,1.0,gemini
+val_106_det43_crop.jpg,Other / Unclear,Unclear / Generic Product,1.0,gemini
+val_106_det45_crop.jpg,Personal Care & Beauty,Skin Care,1.0,gemini
+val_106_det46_crop.jpg,Hair Care,Shampoo & Conditioner,1.0,gemini
+val_106_det47_crop.jpg,Hair Care,Shampoo & Conditioner,1.0,gemini
+val_106_det4_crop.jpg,Hair Care,Shampoo & Conditioner,1.0,gemini
+val_106_det50_crop.jpg,Personal Care & Beauty,Skin Care,1.0,gemini
+val_106_det48_crop.jpg,Personal Care & Beauty,Skin Care,1.0,gemini
+val_106_det49_crop.jpg,Personal Care & Beauty,Skin Care,1.0,gemini
+val_106_det52_crop.jpg,Personal Care & Beauty,Skin Care,1.0,gemini
+val_106_det51_crop.jpg,Personal Care & Beauty,Skin Care,1.0,gemini
+val_106_det53_crop.jpg,Personal Care & Beauty,Skin Care,1.0,gemini
+val_106_det55_crop.jpg,Other / Unclear,Unclear / Generic Product,1.0,gemini
+val_106_det54_crop.jpg,Personal Care & Beauty,Skin Care,1.0,gemini
+val_106_det56_crop.jpg,Personal Care & Beauty,Skin Care,1.0,gemini
+val_106_det58_crop.jpg,Personal Care & Beauty,Skin Care,1.0,gemini
+val_106_det59_crop.jpg,Personal Care & Beauty,Skin Care,1.0,gemini
+val_106_det5_crop.jpg,Personal Care & Beauty,Skin Care,1.0,gemini
+val_106_det57_crop.jpg,Other / Unclear,Unclear / Generic Product,1.0,gemini
+val_106_det61_crop.jpg,Personal Care & Beauty,Skin Care,1.0,gemini
+val_106_det60_crop.jpg,Personal Care & Beauty,Skin Care,1.0,gemini
+val_106_det62_crop.jpg,Personal Care & Beauty,Skin Care,1.0,gemini
+val_106_det65_crop.jpg,Other / Unclear,Unclear / Generic Product,1.0,gemini
+val_106_det63_crop.jpg,Personal Care & Beauty,Skin Care,1.0,gemini
+val_106_det67_crop.jpg,Other / Unclear,Unclear / Generic Product,1.0,gemini
+val_106_det66_crop.jpg,Hair Care,Shampoo & Conditioner,1.0,gemini
+val_106_det68_crop.jpg,Other / Unclear,Unclear / Generic Product,1.0,gemini
+val_106_det64_crop.jpg,Personal Care & Beauty,Skin Care,1.0,gemini
+val_106_det6_crop.jpg,Personal Care & Beauty,Bath & Body Wash,1.0,gemini
+val_106_det69_crop.jpg,Personal Care & Beauty,Skin Care,1.0,gemini
+val_106_det74_crop.jpg,Personal Care & Beauty,Bath & Body Wash,1.0,gemini
+val_106_det71_crop.jpg,Personal Care & Beauty,Skin Care,1.0,gemini
+val_106_det72_crop.jpg,Other / Unclear,Unclear / Generic Product,1.0,gemini
+val_106_det70_crop.jpg,Personal Care & Beauty,Skin Care,1.0,gemini
+val_106_det73_crop.jpg,Personal Care & Beauty,Skin Care,1.0,gemini
+val_106_det75_crop.jpg,Personal Care & Beauty,Skin Care,1.0,gemini
+val_106_det76_crop.jpg,Personal Care & Beauty,Skin Care,1.0,gemini
+val_106_det77_crop.jpg,Other / Unclear,Unclear / Generic Product,1.0,gemini
+val_106_det81_crop.jpg,Other / Unclear,Unclear / Generic Product,1.0,gemini
+val_106_det79_crop.jpg,Personal Care & Beauty,Skin Care,1.0,gemini
+val_106_det7_crop.jpg,Personal Care & Beauty,Bath & Body Wash,1.0,gemini
+val_106_det78_crop.jpg,Personal Care & Beauty,Skin Care,1.0,gemini
+val_106_det80_crop.jpg,Personal Care & Beauty,Skin Care,1.0,gemini
+val_106_det82_crop.jpg,Personal Care & Beauty,Skin Care,1.0,gemini
+val_106_det83_crop.jpg,Other / Unclear,Unclear / Generic Product,1.0,gemini
+val_106_det85_crop.jpg,Other / Unclear,Unclear / Generic Product,1.0,gemini
+val_106_det88_crop.jpg,Other / Unclear,Unclear / Generic Product,1.0,gemini
+val_106_det86_crop.jpg,Personal Care & Beauty,Skin Care,1.0,gemini
+val_106_det84_crop.jpg,Personal Care & Beauty,Skin Care,1.0,gemini
+val_106_det87_crop.jpg,Personal Care & Beauty,Skin Care,1.0,gemini
+val_106_det89_crop.jpg,Hair Care,Shampoo & Conditioner,1.0,gemini
+val_106_det8_crop.jpg,Personal Care & Beauty,Skin Care,1.0,gemini
+val_106_det90_crop.jpg,Personal Care & Beauty,Skin Care,1.0,gemini
+val_106_det91_crop.jpg,Personal Care & Beauty,Skin Care,1.0,gemini
+val_106_det92_crop.jpg,Other / Unclear,Unclear / Generic Product,1.0,gemini
+val_106_det95_crop.jpg,Personal Care & Beauty,Skin Care,1.0,gemini
+val_106_det96_crop.jpg,Other / Unclear,Unclear / Generic Product,1.0,gemini
+val_106_det94_crop.jpg,Other / Unclear,Unclear / Generic Product,1.0,gemini
+val_106_det97_crop.jpg,Other / Unclear,Unclear / Generic Product,1.0,gemini
+val_106_det93_crop.jpg,Other / Unclear,Unclear / Generic Product,1.0,gemini
+val_106_det9_crop.jpg,Other / Unclear,Unclear / Generic Product,1.0,gemini
+val_106_det98_crop.jpg,Other / Unclear,Unclear / Generic Product,1.0,gemini
+val_107_det0_crop.jpg,Beverages,Energy & Sports Drinks,1.0,gemini
+val_107_det100_crop.jpg,Beverages,Energy & Sports Drinks,1.0,gemini
+val_106_det99_crop.jpg,Personal Care & Beauty,Skin Care,1.0,gemini
+val_107_det101_crop.jpg,Beverages,Energy & Sports Drinks,1.0,gemini
+val_107_det102_crop.jpg,Beverages,Soft Drinks,1.0,gemini
+val_107_det104_crop.jpg,Other / Unclear,Unclear / Generic Product,1.0,gemini
+val_107_det103_crop.jpg,Beverages,Energy & Sports Drinks,1.0,gemini
+val_107_det105_crop.jpg,Other / Unclear,Unclear / Generic Product,1.0,gemini
+val_107_det106_crop.jpg,Beverages,Energy & Sports Drinks,1.0,gemini
+val_107_det108_crop.jpg,Beverages,Energy & Sports Drinks,1.0,gemini
+val_107_det107_crop.jpg,Beverages,Energy & Sports Drinks,1.0,gemini
+val_107_det111_crop.jpg,Other / Unclear,Unclear / Generic Product,1.0,gemini
+val_107_det109_crop.jpg,Beverages,Energy & Sports Drinks,1.0,gemini
+val_107_det10_crop.jpg,Beverages,Energy & Sports Drinks,1.0,gemini
+val_107_det110_crop.jpg,Beverages,Energy & Sports Drinks,1.0,gemini
+val_107_det112_crop.jpg,Beverages,Energy & Sports Drinks,1.0,gemini
+val_107_det113_crop.jpg,Other / Unclear,Unclear / Generic Product,1.0,gemini
+val_107_det114_crop.jpg,Beverages,Energy & Sports Drinks,1.0,gemini
+val_107_det115_crop.jpg,Other / Unclear,Unclear / Generic Product,1.0,gemini
+val_107_det116_crop.jpg,Other / Unclear,Unclear / Generic Product,1.0,gemini
+val_107_det119_crop.jpg,Beverages,Energy & Sports Drinks,1.0,gemini
+val_107_det118_crop.jpg,Beverages,Soft Drinks,1.0,gemini
+val_107_det117_crop.jpg,Beverages,Soft Drinks,1.0,gemini
+val_107_det11_crop.jpg,Beverages,Energy & Sports Drinks,1.0,gemini
+val_107_det120_crop.jpg,Beverages,Soft Drinks,1.0,gemini
+val_107_det121_crop.jpg,Beverages,Energy & Sports Drinks,1.0,gemini
+val_107_det122_crop.jpg,Beverages,Energy & Sports Drinks,1.0,gemini
+val_107_det123_crop.jpg,Beverages,Energy & Sports Drinks,1.0,gemini
+val_107_det125_crop.jpg,Snacks & Confectionery,Snack Bars,1.0,gemini
+val_107_det127_crop.jpg,Other / Unclear,Unclear / Generic Product,1.0,gemini
+val_107_det126_crop.jpg,Other / Unclear,Unclear / Generic Product,1.0,gemini
+val_107_det129_crop.jpg,Beverages,Energy & Sports Drinks,1.0,gemini
+val_107_det128_crop.jpg,Other / Unclear,Unclear / Generic Product,1.0,gemini
+val_107_det12_crop.jpg,Beverages,Energy & Sports Drinks,1.0,gemini
+val_107_det131_crop.jpg,Other / Unclear,Unclear / Generic Product,1.0,gemini
+val_107_det124_crop.jpg,Beverages,Energy & Sports Drinks,1.0,gemini
+val_107_det133_crop.jpg,Snacks & Confectionery,Snack Bars,1.0,gemini
+val_107_det130_crop.jpg,Other / Unclear,Unclear / Generic Product,1.0,gemini
+val_107_det132_crop.jpg,Other / Unclear,Unclear / Generic Product,1.0,gemini
+val_107_det135_crop.jpg,Snacks & Confectionery,Snack Bars,1.0,gemini
+val_107_det136_crop.jpg,Snacks & Confectionery,Snack Bars,1.0,gemini
+val_107_det137_crop.jpg,Other / Unclear,Unclear / Generic Product,1.0,gemini
+val_107_det140_crop.jpg,Other / Unclear,Unclear / Generic Product,1.0,gemini
+val_107_det134_crop.jpg,Other / Unclear,Unclear / Generic Product,1.0,gemini
+val_107_det138_crop.jpg,Snacks & Confectionery,Snack Bars,1.0,gemini
+val_107_det13_crop.jpg,Beverages,Energy & Sports Drinks,1.0,gemini
+val_107_det139_crop.jpg,Beverages,Energy & Sports Drinks,1.0,gemini
+val_107_det142_crop.jpg,Other / Unclear,Unclear / Generic Product,1.0,gemini
+val_107_det145_crop.jpg,Other / Unclear,Unclear / Generic Product,1.0,gemini
+val_107_det141_crop.jpg,Other / Unclear,Unclear / Generic Product,1.0,gemini
+val_107_det147_crop.jpg,Other / Unclear,Unclear / Generic Product,1.0,gemini
+val_107_det143_crop.jpg,Snacks & Confectionery,Snack Bars,1.0,gemini
+val_107_det144_crop.jpg,Other / Unclear,Unclear / Generic Product,1.0,gemini
+val_107_det148_crop.jpg,Other / Unclear,Unclear / Generic Product,1.0,gemini
+val_107_det146_crop.jpg,Snacks & Confectionery,Snack Bars,1.0,gemini
+val_107_det149_crop.jpg,Other / Unclear,Unclear / Generic Product,1.0,gemini
+val_107_det150_crop.jpg,Beverages,Energy & Sports Drinks,1.0,gemini
+val_107_det14_crop.jpg,Beverages,Energy & Sports Drinks,1.0,gemini
+val_107_det151_crop.jpg,Other / Unclear,Unclear / Generic Product,1.0,gemini
+val_107_det17_crop.jpg,Beverages,Energy & Sports Drinks,1.0,gemini
+val_107_det15_crop.jpg,Beverages,Energy & Sports Drinks,1.0,gemini
+val_107_det16_crop.jpg,Beverages,Energy & Sports Drinks,1.0,gemini
+val_107_det18_crop.jpg,Beverages,Energy & Sports Drinks,1.0,gemini
+val_107_det21_crop.jpg,Beverages,Energy & Sports Drinks,1.0,gemini
+val_107_det19_crop.jpg,Beverages,Energy & Sports Drinks,1.0,gemini
+val_107_det1_crop.jpg,Beverages,Energy & Sports Drinks,1.0,gemini
+val_107_det20_crop.jpg,Beverages,Energy & Sports Drinks,1.0,gemini
+val_107_det25_crop.jpg,Beverages,Energy & Sports Drinks,1.0,gemini
+val_107_det24_crop.jpg,Beverages,Energy & Sports Drinks,1.0,gemini
+val_107_det22_crop.jpg,Beverages,Energy & Sports Drinks,1.0,gemini
+val_107_det23_crop.jpg,Beverages,Energy & Sports Drinks,1.0,gemini
+val_107_det26_crop.jpg,Beverages,Energy & Sports Drinks,1.0,gemini
+val_107_det27_crop.jpg,Beverages,Energy & Sports Drinks,1.0,gemini
+val_107_det30_crop.jpg,Beverages,Energy & Sports Drinks,1.0,gemini
+val_107_det28_crop.jpg,Beverages,Energy & Sports Drinks,1.0,gemini
+val_107_det29_crop.jpg,Beverages,Energy & Sports Drinks,1.0,gemini
+val_107_det2_crop.jpg,Beverages,Energy & Sports Drinks,1.0,gemini
+val_107_det31_crop.jpg,Beverages,Energy & Sports Drinks,1.0,gemini
+val_107_det32_crop.jpg,Beverages,Energy & Sports Drinks,1.0,gemini
+val_107_det33_crop.jpg,Beverages,Energy & Sports Drinks,1.0,gemini
+val_107_det34_crop.jpg,Beverages,Energy & Sports Drinks,1.0,gemini
+val_107_det36_crop.jpg,Beverages,Energy & Sports Drinks,1.0,gemini
+val_107_det37_crop.jpg,Beverages,Energy & Sports Drinks,1.0,gemini
+val_107_det35_crop.jpg,Beverages,Energy & Sports Drinks,1.0,gemini
+val_107_det38_crop.jpg,Beverages,Energy & Sports Drinks,1.0,gemini
+val_107_det39_crop.jpg,Beverages,Energy & Sports Drinks,1.0,gemini
+val_107_det3_crop.jpg,Beverages,Energy & Sports Drinks,1.0,gemini
+val_107_det40_crop.jpg,Beverages,Energy & Sports Drinks,1.0,gemini
+val_107_det42_crop.jpg,Beverages,Energy & Sports Drinks,1.0,gemini
+val_107_det43_crop.jpg,Beverages,Energy & Sports Drinks,1.0,gemini
+val_107_det45_crop.jpg,Beverages,Soft Drinks,1.0,gemini
+val_107_det47_crop.jpg,Snacks & Confectionery,Snack Bars,1.0,gemini
+val_107_det44_crop.jpg,Beverages,Energy & Sports Drinks,1.0,gemini
+val_107_det46_crop.jpg,Beverages,Energy & Sports Drinks,1.0,gemini
+val_107_det41_crop.jpg,Beverages,Soft Drinks,1.0,gemini
+val_107_det48_crop.jpg,Beverages,Energy & Sports Drinks,1.0,gemini
+val_107_det49_crop.jpg,Beverages,Energy & Sports Drinks,1.0,gemini
+val_107_det4_crop.jpg,Beverages,Energy & Sports Drinks,1.0,gemini
+val_107_det50_crop.jpg,Beverages,Energy & Sports Drinks,1.0,gemini
+val_107_det52_crop.jpg,Beverages,Energy & Sports Drinks,1.0,gemini
+val_107_det53_crop.jpg,Other / Unclear,Unclear / Generic Product,1.0,gemini
+val_107_det51_crop.jpg,Beverages,Energy & Sports Drinks,1.0,gemini
+val_107_det54_crop.jpg,Beverages,Energy & Sports Drinks,1.0,gemini
+val_107_det55_crop.jpg,Beverages,Energy & Sports Drinks,1.0,gemini
+val_107_det57_crop.jpg,Beverages,Energy & Sports Drinks,1.0,gemini
+val_107_det56_crop.jpg,Beverages,Beverages Other,1.0,gemini
+val_107_det59_crop.jpg,Snacks & Confectionery,Snack Bars,1.0,gemini
+val_107_det58_crop.jpg,Beverages,Energy & Sports Drinks,1.0,gemini
+val_107_det5_crop.jpg,Beverages,Energy & Sports Drinks,1.0,gemini
+val_107_det60_crop.jpg,Beverages,Energy & Sports Drinks,1.0,gemini
+val_107_det63_crop.jpg,Beverages,Energy & Sports Drinks,1.0,gemini
+val_107_det62_crop.jpg,Other / Unclear,Unclear / Generic Product,1.0,gemini
+val_107_det65_crop.jpg,Beverages,Energy & Sports Drinks,1.0,gemini
+val_107_det64_crop.jpg,Beverages,Energy & Sports Drinks,1.0,gemini
+val_107_det61_crop.jpg,Beverages,Energy & Sports Drinks,1.0,gemini
+val_107_det66_crop.jpg,Beverages,Energy & Sports Drinks,1.0,gemini
+val_107_det68_crop.jpg,Beverages,Energy & Sports Drinks,1.0,gemini
+val_107_det67_crop.jpg,Beverages,Beverages Other,1.0,gemini
+val_107_det69_crop.jpg,Other / Unclear,Unclear / Generic Product,1.0,gemini
+val_107_det6_crop.jpg,Beverages,Energy & Sports Drinks,1.0,gemini
+val_107_det70_crop.jpg,Beverages,Energy & Sports Drinks,1.0,gemini
+val_107_det71_crop.jpg,Beverages,Juice,1.0,gemini
+val_107_det73_crop.jpg,Beverages,Energy & Sports Drinks,1.0,gemini
+val_107_det72_crop.jpg,Beverages,Energy & Sports Drinks,1.0,gemini
+val_107_det74_crop.jpg,Other / Unclear,Unclear / Generic Product,1.0,gemini
+val_107_det76_crop.jpg,Beverages,Energy & Sports Drinks,1.0,gemini
+val_107_det77_crop.jpg,Beverages,Energy & Sports Drinks,1.0,gemini
+val_107_det78_crop.jpg,Beverages,Energy & Sports Drinks,1.0,gemini
+val_107_det75_crop.jpg,Beverages,Energy & Sports Drinks,1.0,gemini
+val_107_det7_crop.jpg,Beverages,Energy & Sports Drinks,1.0,gemini
+val_107_det79_crop.jpg,Beverages,Energy & Sports Drinks,1.0,gemini
+val_107_det80_crop.jpg,Beverages,Juice,1.0,gemini
+val_107_det81_crop.jpg,Beverages,Energy & Sports Drinks,1.0,gemini
+val_107_det83_crop.jpg,Beverages,Soft Drinks,1.0,gemini
+val_107_det86_crop.jpg,Beverages,Soft Drinks,1.0,gemini
+val_107_det82_crop.jpg,Beverages,Energy & Sports Drinks,1.0,gemini
+val_107_det87_crop.jpg,Beverages,Energy & Sports Drinks,1.0,gemini
+val_107_det85_crop.jpg,Beverages,Energy & Sports Drinks,1.0,gemini
+val_107_det84_crop.jpg,Beverages,Energy & Sports Drinks,1.0,gemini
+val_107_det88_crop.jpg,Beverages,Soft Drinks,1.0,gemini
+val_107_det8_crop.jpg,Beverages,Energy & Sports Drinks,1.0,gemini
+val_107_det89_crop.jpg,Beverages,Soft Drinks,1.0,gemini
+val_107_det90_crop.jpg,Beverages,Soft Drinks,1.0,gemini
+val_107_det95_crop.jpg,Other / Unclear,Unclear / Generic Product,1.0,gemini
+val_107_det93_crop.jpg,Beverages,Soft Drinks,1.0,gemini
+val_107_det91_crop.jpg,Beverages,Energy & Sports Drinks,1.0,gemini
+val_107_det94_crop.jpg,Beverages,Soft Drinks,1.0,gemini
+val_107_det92_crop.jpg,Beverages,Energy & Sports Drinks,1.0,gemini
+val_107_det97_crop.jpg,Other / Unclear,Unclear / Generic Product,1.0,gemini
+val_107_det96_crop.jpg,Beverages,Soft Drinks,1.0,gemini
+val_108_det0_crop.jpg,Beverages,Soft Drinks,1.0,gemini
+val_107_det99_crop.jpg,Other / Unclear,Unclear / Generic Product,1.0,gemini
+val_107_det98_crop.jpg,Grocery & Pantry,Sauces & Condiments,1.0,gemini
+val_107_det9_crop.jpg,Beverages,Energy & Sports Drinks,1.0,gemini
+val_108_det100_crop.jpg,Beverages,Soft Drinks,1.0,gemini
+val_108_det101_crop.jpg,Other / Unclear,Unclear / Generic Product,1.0,gemini
+val_108_det102_crop.jpg,Beverages,Soft Drinks,1.0,gemini
+val_108_det103_crop.jpg,Beverages,Soft Drinks,1.0,gemini
+val_108_det104_crop.jpg,Other / Unclear,Unclear / Generic Product,1.0,gemini
+val_108_det105_crop.jpg,Beverages,Soft Drinks,1.0,gemini
+val_108_det109_crop.jpg,Other / Unclear,Unclear / Generic Product,1.0,gemini
+val_108_det107_crop.jpg,Beverages,Soft Drinks,1.0,gemini
+val_108_det108_crop.jpg,Beverages,Soft Drinks,1.0,gemini
+val_108_det106_crop.jpg,Beverages,Soft Drinks,1.0,gemini
+val_108_det111_crop.jpg,Other / Unclear,Unclear / Generic Product,1.0,gemini
+val_108_det113_crop.jpg,Other / Unclear,Unclear / Generic Product,1.0,gemini
+val_108_det110_crop.jpg,Other / Unclear,Unclear / Generic Product,1.0,gemini
+val_108_det10_crop.jpg,Beverages,Soft Drinks,1.0,gemini
+val_108_det114_crop.jpg,Beverages,Soft Drinks,1.0,gemini
+val_108_det112_crop.jpg,Beverages,Soft Drinks,1.0,gemini
+val_108_det115_crop.jpg,Beverages,Soft Drinks,1.0,gemini
+val_108_det116_crop.jpg,Other / Unclear,Unclear / Generic Product,1.0,gemini
+val_108_det117_crop.jpg,Other / Unclear,Unclear / Generic Product,1.0,gemini
+val_108_det118_crop.jpg,Beverages,Soft Drinks,1.0,gemini
+val_108_det119_crop.jpg,Beverages,Soft Drinks,1.0,gemini
+val_108_det11_crop.jpg,Beverages,Soft Drinks,1.0,gemini
+val_108_det120_crop.jpg,Other / Unclear,Unclear / Generic Product,1.0,gemini
+val_108_det121_crop.jpg,Beverages,Soft Drinks,1.0,gemini
+val_108_det122_crop.jpg,Beverages,Soft Drinks,1.0,gemini
+val_108_det123_crop.jpg,Other / Unclear,Unclear / Generic Product,1.0,gemini
+val_108_det125_crop.jpg,Other / Unclear,Unclear / Generic Product,1.0,gemini
+val_108_det124_crop.jpg,Beverages,Soft Drinks,1.0,gemini
+val_108_det128_crop.jpg,Other / Unclear,Unclear / Generic Product,1.0,gemini
+val_108_det126_crop.jpg,Beverages,Soft Drinks,1.0,gemini
+val_108_det12_crop.jpg,Other / Unclear,Unclear / Generic Product,1.0,gemini
+val_108_det129_crop.jpg,Other / Unclear,Unclear / Generic Product,1.0,gemini
+val_108_det127_crop.jpg,Beverages,Soft Drinks,1.0,gemini
+val_108_det130_crop.jpg,Other / Unclear,Unclear / Generic Product,1.0,gemini
+val_108_det131_crop.jpg,Other / Unclear,Unclear / Generic Product,1.0,gemini
+val_108_det132_crop.jpg,Beverages,Soft Drinks,1.0,gemini
+val_108_det134_crop.jpg,Beverages,Soft Drinks,1.0,gemini
+val_108_det133_crop.jpg,Other / Unclear,Unclear / Generic Product,1.0,gemini
+val_108_det135_crop.jpg,Other / Unclear,Unclear / Generic Product,1.0,gemini
+val_108_det137_crop.jpg,Other / Unclear,Unclear / Generic Product,1.0,gemini
+val_108_det136_crop.jpg,Beverages,Soft Drinks,1.0,gemini
+val_108_det139_crop.jpg,Other / Unclear,Unclear / Generic Product,1.0,gemini
+val_108_det138_crop.jpg,Other / Unclear,Unclear / Generic Product,1.0,gemini
+val_108_det140_crop.jpg,Other / Unclear,Unclear / Generic Product,1.0,gemini
+val_108_det142_crop.jpg,Other / Unclear,Unclear / Generic Product,1.0,gemini
+val_108_det13_crop.jpg,Beverages,Soft Drinks,1.0,gemini
+val_108_det144_crop.jpg,Other / Unclear,Unclear / Generic Product,1.0,gemini
+val_108_det141_crop.jpg,Beverages,Soft Drinks,1.0,gemini
+val_108_det145_crop.jpg,Other / Unclear,Unclear / Generic Product,1.0,gemini
+val_108_det143_crop.jpg,Other / Unclear,Unclear / Generic Product,1.0,gemini
+val_108_det148_crop.jpg,Other / Unclear,Unclear / Generic Product,1.0,gemini
+val_108_det146_crop.jpg,Beverages,Soft Drinks,1.0,gemini
+val_108_det149_crop.jpg,Other / Unclear,Unclear / Generic Product,1.0,gemini
+val_108_det147_crop.jpg,Other / Unclear,Unclear / Generic Product,1.0,gemini
+val_108_det152_crop.jpg,Other / Unclear,Unclear / Generic Product,1.0,gemini
+val_108_det14_crop.jpg,Other / Unclear,Unclear / Generic Product,1.0,gemini
+val_108_det151_crop.jpg,Other / Unclear,Unclear / Generic Product,1.0,gemini
+val_108_det153_crop.jpg,Other / Unclear,Unclear / Generic Product,1.0,gemini
+val_108_det150_crop.jpg,Other / Unclear,Unclear / Generic Product,1.0,gemini
+val_108_det154_crop.jpg,Other / Unclear,Unclear / Generic Product,1.0,gemini
+val_108_det155_crop.jpg,Other / Unclear,Unclear / Generic Product,1.0,gemini
+val_108_det156_crop.jpg,Other / Unclear,Unclear / Generic Product,1.0,gemini
+val_108_det159_crop.jpg,Other / Unclear,Unclear / Generic Product,1.0,gemini
+val_108_det158_crop.jpg,Beverages,Soft Drinks,1.0,gemini
+val_108_det157_crop.jpg,Other / Unclear,Unclear / Generic Product,1.0,gemini
+val_108_det161_crop.jpg,Other / Unclear,Unclear / Generic Product,1.0,gemini
+val_108_det160_crop.jpg,Beverages,Soft Drinks,1.0,gemini
+val_108_det15_crop.jpg,Beverages,Soft Drinks,1.0,gemini
+val_108_det162_crop.jpg,Beverages,Soft Drinks,1.0,gemini
+val_108_det164_crop.jpg,Other / Unclear,Unclear / Generic Product,1.0,gemini
+val_108_det163_crop.jpg,Beverages,Soft Drinks,1.0,gemini
+val_108_det165_crop.jpg,Beverages,Soft Drinks,1.0,gemini
+val_108_det166_crop.jpg,Other / Unclear,Unclear / Generic Product,1.0,gemini
+val_108_det167_crop.jpg,Other / Unclear,Unclear / Generic Product,1.0,gemini
+val_108_det171_crop.jpg,Other / Unclear,Unclear / Generic Product,1.0,gemini
+val_108_det169_crop.jpg,Other / Unclear,Unclear / Generic Product,1.0,gemini
+val_108_det170_crop.jpg,Beverages,Soft Drinks,1.0,gemini
+val_108_det172_crop.jpg,Other / Unclear,Unclear / Generic Product,1.0,gemini
+val_108_det16_crop.jpg,Other / Unclear,Unclear / Generic Product,1.0,gemini
+val_108_det173_crop.jpg,Other / Unclear,Unclear / Generic Product,1.0,gemini
+val_108_det175_crop.jpg,Other / Unclear,Unclear / Generic Product,1.0,gemini
+val_108_det178_crop.jpg,Other / Unclear,Unclear / Generic Product,1.0,gemini
+val_108_det168_crop.jpg,Other / Unclear,Unclear / Generic Product,1.0,gemini
+val_108_det174_crop.jpg,Beverages,Soft Drinks,1.0,gemini
+val_108_det177_crop.jpg,Beverages,Soft Drinks,1.0,gemini
+val_108_det179_crop.jpg,Other / Unclear,Unclear / Generic Product,1.0,gemini
+val_108_det176_crop.jpg,Other / Unclear,Unclear / Generic Product,1.0,gemini
+val_108_det17_crop.jpg,Other / Unclear,Unclear / Generic Product,1.0,gemini
+val_108_det181_crop.jpg,Other / Unclear,Unclear / Generic Product,1.0,gemini
+val_108_det180_crop.jpg,Other / Unclear,Unclear / Generic Product,1.0,gemini
+val_108_det182_crop.jpg,Other / Unclear,Unclear / Generic Product,1.0,gemini
+val_108_det183_crop.jpg,Beverages,Soft Drinks,1.0,gemini
+val_108_det184_crop.jpg,Beverages,Soft Drinks,1.0,gemini
+val_108_det186_crop.jpg,Other / Unclear,Unclear / Generic Product,1.0,gemini
+val_108_det185_crop.jpg,Other / Unclear,Unclear / Generic Product,1.0,gemini
+val_108_det187_crop.jpg,Other / Unclear,Unclear / Generic Product,1.0,gemini
+val_108_det188_crop.jpg,Other / Unclear,Unclear / Generic Product,1.0,gemini
+val_108_det18_crop.jpg,Beverages,Soft Drinks,1.0,gemini
+val_108_det189_crop.jpg,Other / Unclear,Unclear / Generic Product,1.0,gemini
+val_108_det190_crop.jpg,Other / Unclear,Unclear / Generic Product,1.0,gemini
+val_108_det192_crop.jpg,Other / Unclear,Unclear / Generic Product,1.0,gemini
+val_108_det191_crop.jpg,Other / Unclear,Unclear / Generic Product,1.0,gemini
+val_108_det194_crop.jpg,Other / Unclear,Unclear / Generic Product,1.0,gemini
+val_108_det195_crop.jpg,Other / Unclear,Unclear / Generic Product,1.0,gemini
+val_108_det193_crop.jpg,Other / Unclear,Unclear / Generic Product,1.0,gemini
+val_108_det197_crop.jpg,Other / Unclear,Unclear / Generic Product,1.0,gemini
+val_108_det196_crop.jpg,Other / Unclear,Unclear / Generic Product,1.0,gemini
+val_108_det199_crop.jpg,Other / Unclear,Unclear / Generic Product,1.0,gemini
+val_108_det200_crop.jpg,Other / Unclear,Unclear / Generic Product,1.0,gemini
+val_108_det19_crop.jpg,Beverages,Soft Drinks,1.0,gemini
+val_108_det1_crop.jpg,Beverages,Soft Drinks,1.0,gemini
+val_108_det198_crop.jpg,Other / Unclear,Unclear / Generic Product,1.0,gemini
+val_108_det201_crop.jpg,Other / Unclear,Unclear / Generic Product,1.0,gemini
+val_108_det203_crop.jpg,Other / Unclear,Unclear / Generic Product,1.0,gemini
+val_108_det202_crop.jpg,Other / Unclear,Unclear / Generic Product,1.0,gemini
+val_108_det206_crop.jpg,Other / Unclear,Unclear / Generic Product,1.0,gemini
+val_108_det204_crop.jpg,Other / Unclear,Unclear / Generic Product,1.0,gemini
+val_108_det205_crop.jpg,Other / Unclear,Unclear / Generic Product,1.0,gemini
+val_108_det207_crop.jpg,Other / Unclear,Unclear / Generic Product,1.0,gemini
+val_108_det209_crop.jpg,Other / Unclear,Unclear / Generic Product,1.0,gemini
+val_108_det208_crop.jpg,Other / Unclear,Unclear / Generic Product,1.0,gemini
+val_108_det22_crop.jpg,Other / Unclear,Unclear / Generic Product,1.0,gemini
+val_108_det210_crop.jpg,Other / Unclear,Unclear / Generic Product,1.0,gemini
+val_108_det21_crop.jpg,Beverages,Soft Drinks,1.0,gemini
+val_108_det20_crop.jpg,Other / Unclear,Unclear / Generic Product,1.0,gemini
+val_108_det24_crop.jpg,Beverages,Soft Drinks,1.0,gemini
+val_108_det25_crop.jpg,Beverages,Soft Drinks,1.0,gemini
+val_108_det23_crop.jpg,Beverages,Soft Drinks,1.0,gemini
+val_108_det26_crop.jpg,Beverages,Soft Drinks,1.0,gemini
+val_108_det27_crop.jpg,Beverages,Soft Drinks,1.0,gemini
+val_108_det29_crop.jpg,Beverages,Soft Drinks,1.0,gemini
+val_108_det2_crop.jpg,Beverages,Soft Drinks,1.0,gemini
+val_108_det28_crop.jpg,Beverages,Soft Drinks,1.0,gemini
+val_108_det31_crop.jpg,Beverages,Soft Drinks,1.0,gemini
+val_108_det30_crop.jpg,Beverages,Soft Drinks,1.0,gemini
+val_108_det32_crop.jpg,Beverages,Soft Drinks,1.0,gemini
+val_108_det34_crop.jpg,Beverages,Soft Drinks,1.0,gemini
+val_108_det33_crop.jpg,Beverages,Soft Drinks,1.0,gemini
+val_108_det36_crop.jpg,Other / Unclear,Unclear / Generic Product,1.0,gemini
+val_108_det35_crop.jpg,Beverages,Soft Drinks,1.0,gemini
+val_108_det37_crop.jpg,Other / Unclear,Unclear / Generic Product,1.0,gemini
+val_108_det38_crop.jpg,Beverages,Soft Drinks,1.0,gemini
+val_108_det40_crop.jpg,Beverages,Soft Drinks,1.0,gemini
+val_108_det39_crop.jpg,Beverages,Soft Drinks,1.0,gemini
+val_108_det41_crop.jpg,Beverages,Soft Drinks,1.0,gemini
+val_108_det3_crop.jpg,Beverages,Soft Drinks,1.0,gemini
+val_108_det43_crop.jpg,Beverages,Soft Drinks,1.0,gemini
+val_108_det42_crop.jpg,Beverages,Soft Drinks,1.0,gemini
+val_108_det44_crop.jpg,Beverages,Soft Drinks,1.0,gemini
+val_108_det45_crop.jpg,Beverages,Soft Drinks,1.0,gemini
+val_108_det47_crop.jpg,Beverages,Soft Drinks,1.0,gemini
+val_108_det46_crop.jpg,Beverages,Soft Drinks,1.0,gemini
+val_108_det51_crop.jpg,Other / Unclear,Unclear / Generic Product,1.0,gemini
+val_108_det49_crop.jpg,Beverages,Soft Drinks,1.0,gemini
+val_108_det48_crop.jpg,Beverages,Soft Drinks,1.0,gemini
+val_108_det4_crop.jpg,Beverages,Soft Drinks,1.0,gemini
+val_108_det50_crop.jpg,Other / Unclear,Unclear / Generic Product,1.0,gemini
+val_108_det54_crop.jpg,Beverages,Soft Drinks,1.0,gemini
+val_108_det56_crop.jpg,Beverages,Soft Drinks,1.0,gemini
+val_108_det53_crop.jpg,Beverages,Soft Drinks,1.0,gemini
+val_108_det55_crop.jpg,Other / Unclear,Unclear / Generic Product,1.0,gemini
+val_108_det52_crop.jpg,Other / Unclear,Unclear / Generic Product,1.0,gemini
+val_108_det58_crop.jpg,Other / Unclear,Unclear / Generic Product,1.0,gemini
+val_108_det57_crop.jpg,Other / Unclear,Unclear / Generic Product,1.0,gemini
+val_108_det59_crop.jpg,Other / Unclear,Unclear / Generic Product,1.0,gemini
+val_108_det5_crop.jpg,Beverages,Soft Drinks,1.0,gemini
+val_108_det61_crop.jpg,Beverages,Soft Drinks,1.0,gemini
+val_108_det63_crop.jpg,Beverages,Soft Drinks,1.0,gemini
+val_108_det62_crop.jpg,Other / Unclear,Unclear / Generic Product,1.0,gemini
+val_108_det60_crop.jpg,Beverages,Soft Drinks,1.0,gemini
+val_108_det64_crop.jpg,Beverages,Soft Drinks,1.0,gemini
+val_108_det65_crop.jpg,Beverages,Soft Drinks,1.0,gemini
+val_108_det66_crop.jpg,Other / Unclear,Unclear / Generic Product,1.0,gemini
+val_108_det69_crop.jpg,Beverages,Soft Drinks,1.0,gemini
+val_108_det68_crop.jpg,Beverages,Soft Drinks,1.0,gemini
+val_108_det72_crop.jpg,Other / Unclear,Unclear / Generic Product,1.0,gemini
+val_108_det67_crop.jpg,Beverages,Soft Drinks,1.0,gemini
+val_108_det70_crop.jpg,Beverages,Soft Drinks,1.0,gemini
+val_108_det6_crop.jpg,Beverages,Soft Drinks,1.0,gemini
+val_108_det71_crop.jpg,Beverages,Soft Drinks,1.0,gemini
+val_108_det73_crop.jpg,Beverages,Soft Drinks,1.0,gemini
+val_108_det74_crop.jpg,Beverages,Soft Drinks,1.0,gemini
+val_108_det75_crop.jpg,Beverages,Soft Drinks,1.0,gemini
+val_108_det79_crop.jpg,Other / Unclear,Unclear / Generic Product,1.0,gemini
+val_108_det78_crop.jpg,Beverages,Soft Drinks,1.0,gemini
+val_108_det76_crop.jpg,Beverages,Soft Drinks,1.0,gemini
+val_108_det77_crop.jpg,Beverages,Soft Drinks,1.0,gemini
+val_108_det80_crop.jpg,Beverages,Soft Drinks,1.0,gemini
+val_108_det7_crop.jpg,Beverages,Soft Drinks,1.0,gemini
+val_108_det83_crop.jpg,Other / Unclear,Unclear / Generic Product,1.0,gemini
+val_108_det84_crop.jpg,Other / Unclear,Unclear / Generic Product,1.0,gemini
+val_108_det82_crop.jpg,Other / Unclear,Unclear / Generic Product,1.0,gemini
+val_108_det81_crop.jpg,Beverages,Soft Drinks,1.0,gemini
+val_108_det88_crop.jpg,Other / Unclear,Unclear / Generic Product,1.0,gemini
+val_108_det85_crop.jpg,Beverages,Soft Drinks,1.0,gemini
+val_108_det87_crop.jpg,Beverages,Soft Drinks,1.0,gemini
+val_108_det86_crop.jpg,Other / Unclear,Unclear / Generic Product,1.0,gemini
+val_108_det91_crop.jpg,Other / Unclear,Unclear / Generic Product,1.0,gemini
+val_108_det90_crop.jpg,Other / Unclear,Unclear / Generic Product,1.0,gemini
+val_108_det89_crop.jpg,Other / Unclear,Unclear / Generic Product,1.0,gemini
+val_108_det8_crop.jpg,Beverages,Soft Drinks,1.0,gemini
+val_108_det92_crop.jpg,Beverages,Soft Drinks,1.0,gemini
+val_108_det93_crop.jpg,Other / Unclear,Unclear / Generic Product,1.0,gemini
+val_108_det96_crop.jpg,Other / Unclear,Unclear / Generic Product,1.0,gemini
+val_108_det97_crop.jpg,Other / Unclear,Unclear / Generic Product,1.0,gemini
+val_108_det94_crop.jpg,Beverages,Soft Drinks,1.0,gemini
+val_108_det95_crop.jpg,Beverages,Soft Drinks,1.0,gemini
+val_108_det98_crop.jpg,Other / Unclear,Unclear / Generic Product,1.0,gemini
+val_108_det99_crop.jpg,Beverages,Soft Drinks,1.0,gemini
+val_108_det9_crop.jpg,Beverages,Soft Drinks,1.0,gemini
+val_109_det100_crop.jpg,Household Cleaning & Laundry,Household Cleaners,1.0,gemini
+val_109_det0_crop.jpg,Household Cleaning & Laundry,Household Cleaners,1.0,gemini
+val_109_det102_crop.jpg,Household Cleaning & Laundry,Air Fresheners,1.0,gemini
+val_109_det101_crop.jpg,Household Cleaning & Laundry,Household Cleaners,1.0,gemini
+val_109_det103_crop.jpg,Other / Unclear,Unclear / Generic Product,1.0,gemini
+val_109_det104_crop.jpg,Other / Unclear,Other / Unmapped,1.0,gemini
+val_109_det108_crop.jpg,Other / Unclear,Unclear / Generic Product,1.0,gemini
+val_109_det107_crop.jpg,Other / Unclear,Unclear / Generic Product,1.0,gemini
+val_109_det105_crop.jpg,Other / Unclear,Unclear / Generic Product,1.0,gemini
+val_109_det109_crop.jpg,Other / Unclear,Unclear / Generic Product,1.0,gemini
+val_109_det106_crop.jpg,Household Cleaning & Laundry,Household Cleaners,1.0,gemini
+val_109_det10_crop.jpg,Household Cleaning & Laundry,Household Cleaners,1.0,gemini
+val_109_det110_crop.jpg,Grocery & Pantry,Spreads,1.0,gemini
+val_109_det111_crop.jpg,Other / Unclear,Unclear / Generic Product,1.0,gemini
+val_109_det113_crop.jpg,Household Cleaning & Laundry,Household Cleaners,1.0,gemini
+val_109_det112_crop.jpg,Household Cleaning & Laundry,Household Cleaners,1.0,gemini
+val_109_det114_crop.jpg,Other / Unclear,Unclear / Generic Product,1.0,gemini
+val_109_det117_crop.jpg,Other / Unclear,Unclear / Generic Product,1.0,gemini
+val_109_det115_crop.jpg,Household Cleaning & Laundry,Household Cleaners,1.0,gemini
+val_109_det116_crop.jpg,Personal Care & Beauty,Skin Care,1.0,gemini
+val_109_det118_crop.jpg,Other / Unclear,Unclear / Generic Product,1.0,gemini
+val_109_det119_crop.jpg,Other / Unclear,Unclear / Generic Product,1.0,gemini
+val_109_det14_crop.jpg,Household Cleaning & Laundry,Household Cleaners,1.0,gemini
+val_109_det12_crop.jpg,Household Cleaning & Laundry,Household Cleaners,1.0,gemini
+val_109_det13_crop.jpg,Household Cleaning & Laundry,Household Cleaners,1.0,gemini
+val_109_det11_crop.jpg,Household Cleaning & Laundry,Household Cleaners,1.0,gemini
+val_109_det16_crop.jpg,Household Cleaning & Laundry,Household Cleaners,1.0,gemini
+val_109_det15_crop.jpg,Household Cleaning & Laundry,Household Cleaners,1.0,gemini
+val_109_det17_crop.jpg,Household Cleaning & Laundry,Household Cleaners,1.0,gemini
+val_109_det18_crop.jpg,Household Cleaning & Laundry,Household Cleaners,1.0,gemini
+val_109_det21_crop.jpg,Household Cleaning & Laundry,Household Cleaners,1.0,gemini
+val_109_det19_crop.jpg,Household Cleaning & Laundry,Household Cleaners,1.0,gemini
+val_109_det1_crop.jpg,Household Cleaning & Laundry,Household Cleaners,1.0,gemini
+val_109_det20_crop.jpg,Household Cleaning & Laundry,Household Cleaners,1.0,gemini
+val_109_det22_crop.jpg,Household Cleaning & Laundry,Household Cleaners,1.0,gemini
+val_109_det23_crop.jpg,Household Cleaning & Laundry,Household Cleaners,1.0,gemini
+val_109_det24_crop.jpg,Household Cleaning & Laundry,Household Cleaners,1.0,gemini
+val_109_det27_crop.jpg,Household Cleaning & Laundry,Household Cleaners,1.0,gemini
+val_109_det28_crop.jpg,Household Cleaning & Laundry,Household Cleaners,1.0,gemini
+val_109_det25_crop.jpg,Household Cleaning & Laundry,Household Cleaners,1.0,gemini
+val_109_det26_crop.jpg,Household Cleaning & Laundry,Household Cleaners,1.0,gemini
+val_109_det29_crop.jpg,Household Cleaning & Laundry,Household Cleaners,1.0,gemini
+val_109_det2_crop.jpg,Household Cleaning & Laundry,Household Cleaners,1.0,gemini
+val_109_det30_crop.jpg,Household Cleaning & Laundry,Household Cleaners,1.0,gemini
+val_109_det31_crop.jpg,Household Cleaning & Laundry,Household Cleaners,1.0,gemini
+val_109_det33_crop.jpg,Household Cleaning & Laundry,Household Cleaners,1.0,gemini
+val_109_det34_crop.jpg,Household Cleaning & Laundry,Household Cleaners,1.0,gemini
+val_109_det32_crop.jpg,Household Cleaning & Laundry,Household Cleaners,1.0,gemini
+val_109_det35_crop.jpg,Household Cleaning & Laundry,Household Cleaners,1.0,gemini
+val_109_det36_crop.jpg,Household Cleaning & Laundry,Household Cleaners,1.0,gemini
+val_109_det37_crop.jpg,Household Cleaning & Laundry,Household Cleaners,1.0,gemini
+val_109_det38_crop.jpg,Household Cleaning & Laundry,Household Cleaners,1.0,gemini
+val_109_det39_crop.jpg,Household Cleaning & Laundry,Household Cleaners,1.0,gemini
+val_109_det3_crop.jpg,Household Cleaning & Laundry,Household Cleaners,1.0,gemini
+val_109_det40_crop.jpg,Household Cleaning & Laundry,Household Cleaners,1.0,gemini
+val_109_det41_crop.jpg,Household Cleaning & Laundry,Laundry Detergent,1.0,gemini
+val_109_det42_crop.jpg,Household Cleaning & Laundry,Household Cleaners,1.0,gemini
+val_109_det44_crop.jpg,Automotive & Hardware,Automotive & Hardware,1.0,gemini
+val_109_det43_crop.jpg,Household Cleaning & Laundry,Household Cleaners,1.0,gemini
+val_109_det45_crop.jpg,Household Cleaning & Laundry,Household Cleaners,1.0,gemini
+val_109_det48_crop.jpg,Household Cleaning & Laundry,Household Cleaners,1.0,gemini
+val_109_det47_crop.jpg,Household Cleaning & Laundry,Household Cleaners,1.0,gemini
+val_109_det50_crop.jpg,Household Cleaning & Laundry,Household Cleaners,1.0,gemini
+val_109_det46_crop.jpg,Household Cleaning & Laundry,Household Cleaners,1.0,gemini
+val_109_det49_crop.jpg,Household Cleaning & Laundry,Household Cleaners,1.0,gemini
+val_109_det4_crop.jpg,Household Cleaning & Laundry,Household Cleaners,1.0,gemini
+val_109_det51_crop.jpg,Household Cleaning & Laundry,Household Cleaners,1.0,gemini
+val_109_det52_crop.jpg,Household Cleaning & Laundry,Household Cleaners,1.0,gemini
+val_109_det53_crop.jpg,Household Cleaning & Laundry,Household Cleaners,1.0,gemini
+val_109_det55_crop.jpg,Hair Care,Hair Color,1.0,gemini
+val_109_det56_crop.jpg,Household Cleaning & Laundry,Household Cleaners,1.0,gemini
+val_109_det54_crop.jpg,Household Cleaning & Laundry,Household Cleaners,1.0,gemini
+val_109_det57_crop.jpg,Household Cleaning & Laundry,Household Cleaners,1.0,gemini
+val_109_det58_crop.jpg,Household Cleaning & Laundry,Household Cleaners,1.0,gemini
+val_109_det5_crop.jpg,Household Cleaning & Laundry,Household Cleaners,1.0,gemini
+val_109_det60_crop.jpg,Automotive & Hardware,Automotive & Hardware,1.0,gemini
+val_109_det61_crop.jpg,Household Cleaning & Laundry,Household Cleaners,1.0,gemini
+val_109_det59_crop.jpg,Household Cleaning & Laundry,Household Cleaners,1.0,gemini
+val_109_det63_crop.jpg,Household Cleaning & Laundry,Laundry Detergent,1.0,gemini
+val_109_det62_crop.jpg,Other / Unclear,Other / Unmapped,1.0,gemini
+val_109_det64_crop.jpg,Household Cleaning & Laundry,Household Cleaners,1.0,gemini
+val_109_det65_crop.jpg,Other / Unclear,Unclear / Generic Product,1.0,gemini
+val_109_det67_crop.jpg,Household Cleaning & Laundry,Household Cleaners,1.0,gemini
+val_109_det66_crop.jpg,Household Cleaning & Laundry,Household Cleaners,1.0,gemini
+val_109_det69_crop.jpg,Other / Unclear,Unclear / Generic Product,1.0,gemini
+val_109_det68_crop.jpg,Household Cleaning & Laundry,Household Cleaners,1.0,gemini
+val_109_det6_crop.jpg,Household Cleaning & Laundry,Household Cleaners,1.0,gemini
+val_109_det70_crop.jpg,Other / Unclear,Other / Unmapped,1.0,gemini
+val_109_det71_crop.jpg,Household Cleaning & Laundry,Household Cleaners,1.0,gemini
+val_109_det72_crop.jpg,Household Cleaning & Laundry,Household Cleaners,1.0,gemini
+val_109_det73_crop.jpg,Household Cleaning & Laundry,Household Cleaners,1.0,gemini
+val_109_det74_crop.jpg,Household Cleaning & Laundry,Laundry Detergent,1.0,gemini
+val_109_det76_crop.jpg,Household Cleaning & Laundry,Household Cleaners,1.0,gemini
+val_109_det78_crop.jpg,Household Cleaning & Laundry,Laundry Detergent,1.0,gemini
+val_109_det75_crop.jpg,Household Cleaning & Laundry,Household Cleaners,1.0,gemini
+val_109_det77_crop.jpg,Household Cleaning & Laundry,Household Cleaners,1.0,gemini
+val_109_det79_crop.jpg,Household Cleaning & Laundry,Household Cleaners,1.0,gemini
+val_109_det7_crop.jpg,Household Cleaning & Laundry,Household Cleaners,1.0,gemini
+val_109_det82_crop.jpg,Household Cleaning & Laundry,Household Cleaners,1.0,gemini
+val_109_det81_crop.jpg,Household Cleaning & Laundry,Household Cleaners,1.0,gemini
+val_109_det80_crop.jpg,Household Cleaning & Laundry,Household Cleaners,1.0,gemini
+val_109_det85_crop.jpg,Other / Unclear,Other / Unmapped,1.0,gemini
+val_109_det83_crop.jpg,Other / Unclear,Unclear / Generic Product,1.0,gemini
+val_109_det84_crop.jpg,Household Cleaning & Laundry,Household Cleaners,1.0,gemini
+val_109_det87_crop.jpg,Household Cleaning & Laundry,Household Cleaners,1.0,gemini
+val_109_det86_crop.jpg,Household Cleaning & Laundry,Household Cleaners,1.0,gemini
+val_109_det90_crop.jpg,Household Cleaning & Laundry,Household Cleaners,1.0,gemini
+val_109_det88_crop.jpg,Household Cleaning & Laundry,Household Cleaners,1.0,gemini
+val_109_det89_crop.jpg,Household Cleaning & Laundry,Laundry Detergent,1.0,gemini
+val_109_det8_crop.jpg,Household Cleaning & Laundry,Household Cleaners,1.0,gemini
+val_109_det91_crop.jpg,Other / Unclear,Other / Unmapped,1.0,gemini
+val_109_det92_crop.jpg,Other / Unclear,Unclear / Generic Product,1.0,gemini
+val_109_det93_crop.jpg,Household Cleaning & Laundry,Laundry Detergent,1.0,gemini
+val_109_det96_crop.jpg,Household Cleaning & Laundry,Household Cleaners,1.0,gemini
+val_109_det94_crop.jpg,Hair Care,Hair Color,1.0,gemini
+val_109_det95_crop.jpg,Household Cleaning & Laundry,Household Cleaners,1.0,gemini
+val_109_det97_crop.jpg,Household Cleaning & Laundry,Laundry Detergent,1.0,gemini
+val_109_det99_crop.jpg,Other / Unclear,Other / Unmapped,1.0,gemini
+val_109_det98_crop.jpg,Household Cleaning & Laundry,Household Cleaners,1.0,gemini
+val_109_det9_crop.jpg,Household Cleaning & Laundry,Household Cleaners,1.0,gemini
+val_10_det0_crop.jpg,Personal Care & Beauty,Bath & Body Wash,1.0,gemini
+val_10_det101_crop.jpg,Other / Unclear,Unclear / Generic Product,1.0,gemini
+val_10_det100_crop.jpg,Other / Unclear,Unclear / Generic Product,1.0,gemini
+val_10_det102_crop.jpg,Other / Unclear,Unclear / Generic Product,1.0,gemini
+val_10_det103_crop.jpg,Other / Unclear,Unclear / Generic Product,1.0,gemini
+val_10_det104_crop.jpg,Other / Unclear,Unclear / Generic Product,1.0,gemini
+val_10_det106_crop.jpg,Other / Unclear,Unclear / Generic Product,1.0,gemini
+val_10_det105_crop.jpg,Other / Unclear,Unclear / Generic Product,1.0,gemini
+val_10_det107_crop.jpg,Other / Unclear,Unclear / Generic Product,1.0,gemini
+val_10_det10_crop.jpg,Personal Care & Beauty,Deodorant,1.0,gemini
+val_10_det108_crop.jpg,Personal Care & Beauty,Deodorant,1.0,gemini
+val_10_det109_crop.jpg,Other / Unclear,Unclear / Generic Product,1.0,gemini
+val_10_det111_crop.jpg,Other / Unclear,Unclear / Generic Product,1.0,gemini
+val_10_det112_crop.jpg,Other / Unclear,Unclear / Generic Product,1.0,gemini
+val_10_det110_crop.jpg,Other / Unclear,Unclear / Generic Product,1.0,gemini
+val_10_det114_crop.jpg,Other / Unclear,Unclear / Generic Product,1.0,gemini
+val_10_det116_crop.jpg,Other / Unclear,Unclear / Generic Product,1.0,gemini
+val_10_det113_crop.jpg,Other / Unclear,Unclear / Generic Product,1.0,gemini
+val_10_det115_crop.jpg,Personal Care & Beauty,Deodorant,1.0,gemini
+val_10_det117_crop.jpg,Other / Unclear,Unclear / Generic Product,1.0,gemini
+val_10_det118_crop.jpg,Other / Unclear,Unclear / Generic Product,1.0,gemini
+val_10_det119_crop.jpg,Other / Unclear,Unclear / Generic Product,1.0,gemini
+val_10_det11_crop.jpg,Personal Care & Beauty,Deodorant,1.0,gemini
+val_10_det120_crop.jpg,Other / Unclear,Unclear / Generic Product,1.0,gemini
+val_10_det124_crop.jpg,Other / Unclear,Unclear / Generic Product,1.0,gemini
+val_10_det122_crop.jpg,Personal Care & Beauty,Deodorant,1.0,gemini
+val_10_det125_crop.jpg,Other / Unclear,Unclear / Generic Product,1.0,gemini
+val_10_det121_crop.jpg,Other / Unclear,Unclear / Generic Product,1.0,gemini
+val_10_det123_crop.jpg,Oral Care,Toothpaste & Oral Care,1.0,gemini
+val_10_det127_crop.jpg,Other / Unclear,Unclear / Generic Product,1.0,gemini
+val_10_det126_crop.jpg,Other / Unclear,Unclear / Generic Product,1.0,gemini
+val_10_det128_crop.jpg,Personal Care & Beauty,Deodorant,1.0,gemini
+val_10_det130_crop.jpg,Other / Unclear,Unclear / Generic Product,1.0,gemini
+val_10_det129_crop.jpg,Other / Unclear,Unclear / Generic Product,1.0,gemini
+val_10_det131_crop.jpg,Other / Unclear,Unclear / Generic Product,1.0,gemini
+val_10_det12_crop.jpg,Personal Care & Beauty,Deodorant,1.0,gemini
+val_10_det132_crop.jpg,Other / Unclear,Unclear / Generic Product,1.0,gemini
+val_10_det134_crop.jpg,Other / Unclear,Unclear / Generic Product,1.0,gemini
+val_10_det133_crop.jpg,Other / Unclear,Unclear / Generic Product,1.0,gemini
+val_10_det136_crop.jpg,Other / Unclear,Unclear / Generic Product,1.0,gemini
+val_10_det137_crop.jpg,Other / Unclear,Unclear / Generic Product,1.0,gemini
+val_10_det139_crop.jpg,Other / Unclear,Unclear / Generic Product,1.0,gemini
+val_10_det135_crop.jpg,Other / Unclear,Unclear / Generic Product,1.0,gemini
+val_10_det138_crop.jpg,Personal Care & Beauty,Deodorant,1.0,gemini
+val_10_det13_crop.jpg,Personal Care & Beauty,Deodorant,1.0,gemini
+val_10_det141_crop.jpg,Personal Care & Beauty,Perfume & Fragrance,1.0,gemini
+val_10_det143_crop.jpg,Other / Unclear,Unclear / Generic Product,1.0,gemini
+val_10_det140_crop.jpg,Personal Care & Beauty,Personal Care Other,1.0,gemini
+val_10_det142_crop.jpg,Other / Unclear,Unclear / Generic Product,1.0,gemini
+val_10_det144_crop.jpg,Other / Unclear,Unclear / Generic Product,1.0,gemini
+val_10_det146_crop.jpg,Other / Unclear,Unclear / Generic Product,1.0,gemini
+val_10_det145_crop.jpg,Other / Unclear,Unclear / Generic Product,1.0,gemini
+val_10_det147_crop.jpg,Other / Unclear,Unclear / Generic Product,1.0,gemini
+val_10_det148_crop.jpg,Personal Care & Beauty,Perfume & Fragrance,1.0,gemini
+val_10_det149_crop.jpg,Other / Unclear,Unclear / Generic Product,1.0,gemini
+val_10_det14_crop.jpg,Personal Care & Beauty,Deodorant,1.0,gemini
+val_10_det154_crop.jpg,Other / Unclear,Unclear / Generic Product,1.0,gemini
+val_10_det150_crop.jpg,Other / Unclear,Unclear / Generic Product,1.0,gemini
+val_10_det151_crop.jpg,Other / Unclear,Unclear / Generic Product,1.0,gemini
+val_10_det153_crop.jpg,Other / Unclear,Unclear / Generic Product,1.0,gemini
+val_10_det152_crop.jpg,Other / Unclear,Unclear / Generic Product,1.0,gemini
+val_10_det155_crop.jpg,Other / Unclear,Unclear / Generic Product,1.0,gemini
+val_10_det157_crop.jpg,Other / Unclear,Unclear / Generic Product,1.0,gemini
+val_10_det156_crop.jpg,Beverages,Soft Drinks,1.0,gemini
+val_10_det158_crop.jpg,Other / Unclear,Unclear / Generic Product,1.0,gemini
+val_10_det159_crop.jpg,Other / Unclear,Unclear / Generic Product,1.0,gemini
+val_10_det160_crop.jpg,Other / Unclear,Unclear / Generic Product,1.0,gemini
+val_10_det161_crop.jpg,Other / Unclear,Unclear / Generic Product,1.0,gemini
+val_10_det163_crop.jpg,Other / Unclear,Unclear / Generic Product,1.0,gemini
+val_10_det15_crop.jpg,Personal Care & Beauty,Deodorant,1.0,gemini
+val_10_det162_crop.jpg,Other / Unclear,Unclear / Generic Product,1.0,gemini
+val_10_det164_crop.jpg,Other / Unclear,Unclear / Generic Product,1.0,gemini
+val_10_det165_crop.jpg,Beverages,Soft Drinks,1.0,gemini
+val_10_det167_crop.jpg,Other / Unclear,Unclear / Generic Product,1.0,gemini
+val_10_det166_crop.jpg,Personal Care & Beauty,Bath & Body Wash,1.0,gemini
+val_10_det168_crop.jpg,Other / Unclear,Unclear / Generic Product,1.0,gemini
+val_10_det16_crop.jpg,Personal Care & Beauty,Deodorant,1.0,gemini
+val_10_det171_crop.jpg,Other / Unclear,Unclear / Generic Product,1.0,gemini
+val_10_det169_crop.jpg,Personal Care & Beauty,Bath & Body Wash,1.0,gemini
+val_10_det170_crop.jpg,Personal Care & Beauty,Skin Care,1.0,gemini
+val_10_det173_crop.jpg,Other / Unclear,Unclear / Generic Product,1.0,gemini
+val_10_det172_crop.jpg,Other / Unclear,Unclear / Generic Product,1.0,gemini
+val_10_det176_crop.jpg,Other / Unclear,Unclear / Generic Product,1.0,gemini
+val_10_det178_crop.jpg,Other / Unclear,Unclear / Generic Product,1.0,gemini
+val_10_det175_crop.jpg,Other / Unclear,Unclear / Generic Product,1.0,gemini
+val_10_det179_crop.jpg,Other / Unclear,Unclear / Generic Product,1.0,gemini
+val_10_det174_crop.jpg,Other / Unclear,Unclear / Generic Product,1.0,gemini
+val_10_det180_crop.jpg,Other / Unclear,Unclear / Generic Product,1.0,gemini
+val_10_det177_crop.jpg,Other / Unclear,Unclear / Generic Product,1.0,gemini
+val_10_det17_crop.jpg,Personal Care & Beauty,Deodorant,1.0,gemini
+val_10_det182_crop.jpg,Other / Unclear,Unclear / Generic Product,1.0,gemini
+val_10_det184_crop.jpg,Other / Unclear,Unclear / Generic Product,1.0,gemini
+val_10_det185_crop.jpg,Other / Unclear,Unclear / Generic Product,1.0,gemini
+val_10_det183_crop.jpg,Other / Unclear,Unclear / Generic Product,1.0,gemini
+val_10_det181_crop.jpg,Other / Unclear,Unclear / Generic Product,1.0,gemini
+val_10_det18_crop.jpg,Other / Unclear,Unclear / Generic Product,1.0,gemini
+val_10_det19_crop.jpg,Personal Care & Beauty,Deodorant,1.0,gemini
+val_10_det20_crop.jpg,Personal Care & Beauty,Deodorant,1.0,gemini
+val_10_det23_crop.jpg,Personal Care & Beauty,Deodorant,1.0,gemini
+val_10_det1_crop.jpg,Personal Care & Beauty,Deodorant,1.0,gemini
+val_10_det22_crop.jpg,Personal Care & Beauty,Bath & Body Wash,1.0,gemini
+val_10_det24_crop.jpg,Personal Care & Beauty,Deodorant,1.0,gemini
+val_10_det21_crop.jpg,Personal Care & Beauty,Bath & Body Wash,1.0,gemini
+val_10_det25_crop.jpg,Personal Care & Beauty,Bath & Body Wash,1.0,gemini
+val_10_det26_crop.jpg,Personal Care & Beauty,Deodorant,1.0,gemini
+val_10_det2_crop.jpg,Personal Care & Beauty,Bath & Body Wash,1.0,gemini
+val_10_det28_crop.jpg,Personal Care & Beauty,Deodorant,1.0,gemini
+val_10_det30_crop.jpg,Other / Unclear,Unclear / Generic Product,1.0,gemini
+val_10_det27_crop.jpg,Personal Care & Beauty,Deodorant,1.0,gemini
+val_10_det29_crop.jpg,Personal Care & Beauty,Personal Care Other,1.0,gemini
+val_10_det33_crop.jpg,Personal Care & Beauty,Deodorant,1.0,gemini
+val_10_det32_crop.jpg,Other / Unclear,Unclear / Generic Product,1.0,gemini
+val_10_det31_crop.jpg,Personal Care & Beauty,Deodorant,1.0,gemini
+val_10_det36_crop.jpg,Other / Unclear,Unclear / Generic Product,1.0,gemini
+val_10_det35_crop.jpg,Personal Care & Beauty,Deodorant,1.0,gemini
+val_10_det34_crop.jpg,Personal Care & Beauty,Deodorant,1.0,gemini
+val_10_det38_crop.jpg,Other / Unclear,Unclear / Generic Product,1.0,gemini
+val_10_det37_crop.jpg,Personal Care & Beauty,Deodorant,1.0,gemini
+val_10_det40_crop.jpg,Personal Care & Beauty,Deodorant,1.0,gemini
+val_10_det39_crop.jpg,Personal Care & Beauty,Deodorant,1.0,gemini
+val_10_det3_crop.jpg,Personal Care & Beauty,Bath & Body Wash,1.0,gemini
+val_10_det42_crop.jpg,Personal Care & Beauty,Deodorant,1.0,gemini
+val_10_det41_crop.jpg,Personal Care & Beauty,Deodorant,1.0,gemini
+val_10_det44_crop.jpg,Personal Care & Beauty,Deodorant,1.0,gemini
+val_10_det43_crop.jpg,Other / Unclear,Unclear / Generic Product,1.0,gemini
+val_10_det45_crop.jpg,Personal Care & Beauty,Deodorant,1.0,gemini
+val_10_det46_crop.jpg,Other / Unclear,Unclear / Generic Product,1.0,gemini
+val_10_det47_crop.jpg,Personal Care & Beauty,Deodorant,1.0,gemini
+val_10_det48_crop.jpg,Beverages,Soft Drinks,1.0,gemini
+val_10_det4_crop.jpg,Personal Care & Beauty,Bath & Body Wash,1.0,gemini
+val_10_det49_crop.jpg,Personal Care & Beauty,Deodorant,1.0,gemini
+val_10_det51_crop.jpg,Other / Unclear,Unclear / Generic Product,1.0,gemini
+val_10_det50_crop.jpg,Personal Care & Beauty,Deodorant,1.0,gemini
+val_10_det52_crop.jpg,Other / Unclear,Unclear / Generic Product,1.0,gemini
+val_10_det53_crop.jpg,Other / Unclear,Unclear / Generic Product,1.0,gemini
+val_10_det55_crop.jpg,Personal Care & Beauty,Personal Care Other,1.0,gemini
+val_10_det54_crop.jpg,Other / Unclear,Unclear / Generic Product,1.0,gemini
+val_10_det56_crop.jpg,Personal Care & Beauty,Skin Care,1.0,gemini
+val_10_det58_crop.jpg,Other / Unclear,Unclear / Generic Product,1.0,gemini
+val_10_det57_crop.jpg,Other / Unclear,Unclear / Generic Product,1.0,gemini
+val_10_det60_crop.jpg,Other / Unclear,Unclear / Generic Product,1.0,gemini
+val_10_det5_crop.jpg,Other / Unclear,Unclear / Generic Product,1.0,gemini
+val_10_det59_crop.jpg,Snacks & Confectionery,Candy & Chocolate,1.0,gemini
+val_10_det63_crop.jpg,Personal Care & Beauty,Deodorant,1.0,gemini
+val_10_det61_crop.jpg,Personal Care & Beauty,Deodorant,1.0,gemini
+val_10_det64_crop.jpg,Other / Unclear,Unclear / Generic Product,1.0,gemini
+val_10_det62_crop.jpg,Other / Unclear,Unclear / Generic Product,1.0,gemini
+val_10_det67_crop.jpg,Other / Unclear,Unclear / Generic Product,1.0,gemini
+val_10_det65_crop.jpg,Personal Care & Beauty,Deodorant,1.0,gemini
+val_10_det66_crop.jpg,Other / Unclear,Unclear / Generic Product,1.0,gemini
+val_10_det68_crop.jpg,Other / Unclear,Unclear / Generic Product,1.0,gemini
+val_10_det69_crop.jpg,Personal Care & Beauty,Deodorant,1.0,gemini
+val_10_det71_crop.jpg,Other / Unclear,Unclear / Generic Product,1.0,gemini
+val_10_det6_crop.jpg,Personal Care & Beauty,Bath & Body Wash,1.0,gemini
+val_10_det74_crop.jpg,Other / Unclear,Unclear / Generic Product,1.0,gemini
+val_10_det75_crop.jpg,Other / Unclear,Unclear / Generic Product,1.0,gemini
+val_10_det73_crop.jpg,Personal Care & Beauty,Deodorant,1.0,gemini
+val_10_det72_crop.jpg,Other / Unclear,Unclear / Generic Product,1.0,gemini
+val_10_det70_crop.jpg,Other / Unclear,Unclear / Generic Product,1.0,gemini
+val_10_det78_crop.jpg,Other / Unclear,Unclear / Generic Product,1.0,gemini
+val_10_det77_crop.jpg,Other / Unclear,Unclear / Generic Product,1.0,gemini
+val_10_det79_crop.jpg,Other / Unclear,Unclear / Generic Product,1.0,gemini
+val_10_det80_crop.jpg,Other / Unclear,Unclear / Generic Product,1.0,gemini
+val_10_det7_crop.jpg,Hair Care,Shampoo & Conditioner,1.0,gemini
+val_10_det81_crop.jpg,Personal Care & Beauty,Deodorant,1.0,gemini
+val_10_det76_crop.jpg,Personal Care & Beauty,Deodorant,1.0,gemini
+val_10_det82_crop.jpg,Personal Care & Beauty,Deodorant,1.0,gemini
+val_10_det83_crop.jpg,Other / Unclear,Unclear / Generic Product,1.0,gemini
+val_10_det84_crop.jpg,Other / Unclear,Unclear / Generic Product,1.0,gemini
+val_10_det85_crop.jpg,Other / Unclear,Unclear / Generic Product,1.0,gemini
+val_10_det86_crop.jpg,Personal Care & Beauty,Deodorant,1.0,gemini
+val_10_det87_crop.jpg,Other / Unclear,Unclear / Generic Product,1.0,gemini
+val_10_det89_crop.jpg,Personal Care & Beauty,Deodorant,1.0,gemini
+val_10_det88_crop.jpg,Personal Care & Beauty,Deodorant,1.0,gemini
+val_10_det8_crop.jpg,Personal Care & Beauty,Bath & Body Wash,1.0,gemini
+val_10_det92_crop.jpg,Other / Unclear,Unclear / Generic Product,1.0,gemini
+val_10_det90_crop.jpg,Other / Unclear,Unclear / Generic Product,1.0,gemini
+val_10_det91_crop.jpg,Beverages,Soft Drinks,1.0,gemini
+val_10_det94_crop.jpg,Other / Unclear,Unclear / Generic Product,1.0,gemini
+val_10_det93_crop.jpg,Other / Unclear,Unclear / Generic Product,1.0,gemini
+val_10_det95_crop.jpg,Other / Unclear,Unclear / Generic Product,1.0,gemini
+val_10_det96_crop.jpg,Other / Unclear,Unclear / Generic Product,1.0,gemini
+val_10_det97_crop.jpg,Other / Unclear,Unclear / Generic Product,1.0,gemini
+val_10_det99_crop.jpg,Other / Unclear,Unclear / Generic Product,1.0,gemini
+val_110_det100_crop.jpg,Paper & Hygiene,Feminine Hygiene,1.0,gemini
+val_110_det0_crop.jpg,Paper & Hygiene,Feminine Hygiene,1.0,gemini
+val_10_det98_crop.jpg,Other / Unclear,Unclear / Generic Product,1.0,gemini
+val_10_det9_crop.jpg,Personal Care & Beauty,Bath & Body Wash,1.0,gemini
+val_110_det101_crop.jpg,Paper & Hygiene,Feminine Hygiene,1.0,gemini
+val_110_det103_crop.jpg,Paper & Hygiene,Feminine Hygiene,1.0,gemini
+val_110_det102_crop.jpg,Other / Unclear,Unclear / Generic Product,1.0,gemini
+val_110_det104_crop.jpg,Paper & Hygiene,Feminine Hygiene,1.0,gemini
+val_110_det106_crop.jpg,Paper & Hygiene,Feminine Hygiene,1.0,gemini
+val_110_det105_crop.jpg,Other / Unclear,Unclear / Generic Product,1.0,gemini
+val_110_det107_crop.jpg,Other / Unclear,Unclear / Generic Product,1.0,gemini
+val_110_det109_crop.jpg,Health & Wellness,Medicine & First Aid,1.0,gemini
+val_110_det108_crop.jpg,Other / Unclear,Unclear / Generic Product,1.0,gemini
+val_110_det10_crop.jpg,Paper & Hygiene,Feminine Hygiene,1.0,gemini
+val_110_det110_crop.jpg,Paper & Hygiene,Feminine Hygiene,1.0,gemini
+val_110_det112_crop.jpg,Other / Unclear,Unclear / Generic Product,1.0,gemini
+val_110_det113_crop.jpg,Other / Unclear,Unclear / Generic Product,1.0,gemini
+val_110_det111_crop.jpg,Other / Unclear,Unclear / Generic Product,1.0,gemini
+val_110_det115_crop.jpg,Other / Unclear,Unclear / Generic Product,1.0,gemini
+val_110_det114_crop.jpg,Paper & Hygiene,Feminine Hygiene,1.0,gemini
+val_110_det116_crop.jpg,Paper & Hygiene,Feminine Hygiene,1.0,gemini
+val_110_det117_crop.jpg,Other / Unclear,Unclear / Generic Product,1.0,gemini
+val_110_det119_crop.jpg,Other / Unclear,Unclear / Generic Product,1.0,gemini
+val_110_det120_crop.jpg,Other / Unclear,Unclear / Generic Product,1.0,gemini
+val_110_det118_crop.jpg,Other / Unclear,Unclear / Generic Product,1.0,gemini
+val_110_det121_crop.jpg,Other / Unclear,Unclear / Generic Product,1.0,gemini
+val_110_det11_crop.jpg,Paper & Hygiene,Feminine Hygiene,1.0,gemini
+val_110_det122_crop.jpg,Other / Unclear,Unclear / Generic Product,1.0,gemini
+val_110_det124_crop.jpg,Other / Unclear,Unclear / Generic Product,1.0,gemini
+val_110_det123_crop.jpg,Other / Unclear,Unclear / Generic Product,1.0,gemini
+val_110_det127_crop.jpg,Other / Unclear,Unclear / Generic Product,1.0,gemini
+val_110_det125_crop.jpg,Other / Unclear,Unclear / Generic Product,1.0,gemini
+val_110_det126_crop.jpg,Other / Unclear,Unclear / Generic Product,1.0,gemini
+val_110_det130_crop.jpg,Other / Unclear,Unclear / Generic Product,1.0,gemini
+val_110_det128_crop.jpg,Other / Unclear,Unclear / Generic Product,1.0,gemini
+val_110_det129_crop.jpg,Health & Wellness,Medicine & First Aid,1.0,gemini
+val_110_det12_crop.jpg,Paper & Hygiene,Feminine Hygiene,1.0,gemini
+val_110_det132_crop.jpg,Other / Unclear,Unclear / Generic Product,1.0,gemini
+val_110_det131_crop.jpg,Other / Unclear,Unclear / Generic Product,1.0,gemini
+val_110_det133_crop.jpg,Other / Unclear,Unclear / Generic Product,1.0,gemini
+val_110_det134_crop.jpg,Other / Unclear,Unclear / Generic Product,1.0,gemini
+val_110_det136_crop.jpg,Other / Unclear,Unclear / Generic Product,1.0,gemini
+val_110_det135_crop.jpg,Health & Wellness,Medicine & First Aid,1.0,gemini
+val_110_det138_crop.jpg,Other / Unclear,Unclear / Generic Product,1.0,gemini
+val_110_det13_crop.jpg,Paper & Hygiene,Feminine Hygiene,1.0,gemini
+val_110_det137_crop.jpg,Health & Wellness,Vitamins & Supplements,1.0,gemini
+val_110_det14_crop.jpg,Paper & Hygiene,Feminine Hygiene,1.0,gemini
+val_110_det15_crop.jpg,Paper & Hygiene,Feminine Hygiene,1.0,gemini
+val_110_det16_crop.jpg,Paper & Hygiene,Feminine Hygiene,1.0,gemini
+val_110_det18_crop.jpg,Paper & Hygiene,Feminine Hygiene,1.0,gemini
+val_110_det19_crop.jpg,Paper & Hygiene,Feminine Hygiene,1.0,gemini
+val_110_det17_crop.jpg,Paper & Hygiene,Feminine Hygiene,1.0,gemini
+val_110_det1_crop.jpg,Paper & Hygiene,Feminine Hygiene,1.0,gemini
+val_110_det20_crop.jpg,Paper & Hygiene,Feminine Hygiene,1.0,gemini
+val_110_det21_crop.jpg,Paper & Hygiene,Feminine Hygiene,1.0,gemini
+val_110_det23_crop.jpg,Paper & Hygiene,Feminine Hygiene,1.0,gemini
+val_110_det22_crop.jpg,Paper & Hygiene,Feminine Hygiene,1.0,gemini
+val_110_det26_crop.jpg,Paper & Hygiene,Feminine Hygiene,1.0,gemini
+val_110_det24_crop.jpg,Paper & Hygiene,Feminine Hygiene,1.0,gemini
+val_110_det28_crop.jpg,Paper & Hygiene,Feminine Hygiene,1.0,gemini
+val_110_det25_crop.jpg,Other / Unclear,Unclear / Generic Product,1.0,gemini
+val_110_det27_crop.jpg,Paper & Hygiene,Feminine Hygiene,1.0,gemini
+val_110_det30_crop.jpg,Paper & Hygiene,Feminine Hygiene,1.0,gemini
+val_110_det29_crop.jpg,Paper & Hygiene,Feminine Hygiene,1.0,gemini
+val_110_det2_crop.jpg,Paper & Hygiene,Feminine Hygiene,1.0,gemini
+val_110_det31_crop.jpg,Other / Unclear,Unclear / Generic Product,1.0,gemini
+val_110_det32_crop.jpg,Paper & Hygiene,Feminine Hygiene,1.0,gemini
+val_110_det33_crop.jpg,Paper & Hygiene,Feminine Hygiene,1.0,gemini
+val_110_det35_crop.jpg,Paper & Hygiene,Feminine Hygiene,1.0,gemini
+val_110_det34_crop.jpg,Other / Unclear,Unclear / Generic Product,1.0,gemini
+val_110_det36_crop.jpg,Paper & Hygiene,Feminine Hygiene,1.0,gemini
+val_110_det37_crop.jpg,Other / Unclear,Unclear / Generic Product,1.0,gemini
+val_110_det40_crop.jpg,Paper & Hygiene,Feminine Hygiene,1.0,gemini
+val_110_det39_crop.jpg,Paper & Hygiene,Feminine Hygiene,1.0,gemini
+val_110_det3_crop.jpg,Paper & Hygiene,Feminine Hygiene,1.0,gemini
+val_110_det41_crop.jpg,Paper & Hygiene,Feminine Hygiene,1.0,gemini
+val_110_det38_crop.jpg,Paper & Hygiene,Feminine Hygiene,1.0,gemini
+val_110_det43_crop.jpg,Paper & Hygiene,Feminine Hygiene,1.0,gemini
+val_110_det42_crop.jpg,Paper & Hygiene,Feminine Hygiene,1.0,gemini
+val_110_det44_crop.jpg,Paper & Hygiene,Feminine Hygiene,1.0,gemini
+val_110_det46_crop.jpg,Paper & Hygiene,Feminine Hygiene,1.0,gemini
+val_110_det47_crop.jpg,Baby Care,Diapers & Baby Care,1.0,gemini
+val_110_det45_crop.jpg,Paper & Hygiene,Feminine Hygiene,1.0,gemini
+val_110_det49_crop.jpg,Paper & Hygiene,Feminine Hygiene,1.0,gemini
+val_110_det48_crop.jpg,Paper & Hygiene,Feminine Hygiene,1.0,gemini
+val_110_det4_crop.jpg,Paper & Hygiene,Feminine Hygiene,1.0,gemini
+val_110_det50_crop.jpg,Paper & Hygiene,Feminine Hygiene,1.0,gemini
+val_110_det54_crop.jpg,Paper & Hygiene,Feminine Hygiene,1.0,gemini
+val_110_det51_crop.jpg,Paper & Hygiene,Feminine Hygiene,1.0,gemini
+val_110_det53_crop.jpg,Paper & Hygiene,Feminine Hygiene,1.0,gemini
+val_110_det55_crop.jpg,Health & Wellness,Medicine & First Aid,1.0,gemini
+val_110_det52_crop.jpg,Paper & Hygiene,Feminine Hygiene,1.0,gemini
+val_110_det57_crop.jpg,Paper & Hygiene,Feminine Hygiene,1.0,gemini
+val_110_det56_crop.jpg,Paper & Hygiene,Feminine Hygiene,1.0,gemini
+val_110_det5_crop.jpg,Paper & Hygiene,Feminine Hygiene,1.0,gemini
+val_110_det58_crop.jpg,Paper & Hygiene,Feminine Hygiene,1.0,gemini
+val_110_det62_crop.jpg,Paper & Hygiene,Feminine Hygiene,1.0,gemini
+val_110_det59_crop.jpg,Paper & Hygiene,Feminine Hygiene,1.0,gemini
+val_110_det61_crop.jpg,Hair Care,Shampoo & Conditioner,1.0,gemini
+val_110_det60_crop.jpg,Paper & Hygiene,Feminine Hygiene,1.0,gemini
+val_110_det63_crop.jpg,Paper & Hygiene,Feminine Hygiene,1.0,gemini
+val_110_det67_crop.jpg,Paper & Hygiene,Feminine Hygiene,1.0,gemini
+val_110_det68_crop.jpg,Paper & Hygiene,Feminine Hygiene,1.0,gemini
+val_110_det66_crop.jpg,Paper & Hygiene,Feminine Hygiene,1.0,gemini
+val_110_det64_crop.jpg,Paper & Hygiene,Feminine Hygiene,1.0,gemini
+val_110_det70_crop.jpg,Paper & Hygiene,Feminine Hygiene,1.0,gemini
+val_110_det69_crop.jpg,Paper & Hygiene,Feminine Hygiene,1.0,gemini
+val_110_det65_crop.jpg,Paper & Hygiene,Feminine Hygiene,1.0,gemini
+val_110_det6_crop.jpg,Paper & Hygiene,Feminine Hygiene,1.0,gemini
+val_110_det71_crop.jpg,Paper & Hygiene,Feminine Hygiene,1.0,gemini
+val_110_det73_crop.jpg,Paper & Hygiene,Feminine Hygiene,1.0,gemini
+val_110_det72_crop.jpg,Other / Unclear,Unclear / Generic Product,1.0,gemini
+val_110_det75_crop.jpg,Other / Unclear,Unclear / Generic Product,1.0,gemini
+val_110_det74_crop.jpg,Health & Wellness,Medicine & First Aid,1.0,gemini
+val_110_det77_crop.jpg,Paper & Hygiene,Feminine Hygiene,1.0,gemini
+val_110_det76_crop.jpg,Paper & Hygiene,Feminine Hygiene,1.0,gemini
+val_110_det78_crop.jpg,Other / Unclear,Unclear / Generic Product,1.0,gemini
+val_110_det7_crop.jpg,Paper & Hygiene,Feminine Hygiene,1.0,gemini
+val_110_det79_crop.jpg,Paper & Hygiene,Feminine Hygiene,1.0,gemini
+val_110_det81_crop.jpg,Paper & Hygiene,Feminine Hygiene,1.0,gemini
+val_110_det82_crop.jpg,Paper & Hygiene,Feminine Hygiene,1.0,gemini
+val_110_det83_crop.jpg,Paper & Hygiene,Feminine Hygiene,1.0,gemini
+val_110_det85_crop.jpg,Paper & Hygiene,Feminine Hygiene,1.0,gemini
+val_110_det84_crop.jpg,Paper & Hygiene,Feminine Hygiene,1.0,gemini
+val_110_det86_crop.jpg,Paper & Hygiene,Feminine Hygiene,1.0,gemini
+val_110_det87_crop.jpg,Health & Wellness,Pain Relief,1.0,gemini
+val_110_det88_crop.jpg,Paper & Hygiene,Feminine Hygiene,1.0,gemini
+val_110_det91_crop.jpg,Paper & Hygiene,Feminine Hygiene,1.0,gemini
+val_110_det89_crop.jpg,Paper & Hygiene,Feminine Hygiene,1.0,gemini
+val_110_det90_crop.jpg,Paper & Hygiene,Feminine Hygiene,1.0,gemini
+val_110_det92_crop.jpg,Paper & Hygiene,Feminine Hygiene,1.0,gemini
+val_110_det93_crop.jpg,Other / Unclear,Unclear / Generic Product,1.0,gemini
+val_110_det94_crop.jpg,Paper & Hygiene,Feminine Hygiene,1.0,gemini
+val_110_det96_crop.jpg,Other / Unclear,Unclear / Generic Product,1.0,gemini
+val_110_det95_crop.jpg,Paper & Hygiene,Feminine Hygiene,1.0,gemini
+val_110_det97_crop.jpg,Paper & Hygiene,Feminine Hygiene,1.0,gemini
+val_110_det98_crop.jpg,Paper & Hygiene,Feminine Hygiene,1.0,gemini
+val_110_det99_crop.jpg,Other / Unclear,Unclear / Generic Product,1.0,gemini
+val_111_det100_crop.jpg,Other / Unclear,Unclear / Generic Product,1.0,gemini
+val_111_det0_crop.jpg,Oral Care,Toothpaste & Oral Care,1.0,gemini
+val_111_det101_crop.jpg,Other / Unclear,Unclear / Generic Product,1.0,gemini
+val_111_det102_crop.jpg,Other / Unclear,Unclear / Generic Product,1.0,gemini
+val_111_det103_crop.jpg,Oral Care,Toothpaste & Oral Care,1.0,gemini
+val_110_det9_crop.jpg,Paper & Hygiene,Feminine Hygiene,1.0,gemini
+val_111_det104_crop.jpg,Other / Unclear,Unclear / Generic Product,1.0,gemini
+val_111_det105_crop.jpg,Other / Unclear,Unclear / Generic Product,1.0,gemini
+val_111_det106_crop.jpg,Other / Unclear,Unclear / Generic Product,1.0,gemini
+val_111_det107_crop.jpg,Personal Care & Beauty,Foot Care,1.0,gemini
+val_110_det80_crop.jpg,Other / Unclear,Unclear / Generic Product,1.0,gemini
+val_110_det8_crop.jpg,Paper & Hygiene,Feminine Hygiene,1.0,gemini
+val_111_det108_crop.jpg,Oral Care,Toothpaste & Oral Care,1.0,gemini
+val_111_det109_crop.jpg,Oral Care,Toothpaste & Oral Care,1.0,gemini
+val_111_det10_crop.jpg,Other / Unclear,Unclear / Generic Product,1.0,gemini
+val_111_det110_crop.jpg,Other / Unclear,Unclear / Generic Product,1.0,gemini
+val_111_det111_crop.jpg,Other / Unclear,Unclear / Generic Product,1.0,gemini
+val_111_det114_crop.jpg,Oral Care,Toothpaste & Oral Care,1.0,gemini
+val_111_det113_crop.jpg,Oral Care,Toothpaste & Oral Care,1.0,gemini
+val_111_det115_crop.jpg,Other / Unclear,Unclear / Generic Product,1.0,gemini
+val_111_det119_crop.jpg,Other / Unclear,Unclear / Generic Product,1.0,gemini
+val_111_det116_crop.jpg,Other / Unclear,Unclear / Generic Product,1.0,gemini
+val_111_det112_crop.jpg,Other / Unclear,Unclear / Generic Product,1.0,gemini
+val_111_det117_crop.jpg,Other / Unclear,Unclear / Generic Product,1.0,gemini
+val_111_det120_crop.jpg,Other / Unclear,Unclear / Generic Product,1.0,gemini
+val_111_det118_crop.jpg,Other / Unclear,Unclear / Generic Product,1.0,gemini
+val_111_det11_crop.jpg,Oral Care,Toothpaste & Oral Care,1.0,gemini
+val_111_det122_crop.jpg,Oral Care,Toothpaste & Oral Care,1.0,gemini
+val_111_det13_crop.jpg,Other / Unclear,Unclear / Generic Product,1.0,gemini
+val_111_det15_crop.jpg,Other / Unclear,Unclear / Generic Product,1.0,gemini
+val_111_det12_crop.jpg,Oral Care,Toothpaste & Oral Care,1.0,gemini
+val_111_det16_crop.jpg,Other / Unclear,Unclear / Generic Product,1.0,gemini
+val_111_det14_crop.jpg,Oral Care,Toothpaste & Oral Care,1.0,gemini
+val_111_det121_crop.jpg,Oral Care,Toothpaste & Oral Care,1.0,gemini
+val_111_det17_crop.jpg,Other / Unclear,Unclear / Generic Product,1.0,gemini
+val_111_det19_crop.jpg,Other / Unclear,Unclear / Generic Product,1.0,gemini
+val_111_det18_crop.jpg,Oral Care,Toothpaste & Oral Care,1.0,gemini
+val_111_det1_crop.jpg,Oral Care,Toothpaste & Oral Care,1.0,gemini

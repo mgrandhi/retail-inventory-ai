@@ -1,0 +1,165 @@
+{
+  "_meta": {
+    "source": "product_labels_openai_val_normalized_categories.csv",
+    "n_rows": 15000,
+    "n_categories": 18,
+    "n_subcategories": 48,
+    "note": "Canonical normalized taxonomy for Module 2 classification. Regenerate with: python -m classification.taxonomy --from-csv <val.csv>"
+  },
+  "categories": {
+    "Apparel & Accessories": [
+      "Clothing & Accessories"
+    ],
+    "Automotive & Hardware": [
+      "Automotive & Hardware"
+    ],
+    "Baby Care": [
+      "Diapers & Baby Care"
+    ],
+    "Beverages": [
+      "Beverages Other",
+      "Coffee & Creamers",
+      "Energy & Sports Drinks",
+      "Juice",
+      "Soft Drinks",
+      "Tea",
+      "Water"
+    ],
+    "Electronics": [
+      "Electronics & Accessories"
+    ],
+    "Grocery & Pantry": [
+      "Breakfast & Cereal",
+      "Grocery Other",
+      "Packaged Foods",
+      "Sauces & Condiments",
+      "Spreads"
+    ],
+    "Hair Care": [
+      "Hair Color",
+      "Hair Styling",
+      "Shampoo & Conditioner"
+    ],
+    "Health & Wellness": [
+      "Medicine & First Aid",
+      "Pain Relief",
+      "Vitamins & Supplements"
+    ],
+    "Home & Kitchen": [
+      "Candles & Home Fragrance",
+      "Drinkware & Tableware",
+      "Home Decor",
+      "Kitchen & Household Items"
+    ],
+    "Household Cleaning & Laundry": [
+      "Air Fresheners",
+      "Household Cleaners",
+      "Laundry Detergent"
+    ],
+    "Oral Care": [
+      "Toothpaste & Oral Care"
+    ],
+    "Other / Unclear": [
+      "Other / Unmapped",
+      "Unclear / Generic Product"
+    ],
+    "Paper & Hygiene": [
+      "Feminine Hygiene",
+      "Paper Towels & Tissue"
+    ],
+    "Personal Care & Beauty": [
+      "Bath & Body Wash",
+      "Cosmetics",
+      "Deodorant",
+      "Foot Care",
+      "Perfume & Fragrance",
+      "Personal Care Other",
+      "Skin Care"
+    ],
+    "Pet Care": [
+      "Pet Food & Supplies"
+    ],
+    "Snacks & Confectionery": [
+      "Biscuits & Crackers",
+      "Candy & Chocolate",
+      "Chips & Savory Snacks",
+      "Snack Bars"
+    ],
+    "Stationery & Office": [
+      "Stationery"
+    ],
+    "Tobacco / Restricted": [
+      "Tobacco Products"
+    ]
+  },
+  "category_counts": {
+    "Beverages": 4270,
+    "Personal Care & Beauty": 2674,
+    "Hair Care": 1312,
+    "Snacks & Confectionery": 1095,
+    "Other / Unclear": 1075,
+    "Household Cleaning & Laundry": 969,
+    "Health & Wellness": 761,
+    "Oral Care": 650,
+    "Paper & Hygiene": 541,
+    "Home & Kitchen": 513,
+    "Grocery & Pantry": 303,
+    "Baby Care": 303,
+    "Apparel & Accessories": 214,
+    "Automotive & Hardware": 94,
+    "Electronics": 83,
+    "Tobacco / Restricted": 69,
+    "Stationery & Office": 59,
+    "Pet Care": 15
+  },
+  "subcategory_counts": {
+    "Soft Drinks": 2080,
+    "Skin Care": 998,
+    "Other / Unmapped": 952,
+    "Beverages Other": 785,
+    "Shampoo & Conditioner": 781,
+    "Toothpaste & Oral Care": 650,
+    "Chips & Savory Snacks": 588,
+    "Bath & Body Wash": 573,
+    "Deodorant": 520,
+    "Household Cleaners": 489,
+    "Medicine & First Aid": 476,
+    "Coffee & Creamers": 392,
+    "Tea": 382,
+    "Laundry Detergent": 343,
+    "Hair Styling": 341,
+    "Feminine Hygiene": 317,
+    "Diapers & Baby Care": 303,
+    "Energy & Sports Drinks": 297,
+    "Candy & Chocolate": 267,
+    "Paper Towels & Tissue": 224,
+    "Clothing & Accessories": 214,
+    "Juice": 201,
+    "Personal Care Other": 195,
+    "Hair Color": 190,
+    "Vitamins & Supplements": 186,
+    "Home Decor": 181,
+    "Kitchen & Household Items": 175,
+    "Biscuits & Crackers": 174,
+    "Candles & Home Fragrance": 147,
+    "Air Fresheners": 137,
+    "Cosmetics": 135,
+    "Foot Care": 135,
+    "Water": 133,
+    "Grocery Other": 133,
+    "Unclear / Generic Product": 123,
+    "Perfume & Fragrance": 118,
+    "Pain Relief": 99,
+    "Automotive & Hardware": 94,
+    "Electronics & Accessories": 83,
+    "Sauces & Condiments": 69,
+    "Tobacco Products": 69,
+    "Snack Bars": 66,
+    "Stationery": 59,
+    "Spreads": 36,
+    "Packaged Foods": 34,
+    "Breakfast & Cereal": 31,
+    "Pet Food & Supplies": 15,
+    "Drinkware & Tableware": 10
+  }
+}

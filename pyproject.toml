@@ -33,8 +33,11 @@ classification = [
     "open-clip-torch>=2.24",
     "scikit-learn>=1.4",
 ]
-# Module 3 — auto-labeling (LLaVA via Ollama)
+# Module 3 — auto-labeling: GCP VLM (Vertex AI Gemini) + self-hosted Gemma/LLaVA via Ollama.
+# google-genai is the access path for Vertex (client(vertexai=True, ...)); auth is the VM
+# service account (roles/aiplatform.user) — no API key.
 autolabel = [
+    "google-genai>=0.3",
     "ollama>=0.3",
 ]
 # Module 4 — backend (FastAPI + SQLite)

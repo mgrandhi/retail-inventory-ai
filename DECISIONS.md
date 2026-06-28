@@ -5,6 +5,43 @@ This log feeds the "Design Decisions" section of the final report.
 
 ---
 
+## 2026-06-27 · Classifier targets the normalized taxonomy (18/48), not product names
+- **Context:** Mentor reframed Module 2: train a classifier, gate on its confidence, fall back to
+  an LLM only for low-confidence crops. A teammate's classifier on the shared SKU crops scored
+  "very low."
+- **Decision:** The trainable classifier predicts **normalized_category (18) + normalized_subcategory
+  (48)** as two heads. The fine-grained product name is NOT a classifier target — it's produced by
+  the VLM fallback only.
+- **Rationale:** The shared val labels have **9,685 unique `product_label` values across 15,000
+  crops** (~1.5 examples/class) — impossible to classify, which explains the near-zero accuracy.
+  The normalized columns collapse to 18/48 classes with hundreds of examples each — learnable. The
+  taxonomy is a clean tree (every subcat → exactly one cat), so we mask the subcat head to the
+  chosen category for consistency.
+- **Alternatives:** Classify product_label directly (rejected — unlearnable with current data);
+  category-only single head (rejected — loses subcategory granularity the BI layer wants).
+
+## 2026-06-27 · Auto-labeling + LLM fallback use GCP Vertex (Gemini/Gemma), not OpenAI
+- **Context:** Need labels for the unlabeled SKU crops, and a low-confidence fallback model.
+  Teammate used OpenAI gpt-5.4-mini; user wants everything inside the GCP project.
+- **Decision:** Use **Vertex AI Gemini** (default `gemini-2.5-flash` — verified callable 2026-06-27; gemini-3.x was NOT available in-project, via the `google-genai` SDK
+  with `vertexai=True`) as the default labeler + fallback, with a **self-hosted Gemma 3** (Ollama)
+  backend as the $0-per-call alternative. Auth = VM service account (`roles/aiplatform.user`); no
+  API key. `autolabel/label_vlm.py` is backend-agnostic (`--backend gemini|gemma`).
+- **Rationale:** Keeps all compute + spend in one cloud account, no external API egress, reuses the
+  no-public-IP + Cloud NAT pattern. Output is constrained to the taxonomy via a JSON-schema enum.
+- **Alternatives:** OpenAI (rejected — out-of-project cost/egress); CLIP-only (kept as the free
+  labeler and compared against Gemini via `compare_labels.py` — the decision gate for the full set).
+
+## 2026-06-27 · Generate crops from SKU-110K with our detector; 10% of train first
+- **Context:** Module 2 needs per-product crops, but SKU-110K ships as full shelf images. We have
+  a mAP@0.5≈0.92 detector (`detection/artifacts/v11/best.pt`).
+- **Decision:** Crop SKU-110K ourselves with `best.pt` (`gen_crops.py`), naming crops to match the
+  teammate's val export so the shared val CSV joins by filename. Start at **`--fraction 0.10`** of
+  train (all val/test), evaluate, then scale.
+- **Rationale:** Owns the full pipeline end-to-end (no dependency on the teammate's crop files);
+  10%-first bounds crop + labeling cost until the pipeline is proven. Inference-only, so it runs on
+  a cheap GPU/CPU VM that self-deletes.
+
 ## 2026-06-06 · Colab notebook does inference only; GCP does the real training
 - **Context:** Today's checkpoint deliverable is a Colab notebook showing before/after detection.
   Colab free tier disconnects after a few hours, too short for a full 50-epoch run at 1280.
