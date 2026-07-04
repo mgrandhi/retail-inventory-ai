@@ -92,3 +92,9 @@ target-version = "py311"
 [build-system]
 requires = ["setuptools>=68"]
 build-backend = "setuptools.build_meta"
+
+# Declare packages explicitly. With this many top-level dirs (detection/, datasets/, report/,
+# notebooks/, frontend/ are scripts/data, not importable packages), setuptools' flat-layout
+# auto-discovery refuses to guess. List only the real importable Python packages.
+[tool.setuptools]
+packages = ["autolabel", "classification", "retrieval", "backend", "bi_interface"]
