@@ -87,8 +87,36 @@ hard half to the Gemini VLM fallback. Push to 0.70 for ~85% accuracy on the acce
 fallback budget allows; drop to 0.50 to accept ~two-thirds at ~74%. `gate_sweep.json` +
 `gate.log` in `gs://…/classifier/clip_v1/`.
 
-## Auto-labeling (Module 3 — LLaVA) — Week 5
-_not started_
+## Auto-labeling / SKU OCR (Module 3) — Week 5
+
+### SKU/OCR benchmark harness (2026-07-08)
+
+Goal: evaluate open multimodal models on **crop-level SKU/product identity extraction**, not just
+category classification. The shared prompt/schema extracts: `brand`, `product_name`, `sku_text`,
+`visible_text`, `package_size`, `barcode`, `category_hint`, `confidence`, `needs_review`.
+
+| Date | Backend | Model | Sample | Parse success | Error rate | OCR text rate | Notes |
+|---|---|---|---:|---:|---:|---:|---|
+| 2026-07-08 | dry-run | dry-run | 100 val crops | **1.000** | **0.000** | **1.000** | GCP harness validation only: no real VLM call. VM downloaded `val_crops.tar` (92,597 crops), sampled 100, wrote CSV + summary to `gs://…/sku_vlm_benchmarks/dryrun_sku_100_gcp/`. VM self-delete fallback did not remove the instance, so it was manually deleted; script hardened with `--project` on the in-VM delete command. |
+| _pending_ | openai-compatible / Vertex vLLM | Qwen2.5-VL-7B-Instruct or Qwen3-VL | 100 → 500 → 2,000 crops | — | — | — | Primary open-source OCR/KIE candidate. Requires a deployed vLLM / Vertex Model Garden endpoint exposed as OpenAI-compatible `/v1/chat/completions`. |
+| _pending_ | openai-compatible / Vertex vLLM | PaliGemma 2 Mix 10B/448 | 100 → 500 → 2,000 crops | — | — | — | Google open VLM baseline; expected to be strong on OCR/VQA with easier report framing. |
+| _pending_ | openai-compatible / Vertex vLLM | Gemma 3 12B multimodal | 100 → 500 → 2,000 crops | — | — | — | Google-native open-model deployment baseline. |
+| _optional reference_ | gemini | gemini-2.5-flash | 100 → 500 crops | — | — | — | Non-open reference ceiling only; do not present as the final open-source answer. |
+
+**Harness files:** `autolabel/sku_vlm.py`, `autolabel/sku_vlm_benchmark.sh`,
+`autolabel/launch_sku_vlm_benchmark.sh`, `docs/open_vlm_sku_benchmark.md`.
+
+**Next real benchmark command shape:**
+```bash
+export PROJECT_ID=ehc-mgrandhi-bc801a
+export BACKEND=openai-compatible
+export MODEL=Qwen/Qwen2.5-VL-7B-Instruct
+export VLM_ENDPOINT_URL=https://<vertex-or-vllm-endpoint>/v1
+export AUTH_MODE=metadata
+export RUN_NAME=qwen25_vl_sku_100
+export SAMPLE_LIMIT=100 SPLIT=val
+bash autolabel/launch_sku_vlm_benchmark.sh
+```
 
 ## NL BI interface (Module 5) — Week 6
 _not started_

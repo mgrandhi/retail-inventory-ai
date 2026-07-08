@@ -5,6 +5,36 @@ This log feeds the "Design Decisions" section of the final report.
 
 ---
 
+## 2026-07-08 · SKU database becomes product-master + inventory + checkout schema
+- **Context:** The project needs to move from scan-level analytics to a database that supports
+  product/SKU identity, inventory counts, automatic checkout, and model benchmark traceability.
+  The existing SQLite store (`backend/inventory_db.py`) only held `scans` and `items`.
+- **Decision:** Keep SQLite for the local demo, but define the logical schema as product-master
+  tables (`products`, `product_aliases`), scan/detection tables (`shelf_scans`, `detected_items`),
+  inventory tables (`inventory_snapshots`), checkout tables (`checkout_sessions`, `checkout_items`),
+  and model-evaluation tables (`model_runs`, `model_predictions`).
+- **Rationale:** Automatic checkout needs canonical products, prices, aliases, and review status;
+  BI needs time-series inventory and checkout facts; model comparison needs run-level and per-crop
+  prediction records. SQLite keeps the Streamlit demo simple while preserving a clean path to
+  Postgres/Cloud SQL later.
+- **Alternatives:** Keep only the current `scans/items` tables (rejected — insufficient for SKU
+  resolution and checkout); jump directly to Cloud SQL (deferred — unnecessary for local/demo work).
+
+## 2026-07-08 · Benchmark open VLMs for SKU/OCR before integrating product-name extraction
+- **Context:** Category retrieval is working via SWIN+FAISS, but automatic checkout needs more
+  precise SKU/product identity from crop images. The hard part is OCR on tiny/partial package text.
+- **Decision:** Benchmark open multimodal models first: **Qwen2.5-VL-7B-Instruct / Qwen3-VL** as
+  the primary OCR/KIE candidate, **PaliGemma 2 Mix** as the Google open VLM baseline, and
+  **Gemma 3 multimodal** as the Google-native deployment baseline. Keep **Gemini 2.5 Flash** only
+  as a non-open reference ceiling.
+- **Rationale:** Qwen-VL has strong public OCR/key-information-extraction recipes; PaliGemma 2 Mix
+  is Google’s open VLM family with OCR support through Model Garden; Gemma 3 is easiest to explain
+  and deploy on Vertex but may be less OCR-specialized for packaging text. A benchmark prevents us
+  from picking a model based on general VQA quality rather than SKU/OCR performance.
+- **Alternatives:** Use Gemini directly for SKU extraction (rejected as the final model because it
+  is not open-source); rely on SWIN+FAISS nearest-neighbour labels only (rejected for checkout
+  because category/subcategory is not enough to identify sellable SKUs).
+
 ## 2026-06-27 · Classifier targets the normalized taxonomy (18/48), not product names
 - **Context:** Mentor reframed Module 2: train a classifier, gate on its confidence, fall back to
   an LLM only for low-confidence crops. A teammate's classifier on the shared SKU crops scored

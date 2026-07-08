@@ -39,11 +39,30 @@ CREATE TABLE IF NOT EXISTS items (
     score REAL,
     area INTEGER,
     box TEXT,
+    brand TEXT,
+    product_name TEXT,
+    sku_text TEXT,
+    visible_text TEXT,
+    package_size TEXT,
+    barcode TEXT,
+    sku_confidence REAL,
+    sku_needs_review INTEGER,
     FOREIGN KEY (scan_id) REFERENCES scans(id) ON DELETE CASCADE
 );
 CREATE INDEX IF NOT EXISTS idx_items_scan ON items(scan_id);
 CREATE INDEX IF NOT EXISTS idx_items_category ON items(category);
 """
+
+_ITEM_OPTIONAL_COLUMNS = {
+    "brand": "TEXT",
+    "product_name": "TEXT",
+    "sku_text": "TEXT",
+    "visible_text": "TEXT",
+    "package_size": "TEXT",
+    "barcode": "TEXT",
+    "sku_confidence": "REAL",
+    "sku_needs_review": "INTEGER",
+}
 
 
 def _connect(db_path: str = DB_PATH) -> sqlite3.Connection:
@@ -55,6 +74,15 @@ def _connect(db_path: str = DB_PATH) -> sqlite3.Connection:
 def init_db(db_path: str = DB_PATH) -> None:
     with _connect(db_path) as conn:
         conn.executescript(_SCHEMA)
+        _ensure_item_columns(conn)
+
+
+def _ensure_item_columns(conn: sqlite3.Connection) -> None:
+    """Add SKU/OCR columns to older local DBs without dropping existing data."""
+    existing = {row[1] for row in conn.execute("PRAGMA table_info(items)").fetchall()}
+    for name, column_type in _ITEM_OPTIONAL_COLUMNS.items():
+        if name not in existing:
+            conn.execute(f"ALTER TABLE items ADD COLUMN {name} {column_type}")
 
 
 def save_scan(result, image_name: str, records: list[dict], db_path: str = DB_PATH) -> int:
@@ -71,10 +99,16 @@ def save_scan(result, image_name: str, records: list[dict], db_path: str = DB_PA
         )
         scan_id = int(cur.lastrowid)
         conn.executemany(
-            """INSERT INTO items (scan_id, crop_id, category, subcategory, score, area, box)
-               VALUES (?, ?, ?, ?, ?, ?, ?)""",
+            """INSERT INTO items (
+                   scan_id, crop_id, category, subcategory, score, area, box,
+                   brand, product_name, sku_text, visible_text, package_size, barcode,
+                   sku_confidence, sku_needs_review
+               )
+               VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)""",
             [(scan_id, r["crop_id"], r["category"], r["subcategory"], r["score"], r["area"],
-              json.dumps(r["box"])) for r in records],
+              json.dumps(r["box"]), r.get("brand"), r.get("product_name"), r.get("sku_text"),
+              r.get("visible_text"), r.get("package_size"), r.get("barcode"),
+              r.get("sku_confidence"), r.get("sku_needs_review")) for r in records],
         )
     return scan_id
 

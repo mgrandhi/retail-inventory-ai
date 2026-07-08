@@ -12,7 +12,11 @@ from __future__ import annotations
 
 import os
 import sys
+import tempfile
+import json
 from pathlib import Path
+from types import SimpleNamespace
+from urllib import request as urllib_request
 
 os.environ.setdefault("KMP_DUPLICATE_LIB_OK", "TRUE")
 os.environ.setdefault("OMP_NUM_THREADS", "1")
@@ -25,9 +29,17 @@ import plotly.express as px
 import streamlit as st
 from PIL import Image
 
+try:
+    from dotenv import load_dotenv
+except ImportError:
+    def load_dotenv(*_args, **_kwargs):
+        return False
+
 from backend import inventory_db as db
 from bi_interface import bi_engine
 from retrieval import pipeline
+
+load_dotenv()
 
 st.set_page_config(page_title="Smart Shelf Analytics & BI", page_icon="🛒", layout="wide")
 
@@ -53,6 +65,20 @@ st.markdown(
 PALETTE = px.colors.qualitative.Set3
 
 
+SKU_COLUMNS = [
+    "brand",
+    "product_name",
+    "sku_text",
+    "visible_text",
+    "package_size",
+    "barcode",
+    "sku_confidence",
+    "sku_needs_review",
+    "sku_latency_s",
+    "sku_error",
+]
+
+
 def _style_fig(fig, height=380):
     fig.update_layout(height=height, margin=dict(l=10, r=10, t=40, b=10),
                       paper_bgcolor="rgba(0,0,0,0)", plot_bgcolor="rgba(0,0,0,0)",
@@ -60,6 +86,92 @@ def _style_fig(fig, height=380):
     fig.update_xaxes(gridcolor="#374151")
     fig.update_yaxes(gridcolor="#374151")
     return fig
+
+
+@st.cache_resource(show_spinner=False)
+def _load_sku_backend(backend: str, model: str, endpoint: str, api_key: str,
+                      project: str, location: str, timeout: int, dedicated_dns: str = ""):
+    from autolabel.sku_vlm import build_backend
+
+    args = SimpleNamespace(
+        backend=backend,
+        model=model,
+        endpoint=endpoint or None,
+        api_key=api_key or "",
+        project=project or None,
+        location=location or "us-central1",
+        timeout=timeout,
+        dedicated_dns=dedicated_dns or "",
+    )
+    return build_backend(args)
+
+
+def _empty_sku_fields() -> dict:
+    return {
+        "brand": "",
+        "product_name": "",
+        "sku_text": "",
+        "visible_text": "",
+        "package_size": "",
+        "barcode": "",
+        "sku_confidence": 0.0,
+        "sku_needs_review": 1,
+        "sku_latency_s": 0.0,
+        "sku_error": "",
+    }
+
+
+@st.cache_data(ttl=30, show_spinner=False)
+def _list_openai_models(endpoint: str) -> list[str]:
+    from autolabel.sku_vlm import normalize_openai_base_url
+
+    if not endpoint:
+        return []
+    url = f"{normalize_openai_base_url(endpoint)}/models"
+    try:
+        with urllib_request.urlopen(url, timeout=5) as resp:
+            data = json.loads(resp.read().decode("utf-8"))
+        return [m["id"] for m in data.get("data", []) if m.get("id")]
+    except Exception:
+        return []
+
+
+def _enrich_records_with_sku(records: list[dict], image: Image.Image, backend, max_sku_crops: int):
+    from autolabel.sku_vlm import coerce_bool
+
+    if not records:
+        return records
+    limit = len(records) if max_sku_crops <= 0 else min(max_sku_crops, len(records))
+    progress = st.progress(0, text=f"Extracting SKU/OCR for {limit} crops…")
+    image = image.convert("RGB")
+    with tempfile.TemporaryDirectory(prefix="sku_crops_") as tmp:
+        tmp_dir = Path(tmp)
+        for i, record in enumerate(records):
+            record.update(_empty_sku_fields())
+            if i >= limit:
+                record["sku_error"] = "not_processed_limit"
+                continue
+            x1, y1, x2, y2 = record["box"]
+            crop = image.crop((x1, y1, x2, y2))
+            crop_path = tmp_dir / f"crop_{record['crop_id']:04d}.jpg"
+            crop.save(crop_path, quality=92)
+            pred = backend.predict(crop_path)
+            parsed = pred.parsed
+            record.update({
+                "brand": parsed.get("brand", ""),
+                "product_name": parsed.get("product_name", ""),
+                "sku_text": parsed.get("sku_text", ""),
+                "visible_text": parsed.get("visible_text", ""),
+                "package_size": parsed.get("package_size", ""),
+                "barcode": parsed.get("barcode", ""),
+                "sku_confidence": parsed.get("confidence", 0.0),
+                "sku_needs_review": int(coerce_bool(parsed.get("needs_review", True))),
+                "sku_latency_s": pred.latency_s,
+                "sku_error": pred.error,
+            })
+            progress.progress((i + 1) / limit, text=f"Extracting SKU/OCR ({i + 1}/{limit})…")
+    progress.empty()
+    return records
 
 
 st.title("🛒 Smart Shelf Analytics & BI")
@@ -84,6 +196,92 @@ with st.sidebar:
     conf = st.slider("YOLO confidence", 0.05, 0.9, 0.25, 0.05)
     max_crops = st.slider("Max products to classify (0 = all)", 0, 300, 60, 10,
                           help="Cap for speed on CPU. 0 classifies every detected box.")
+    st.divider()
+    st.header("② SKU / OCR extraction")
+    extract_sku = st.checkbox(
+        "Extract SKU/OCR with VLM",
+        value=False,
+        help="Adds brand/product/SKU/visible-text columns to the result table. "
+             "Use Gemini now, or an OpenAI-compatible Vertex/vLLM endpoint for open models.",
+    )
+    default_sku_backend = "vertex-model-garden" if os.getenv("PROJECT_ID") else "dry-run"
+    sku_backend = st.selectbox(
+        "SKU backend",
+        ["dry-run", "gemini", "openai-compatible", "vertex-model-garden"],
+        index=["dry-run", "gemini", "openai-compatible", "vertex-model-garden"].index(default_sku_backend),
+        disabled=not extract_sku,
+    )
+    default_sku_model = {
+        "dry-run": "dry-run",
+        "gemini": os.getenv("VERTEX_MODEL", "gemini-2.5-flash"),
+        "openai-compatible": os.getenv("VLM_MODEL", "Qwen/Qwen2.5-VL-3B-Instruct"),
+        "vertex-model-garden": os.getenv(
+            "VERTEX_MODEL_GARDEN_MODEL", "google/paligemma@paligemma-mix-448-float16"
+        ),
+    }[sku_backend]
+    sku_model = st.text_input("SKU model", value=default_sku_model, disabled=not extract_sku)
+    default_sku_endpoint = (
+        os.getenv("VLM_ENDPOINT_URL", "")
+        if sku_backend == "openai-compatible"
+        else os.getenv(
+            "VLM_ENDPOINT_URL",
+            os.getenv(
+                "VERTEX_MODEL_GARDEN_ENDPOINT_ID",
+                "mg-endpoint-98b3f9ea-9188-48af-b14c-87765eece175",
+            )
+        )
+        if sku_backend == "vertex-model-garden"
+        else ""
+    )
+    sku_endpoint = st.text_input(
+        "SKU endpoint",
+        value=default_sku_endpoint,
+        disabled=not extract_sku or sku_backend not in {"openai-compatible", "vertex-model-garden"},
+        help="OpenAI-compatible base URL, or Vertex Model Garden endpoint ID/DNS.",
+    )
+    if extract_sku and sku_backend == "openai-compatible" and sku_endpoint:
+        try:
+            from autolabel.sku_vlm import normalize_openai_base_url
+
+            resolved_endpoint = f"{normalize_openai_base_url(sku_endpoint)}/chat/completions"
+            st.caption(f"Resolved chat endpoint: `{resolved_endpoint}`")
+        except Exception:
+            pass
+    effective_sku_model = sku_model
+    if extract_sku and sku_backend == "openai-compatible" and sku_endpoint:
+        served_models = _list_openai_models(sku_endpoint)
+        if served_models:
+            st.caption("Served model(s): `" + "`, `".join(served_models) + "`")
+            if sku_model not in served_models:
+                effective_sku_model = served_models[0]
+                st.warning(
+                    f"Using served model `{effective_sku_model}` instead of `{sku_model}`."
+                )
+    vertex_dedicated_dns = os.getenv(
+        "VERTEX_MODEL_GARDEN_DEDICATED_DNS",
+        "mg-endpoint-98b3f9ea-9188-48af-b14c-87765eece175.us-central1-735098166286.prediction.vertexai.goog",
+    )
+    if extract_sku and sku_backend == "vertex-model-garden":
+        st.caption(f"Vertex dedicated DNS: `{vertex_dedicated_dns}`")
+    sku_project = st.text_input(
+        "GCP project",
+        value=os.getenv("PROJECT_ID", ""),
+        disabled=not extract_sku or sku_backend not in {"gemini", "vertex-model-garden"},
+    )
+    sku_location = st.text_input(
+        "GCP region",
+        value=os.getenv("REGION", "us-central1"),
+        disabled=not extract_sku or sku_backend != "gemini",
+    )
+    max_sku_crops = st.slider(
+        "Max SKU/OCR crops (0 = all classified crops)",
+        0,
+        100,
+        10,
+        5,
+        disabled=not extract_sku,
+        help="Keep this low for UI tests; each real VLM crop is a separate request.",
+    )
     save_to_db = st.checkbox("Save scan to inventory history", value=True)
     run = st.button("🔍 Analyze shelf", type="primary", use_container_width=True,
                     disabled=uploaded is None)
@@ -103,6 +301,25 @@ if run and uploaded is not None:
     with st.spinner("Detecting products and classifying crops…"):
         result = pipeline.analyze_image(image, conf=conf, max_crops=max_crops)
         records = pipeline.detections_to_records(result)
+    if extract_sku:
+        try:
+            with st.spinner("Loading SKU/OCR backend…"):
+                sku_vlm = _load_sku_backend(
+                    sku_backend,
+                    effective_sku_model,
+                    sku_endpoint,
+                    os.getenv("VLM_API_KEY", ""),
+                    sku_project,
+                    sku_location,
+                    180,
+                    vertex_dedicated_dns,
+                )
+            records = _enrich_records_with_sku(records, image, sku_vlm, max_sku_crops)
+        except Exception as exc:
+            st.error(f"SKU/OCR extraction failed: {exc}")
+            for record in records:
+                record.update(_empty_sku_fields())
+                record["sku_error"] = str(exc)
     st.session_state["result"] = result
     st.session_state["records"] = records
     if save_to_db:
@@ -138,8 +355,10 @@ with tab_analyze:
         with right:
             df = pd.DataFrame(records)
             st.markdown("**Detected items**")
-            st.dataframe(df[["crop_id", "category", "subcategory", "score"]],
-                         height=420, use_container_width=True, hide_index=True)
+            base_cols = ["crop_id", "category", "subcategory", "score"]
+            sku_cols = [c for c in SKU_COLUMNS if c in df.columns]
+            st.dataframe(df[base_cols + sku_cols], height=420, use_container_width=True,
+                         hide_index=True)
             st.download_button("⬇️ Download detections CSV", df.to_csv(index=False).encode(),
                                file_name="detections.csv", use_container_width=True)
 

@@ -68,8 +68,10 @@ cp .env.example .env   # then fill in PROJECT_ID, BUCKET, etc.
 ## 🚀 Run the analytics + BI dashboard (Modules 2b / 4 / 5 / 7)
 
 An end-to-end shelf app that runs **locally**: upload a shelf image → YOLO detects products →
-SWIN + FAISS retrieval classifies each crop → the dashboard shows KPIs, interactive analytics
-charts, and a natural-language Business-Intelligence panel over an accumulating SQLite inventory.
+SWIN + FAISS retrieval classifies each crop → optional VLM SKU/OCR extraction adds brand,
+product-name, SKU text, visible text, package size, and barcode columns → the dashboard shows
+KPIs, interactive analytics charts, and a natural-language Business-Intelligence panel over an
+accumulating SQLite inventory.
 
 ```bash
 cd retail-inventory-ai
@@ -80,6 +82,16 @@ pip install -e ".[retrieval]"
 # One-time: provision the SWIN/FAISS assets (~2.3 GB, gitignored).
 # See retrieval/README.md for the exact copy commands from the teammate repo (Git LFS).
 
+# Optional: enable real SKU/OCR extraction in the UI.
+# Gemini works as the immediate Vertex reference backend (not open-source):
+export PROJECT_ID=your-gcp-project
+export REGION=us-central1
+export VERTEX_MODEL=gemini-2.5-flash
+
+# Open-source VLMs use the same UI once deployed behind an OpenAI-compatible endpoint:
+# export VLM_ENDPOINT_URL=https://<qwen-or-paligemma-vllm-endpoint>/v1
+# export VLM_API_KEY=<optional bearer token>
+
 # Launch (KMP flag required on macOS — torch + faiss both bundle libomp):
 KMP_DUPLICATE_LIB_OK=TRUE streamlit run frontend/app.py   # -> http://localhost:8501
 ```
@@ -87,6 +99,10 @@ KMP_DUPLICATE_LIB_OK=TRUE streamlit run frontend/app.py   # -> http://localhost:
 Tabs: **Detection** (annotated image + KPIs + CSV export) · **Analytics** (category bar/donut,
 subcategory treemap, empty-space gauge) · **Business Intelligence** (NL Q&A; auto-uses Ollama if
 running, else a deterministic rule-based engine) · **Inventory History** (trends across scans).
+
+In the sidebar, enable **Extract SKU/OCR with VLM** to add SKU fields to the result table. Use
+`gemini` for the immediate GCP-backed reference path, or `openai-compatible` after deploying
+Qwen-VL, PaliGemma, or Gemma behind Vertex Model Garden / vLLM.
 
 The retrieval classifier reuses **our own** detector (`detection/artifacts/v11/best.pt`). Full
 details + asset provisioning in [`retrieval/README.md`](retrieval/README.md).
