@@ -2,7 +2,7 @@
 name = "retail-inventory-ai"
 version = "0.1.0"
 description = "Intelligent Retail Product Detection & Inventory Management System (Computer Vision + LLM-based Business Intelligence)"
-requires-python = ">=3.11,<3.12"
+requires-python = ">=3.10,<3.12"
 readme = "README.md"
 
 # Dependency groups are split per module so early weeks don't need the whole stack installed.
@@ -50,6 +50,7 @@ retrieval = [
     "faiss-cpu>=1.8",
     "ultralytics>=8.2",
     "streamlit>=1.33",
+    "gradio>=4.44",
     "plotly>=5.20",
     "requests>=2.31",
     "google-genai>=0.3",
@@ -72,6 +73,7 @@ bi = [
 # Module 7 — frontend (Streamlit dashboard)
 frontend = [
     "streamlit>=1.33",
+    "gradio>=4.44",
     "plotly>=5.20",
     "requests>=2.31",
 ]

@@ -82,6 +82,8 @@ cp ../retail-inventory-ai/docs/database_schema.md mgrandhi/docs/
 cp ../retail-inventory-ai/docs/open_vlm_sku_benchmark.md mgrandhi/docs/
 
 cp ../retail-inventory-ai/frontend/app.py mgrandhi/app.py
+cp ../retail-inventory-ai/frontend/gradio_app.py mgrandhi/gradio_app.py
+cp ../retail-inventory-ai/frontend/run_hybrid_ui.sh mgrandhi/run_hybrid_ui.sh
 ```
 
 ## 4. Add A Path Config For Teammate Assets
@@ -122,6 +124,7 @@ transformers>=4.40
 faiss-cpu>=1.8
 ultralytics>=8.2
 streamlit>=1.33
+gradio>=4.44
 plotly>=5.20
 requests>=2.31
 google-genai>=0.3
@@ -156,6 +159,14 @@ pip install -r mgrandhi/requirements.txt
 KMP_DUPLICATE_LIB_OK=TRUE OMP_NUM_THREADS=1 streamlit run mgrandhi/app.py
 \`\`\`
 
+## Run Hybrid UI
+
+\`\`\`bash
+bash mgrandhi/run_hybrid_ui.sh
+\`\`\`
+
+This starts Gradio for fast upload/result-table interaction and Streamlit for analytics/BI.
+
 ## Notes
 
 - Update `mgrandhi/config/paths.py` if asset paths differ.
@@ -165,7 +176,8 @@ KMP_DUPLICATE_LIB_OK=TRUE OMP_NUM_THREADS=1 streamlit run mgrandhi/app.py
 
 ## 7. Update Imports And Asset Paths
 
-The copied `mgrandhi/app.py` currently comes from this repo and may import:
+The copied `mgrandhi/app.py` and `mgrandhi/gradio_app.py` currently come from this repo and may
+import:
 
 ```python
 from backend import inventory_db as db

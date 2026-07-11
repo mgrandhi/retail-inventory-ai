@@ -92,13 +92,64 @@ export VERTEX_MODEL=gemini-2.5-flash
 # export VLM_ENDPOINT_URL=https://<qwen-or-paligemma-vllm-endpoint>/v1
 # export VLM_API_KEY=<optional bearer token>
 
-# Launch (KMP flag required on macOS — torch + faiss both bundle libomp):
+# Launch Streamlit only (KMP flag required on macOS — torch + faiss both bundle libomp):
 KMP_DUPLICATE_LIB_OK=TRUE streamlit run frontend/app.py   # -> http://localhost:8501
+
+# Or launch the hybrid UI:
+# - Gradio fast upload/result-table UI on http://localhost:7860
+# - Streamlit analytics/BI dashboard on http://localhost:8502
+bash frontend/run_hybrid_ui.sh
 ```
 
-Tabs: **Detection** (annotated image + KPIs + CSV export) · **Analytics** (category bar/donut,
-subcategory treemap, empty-space gauge) · **Business Intelligence** (NL Q&A; auto-uses Ollama if
-running, else a deterministic rule-based engine) · **Inventory History** (trends across scans).
+Tabs: **Fast Upload** (embeds the Gradio upload/result-table UI) · **Detection** (legacy Streamlit
+upload flow + KPIs + CSV export) · **Analytics** (category bar/donut, subcategory treemap,
+empty-space gauge) · **Business Intelligence** (NL Q&A; auto-uses Ollama if running, else a
+deterministic rule-based engine) · **Inventory History** (trends across scans).
+
+Use the hybrid UI when the upload/table flow needs to feel faster or more demo-friendly. The
+Gradio app preloads YOLO + SWIN/FAISS once, then keeps the result interaction focused on image
+upload, annotated output, and a detections table. Streamlit remains the analytics and BI surface.
+For a GCP VM or any public demo URL, set `GRADIO_URL` to the externally reachable Gradio URL before
+starting Streamlit so the embedded **Fast Upload** tab points to the right host.
+
+### Serve the hybrid UI from a GCP VM
+
+For laptops with limited RAM, deploy the working tree and ignored model assets to a larger VM:
+
+```bash
+PROJECT_ID=your-gcp-project \
+ZONE=us-central1-a \
+INSTANCE=retail-inventory-ui-gpu \
+bash frontend/deploy_hybrid_ui_gcp.sh
+```
+
+The script defaults to a `g2-standard-8` L4 GPU VM, opens ports `8502` and `7860`, uploads large
+ignored model assets once to a reusable GCS bucket, installs dependencies, downloads assets from
+the bucket on the VM, and starts a `systemd` service. If L4 capacity is unavailable, use the T4
+fallback that is currently deployed:
+
+```bash
+PROJECT_ID=your-gcp-project \
+ZONE=us-central1-a \
+INSTANCE=retail-inventory-ui-t4 \
+MACHINE_TYPE=n1-standard-8 \
+ACCELERATOR=type=nvidia-tesla-t4,count=1 \
+SYNC_ASSETS_TO_GCS=0 \
+bash frontend/deploy_hybrid_ui_gcp.sh
+```
+
+The deployment prints:
+
+```text
+Streamlit dashboard: http://<external-ip>:8502
+Gradio fast upload : http://<external-ip>:7860
+```
+
+Stop the VM when the demo is done:
+
+```bash
+gcloud compute instances stop retail-inventory-ui-t4 --zone us-central1-a
+```
 
 In the sidebar, enable **Extract SKU/OCR with VLM** to add SKU fields to the result table. Use
 `gemini` for the immediate GCP-backed reference path, or `openai-compatible` after deploying
