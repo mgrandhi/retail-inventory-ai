@@ -49,8 +49,21 @@ CREATE TABLE IF NOT EXISTS items (
     sku_needs_review INTEGER,
     FOREIGN KEY (scan_id) REFERENCES scans(id) ON DELETE CASCADE
 );
+CREATE TABLE IF NOT EXISTS item_feedback (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    scan_id INTEGER NOT NULL,
+    crop_id INTEGER NOT NULL,
+    feedback_type TEXT NOT NULL CHECK (feedback_type IN ('category', 'sku')),
+    verdict TEXT NOT NULL CHECK (verdict IN ('correct', 'incorrect')),
+    correction TEXT,
+    note TEXT,
+    ts TEXT NOT NULL,
+    UNIQUE (scan_id, crop_id, feedback_type),
+    FOREIGN KEY (scan_id) REFERENCES scans(id) ON DELETE CASCADE
+);
 CREATE INDEX IF NOT EXISTS idx_items_scan ON items(scan_id);
 CREATE INDEX IF NOT EXISTS idx_items_category ON items(category);
+CREATE INDEX IF NOT EXISTS idx_feedback_scan ON item_feedback(scan_id);
 """
 
 _ITEM_OPTIONAL_COLUMNS = {
@@ -127,9 +140,61 @@ def get_items_df(scan_id: int | None = None, db_path: str = DB_PATH) -> pd.DataF
         return pd.read_sql_query("SELECT * FROM items WHERE scan_id = ?", conn, params=(scan_id,))
 
 
+def save_feedback(
+    scan_id: int,
+    crop_id: int,
+    feedback_type: str,
+    verdict: str,
+    correction: str = "",
+    note: str = "",
+    db_path: str = DB_PATH,
+) -> int:
+    """Create or replace one human verdict for a detected product field."""
+    init_db(db_path)
+    with _connect(db_path) as conn:
+        item = conn.execute(
+            "SELECT 1 FROM items WHERE scan_id = ? AND crop_id = ?",
+            (scan_id, crop_id),
+        ).fetchone()
+        if item is None:
+            raise ValueError("Detected product does not exist")
+        conn.execute(
+            """INSERT INTO item_feedback (
+                   scan_id, crop_id, feedback_type, verdict, correction, note, ts
+               )
+               VALUES (?, ?, ?, ?, ?, ?, ?)
+               ON CONFLICT(scan_id, crop_id, feedback_type) DO UPDATE SET
+                   verdict = excluded.verdict,
+                   correction = excluded.correction,
+                   note = excluded.note,
+                   ts = excluded.ts""",
+            (
+                scan_id,
+                crop_id,
+                feedback_type,
+                verdict,
+                correction.strip(),
+                note.strip(),
+                datetime.now().isoformat(timespec="seconds"),
+            ),
+        )
+        row = conn.execute(
+            """SELECT id FROM item_feedback
+               WHERE scan_id = ? AND crop_id = ? AND feedback_type = ?""",
+            (scan_id, crop_id, feedback_type),
+        ).fetchone()
+        return int(row[0])
+
+
+def get_feedback_df(db_path: str = DB_PATH) -> pd.DataFrame:
+    init_db(db_path)
+    with _connect(db_path) as conn:
+        return pd.read_sql_query("SELECT * FROM item_feedback ORDER BY id DESC", conn)
+
+
 def clear_all(db_path: str = DB_PATH) -> None:
     with _connect(db_path) as conn:
-        conn.executescript("DELETE FROM items; DELETE FROM scans;")
+        conn.executescript("DELETE FROM item_feedback; DELETE FROM items; DELETE FROM scans;")
 
 
 def stats(db_path: str = DB_PATH) -> dict:

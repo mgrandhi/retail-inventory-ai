@@ -35,7 +35,7 @@ LaTeX report** — we assemble the report *from* them, not from memory.
 | `autolabel/` | M2/M3 — CLIP + GCP VLM (Vertex Gemini / Gemma) labeling & fallback | 4–5 | 🚧 scaffolded |
 | `backend/` | M4 — inventory store (SQLite) + (future) FastAPI | 5 | 🚧 SQLite store live |
 | `bi_interface/` | M5 — natural-language BI (rule-based now, Ollama-ready) | 6 | 🚧 v1 live |
-| `frontend/` | M7 — Streamlit analytics + BI dashboard | 7 | 🚧 v1 live |
+| `frontend/` | M7 — React/FastAPI operator UI, analytics + BI | 7 | 🚧 v2 live |
 | `notebooks/` | Demo / checkpoint notebooks | — | 🚧 |
 | `report/` | LaTeX final report | 8 | 🚧 skeleton |
 | `docs/` | Diagrams, literature summaries | 1 | ⬜ |
@@ -65,19 +65,20 @@ cp .env.example .env   # then fill in PROJECT_ID, BUCKET, etc.
 
 ---
 
-## 🚀 Run the analytics + BI dashboard (Modules 2b / 4 / 5 / 7)
+## 🚀 Run the ShelfSight retail assistant (Modules 2b / 4 / 5 / 7)
 
-An end-to-end shelf app that runs **locally**: upload a shelf image → YOLO detects products →
-SWIN + FAISS retrieval classifies each crop → optional VLM SKU/OCR extraction adds brand,
-product-name, SKU text, visible text, package size, and barcode columns → the dashboard shows
-KPIs, interactive analytics charts, and a natural-language Business-Intelligence panel over an
-accumulating SQLite inventory.
+ShelfSight is an operator-first React application backed by FastAPI. Upload a shelf image and the
+UI remains responsive while a single background inference worker runs YOLO detection, SWIN +
+FAISS category matching, optional VLM SKU/OCR, and SQLite persistence. The result highlights
+products that need review and keeps analytics, history, and natural-language inventory questions
+in the same application.
 
 ```bash
 cd retail-inventory-ai
 python3.11 -m venv .venv
 source .venv/bin/activate
-pip install -e ".[retrieval]"
+pip install -e ".[retrieval,backend,dev]"
+npm --prefix frontend/web install
 
 # One-time: provision the SWIN/FAISS assets (~2.3 GB, gitignored).
 # See retrieval/README.md for the exact copy commands from the teammate repo (Git LFS).
@@ -92,27 +93,23 @@ export VERTEX_MODEL=gemini-2.5-flash
 # export VLM_ENDPOINT_URL=https://<qwen-or-paligemma-vllm-endpoint>/v1
 # export VLM_API_KEY=<optional bearer token>
 
-# Launch Streamlit only (KMP flag required on macOS — torch + faiss both bundle libomp):
-KMP_DUPLICATE_LIB_OK=TRUE streamlit run frontend/app.py   # -> http://localhost:8501
+# Development: FastAPI on :8000 and Vite with hot reload on :5173.
+bash frontend/run_web_dev.sh
 
-# Or launch the hybrid UI:
-# - Gradio fast upload/result-table UI on http://localhost:7860
-# - Streamlit analytics/BI dashboard on http://localhost:8502
-bash frontend/run_hybrid_ui.sh
+# Production-style local build: FastAPI serves the compiled React app on :8000.
+bash frontend/run_web_ui.sh
 ```
 
-Tabs: **Fast Upload** (embeds the Gradio upload/result-table UI) · **Detection** (legacy Streamlit
-upload flow + KPIs + CSV export) · **Analytics** (category bar/donut, subcategory treemap,
-empty-space gauge) · **Business Intelligence** (NL Q&A; auto-uses Ollama if running, else a
-deterministic rule-based engine) · **Inventory History** (trends across scans).
+Primary destinations are **Scan Shelf**, **Insights**, **History**, and **Ask Inventory**. The
+operator can expand **Analysis settings** to choose the number of products categorized, enable
+SKU/package reading, and cap SKU crops. Model names, confidence thresholds, and endpoints remain
+server-side configuration. Each result row also accepts separate category and SKU verdicts;
+corrections are stored in SQLite for later evaluation or retraining. Insights include category
+composition, subcategory breakdown, scan/empty-space trends, and human-feedback acceptance rates.
+The legacy Streamlit and Gradio entrypoints
+remain in `frontend/` temporarily but are no longer the production launch path.
 
-Use the hybrid UI when the upload/table flow needs to feel faster or more demo-friendly. The
-Gradio app preloads YOLO + SWIN/FAISS once, then keeps the result interaction focused on image
-upload, annotated output, and a detections table. Streamlit remains the analytics and BI surface.
-For a GCP VM or any public demo URL, set `GRADIO_URL` to the externally reachable Gradio URL before
-starting Streamlit so the embedded **Fast Upload** tab points to the right host.
-
-### Serve the hybrid UI from a GCP VM
+### Serve ShelfSight from a GCP VM
 
 For laptops with limited RAM, deploy the working tree and ignored model assets to a larger VM:
 
@@ -123,10 +120,10 @@ INSTANCE=retail-inventory-ui-gpu \
 bash frontend/deploy_hybrid_ui_gcp.sh
 ```
 
-The script defaults to a `g2-standard-8` L4 GPU VM, opens ports `8502` and `7860`, uploads large
-ignored model assets once to a reusable GCS bucket, installs dependencies, downloads assets from
-the bucket on the VM, and starts a `systemd` service. If L4 capacity is unavailable, use the T4
-fallback that is currently deployed:
+The script defaults to a `g2-standard-8` L4 GPU VM, serves one application on port `8000`, uploads
+large ignored model assets once to a reusable GCS bucket, builds React locally, installs the
+Python runtime, downloads assets from the bucket, and starts a `systemd` service. Access is IAP-only by default and
+requires Cloud NAT for an address-less VM. If L4 capacity is unavailable, use the T4 fallback:
 
 ```bash
 PROJECT_ID=your-gcp-project \
@@ -138,11 +135,11 @@ SYNC_ASSETS_TO_GCS=0 \
 bash frontend/deploy_hybrid_ui_gcp.sh
 ```
 
-The deployment prints:
+Open the IAP tunnel printed by the deployment:
 
 ```text
-Streamlit dashboard: http://<external-ip>:8502
-Gradio fast upload : http://<external-ip>:7860
+gcloud compute start-iap-tunnel <instance> 8000 --local-host-port=localhost:8000 ...
+# then open http://localhost:8000
 ```
 
 Stop the VM when the demo is done:
@@ -151,9 +148,10 @@ Stop the VM when the demo is done:
 gcloud compute instances stop retail-inventory-ui-t4 --zone us-central1-a
 ```
 
-In the sidebar, enable **Extract SKU/OCR with VLM** to add SKU fields to the result table. Use
-`gemini` for the immediate GCP-backed reference path, or `openai-compatible` after deploying
-Qwen-VL, PaliGemma, or Gemma behind Vertex Model Garden / vLLM.
+SKU/OCR is enabled with `SKU_EXTRACT_DEFAULT=1` (the default). Set `SKU_BACKEND`, `SKU_MODEL`, and
+the relevant Vertex or OpenAI-compatible endpoint environment variables on the service.
+`MAX_CLASSIFICATION_CROPS` and `MAX_SKU_CROPS` provide server defaults; each scan can override
+the two limits from **Analysis settings**.
 
 The retrieval classifier reuses **our own** detector (`detection/artifacts/v11/best.pt`). Full
 details + asset provisioning in [`retrieval/README.md`](retrieval/README.md).

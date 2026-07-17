@@ -94,3 +94,8 @@ report/main.pdf
 .cursor/
 .idea/
 .vscode/
+
+# React frontend build outputs
+frontend/web/node_modules/
+frontend/web/dist/
+frontend/web/coverage/
