@@ -264,6 +264,7 @@ if ! command -v gcloud >/dev/null 2>&1; then
 fi
 sudo rm -rf '$REMOTE_DIR'
 sudo mkdir -p '$REMOTE_DIR'
+sudo mkdir -p /var/lib/shelfsight/review_evidence
 sudo tar -xzf /tmp/retail-inventory-ai.tar.gz -C '$REMOTE_DIR'
 sudo chown -R \$USER:\$USER '$REMOTE_DIR'
 cd '$REMOTE_DIR'
@@ -290,6 +291,8 @@ Environment=PROJECT_ID=$PROJECT_ID
 Environment=REGION=$REGION
 Environment=WEB_PORT=$WEB_PORT
 Environment=SKIP_WEB_BUILD=1
+Environment=INVENTORY_DB=/var/lib/shelfsight/inventory.db
+Environment=FEEDBACK_ASSET_DIR=/var/lib/shelfsight/review_evidence
 Environment=SKU_BACKEND=${SKU_BACKEND:-gemini}
 Environment=SKU_MODEL=${SKU_MODEL:-}
 Environment=VERTEX_MODEL_GARDEN_MODEL=${VERTEX_MODEL_GARDEN_MODEL:-google/paligemma@paligemma-mix-448-float16}

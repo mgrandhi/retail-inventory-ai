@@ -30,6 +30,7 @@ def _result() -> AnalysisResult:
 
 def test_givenSkuExtractionDisabled_whenAnalyzingShelf_thenReturnsSavedOperatorReport(
     monkeypatch,
+    tmp_path,
 ):
     progress = []
     captured = {}
@@ -41,11 +42,23 @@ def test_givenSkuExtractionDisabled_whenAnalyzingShelf_thenReturnsSavedOperatorR
         return _result()
 
     monkeypatch.setenv("SKU_EXTRACT_DEFAULT", "0")
+    monkeypatch.setenv("FEEDBACK_ASSET_DIR", str(tmp_path))
     monkeypatch.setattr(analysis_service.pipeline, "analyze_image", fake_analyze)
     monkeypatch.setattr(
         analysis_service.db,
         "save_scan",
         lambda result, filename, records: 42,
+    )
+    monkeypatch.setattr(
+        analysis_service.db,
+        "attach_scan_artifacts",
+        lambda scan_id, source_path, crop_paths: captured.update(
+            {
+                "artifact_scan_id": scan_id,
+                "source_path": source_path,
+                "crop_paths": crop_paths,
+            }
+        ),
     )
 
     report = analysis_service.analyze_shelf(
@@ -59,13 +72,18 @@ def test_givenSkuExtractionDisabled_whenAnalyzingShelf_thenReturnsSavedOperatorR
     assert report["detections"][0]["sku_error"] == "sku_disabled"
     assert report["annotated_image"].startswith("data:image/jpeg;base64,")
     assert captured["max_crops"] == 60
+    assert captured["artifact_scan_id"] == 42
+    assert (tmp_path / "scan_42" / "source.jpg").is_file()
+    assert (tmp_path / "scan_42" / "crop_0001.jpg").is_file()
     assert progress[-1][0] == "complete"
 
 
 def test_givenSkuBackendFailure_whenAnalyzingShelf_thenKeepsCategoryResultsAndWarning(
     monkeypatch,
+    tmp_path,
 ):
     monkeypatch.setenv("SKU_EXTRACT_DEFAULT", "1")
+    monkeypatch.setenv("FEEDBACK_ASSET_DIR", str(tmp_path))
     monkeypatch.setattr(analysis_service.pipeline, "analyze_image", lambda *args, **kwargs: _result())
     monkeypatch.setattr(
         analysis_service,
@@ -73,6 +91,7 @@ def test_givenSkuBackendFailure_whenAnalyzingShelf_thenKeepsCategoryResultsAndWa
         lambda: (_ for _ in ()).throw(RuntimeError("VLM unavailable")),
     )
     monkeypatch.setattr(analysis_service.db, "save_scan", lambda *args, **kwargs: 9)
+    monkeypatch.setattr(analysis_service.db, "attach_scan_artifacts", lambda *args, **kwargs: None)
 
     report = analysis_service.analyze_shelf(Image.new("RGB", (32, 24)), "shelf.png")
 

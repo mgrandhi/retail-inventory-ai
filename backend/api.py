@@ -148,6 +148,11 @@ def _frame_records(frame) -> list[dict[str, Any]]:
     return [{key: _safe_value(value) for key, value in row.items()} for row in frame.to_dict("records")]
 
 
+def _public_records(frame) -> list[dict[str, Any]]:
+    """Serialize records without exposing server filesystem paths."""
+    return _frame_records(frame.drop(columns=["image_path", "crop_path"], errors="ignore"))
+
+
 def _warm_models() -> None:
     try:
         details = analysis_service.preload_models()
@@ -277,7 +282,7 @@ def get_analysis(job_id: str) -> JobResponse:
 @app.get("/api/scans")
 def list_scans() -> dict[str, Any]:
     scans = db.get_scans_df()
-    return {"scans": _frame_records(scans), "stats": db.stats()}
+    return {"scans": _public_records(scans), "stats": db.stats()}
 
 
 @app.get("/api/scans/{scan_id}")
@@ -287,8 +292,8 @@ def get_scan(scan_id: int) -> dict[str, Any]:
     if selected.empty:
         raise HTTPException(status_code=404, detail="That saved scan could not be found.")
     return {
-        "scan": _frame_records(selected)[0],
-        "items": _frame_records(db.get_items_df(scan_id)),
+        "scan": _public_records(selected)[0],
+        "items": _public_records(db.get_items_df(scan_id)),
     }
 
 

@@ -3,7 +3,9 @@ from __future__ import annotations
 
 import base64
 import io
+import logging
 import os
+import shutil
 import tempfile
 from functools import lru_cache
 from pathlib import Path
@@ -17,6 +19,7 @@ from backend import inventory_db as db
 from retrieval import pipeline
 
 ProgressCallback = Callable[[str, int, str], None]
+logger = logging.getLogger(__name__)
 
 
 def _progress(callback: ProgressCallback | None, stage: str, percent: int, message: str) -> None:
@@ -140,6 +143,28 @@ def _image_data_url(image: Image.Image) -> str:
     return f"data:image/jpeg;base64,{encoded}"
 
 
+def _persist_scan_artifacts(
+    scan_id: int,
+    image: Image.Image,
+    records: list[dict],
+) -> tuple[str, dict[int, str]]:
+    """Persist review evidence outside SQLite and return its paths."""
+    default_root = Path(__file__).resolve().parents[1] / "data" / "review_evidence"
+    scan_dir = Path(os.getenv("FEEDBACK_ASSET_DIR", str(default_root))) / f"scan_{scan_id}"
+    scan_dir.mkdir(parents=True, exist_ok=True)
+
+    source_path = scan_dir / "source.jpg"
+    image.save(source_path, format="JPEG", quality=92)
+    crop_paths: dict[int, str] = {}
+    for record in records:
+        x1, y1, x2, y2 = record["box"]
+        crop_id = int(record["crop_id"])
+        crop_path = scan_dir / f"crop_{crop_id:04d}.jpg"
+        image.crop((x1, y1, x2, y2)).save(crop_path, format="JPEG", quality=92)
+        crop_paths[crop_id] = str(crop_path)
+    return str(source_path), crop_paths
+
+
 def analyze_shelf(
     image: Image.Image,
     filename: str,
@@ -203,6 +228,16 @@ def analyze_shelf(
 
     _progress(callback, "saving", 94, "Preparing your shelf report")
     scan_id = db.save_scan(result, filename, records)
+    artifact_warning = ""
+    source_path: str | None = None
+    try:
+        source_path, crop_paths = _persist_scan_artifacts(scan_id, image, records)
+        db.attach_scan_artifacts(scan_id, source_path, crop_paths)
+    except Exception:
+        logger.exception("Could not preserve review evidence for scan %s", scan_id)
+        artifact_warning = "Review images could not be preserved."
+        if source_path:
+            shutil.rmtree(Path(source_path).parent, ignore_errors=True)
     _progress(callback, "complete", 100, "Shelf report ready")
 
     return {
@@ -219,5 +254,5 @@ def analyze_shelf(
         },
         "detections": records,
         "timings": result.timings,
-        "warning": sku_warning,
+        "warning": " ".join(message for message in (sku_warning, artifact_warning) if message),
     }

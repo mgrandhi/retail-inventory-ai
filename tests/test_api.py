@@ -125,6 +125,24 @@ def test_givenSavedInventory_whenRequestingInsights_thenReturnsChartReadyData(mo
     assert response.json()["summary"]["total_items"] == 2
 
 
+def test_givenSavedEvidencePaths_whenRequestingScan_thenServerPathsAreNotExposed(monkeypatch):
+    scans = pd.DataFrame(
+        [{"id": 1, "image_name": "shelf.jpg", "image_path": "/private/source.jpg"}]
+    )
+    items = pd.DataFrame(
+        [{"scan_id": 1, "crop_id": 1, "crop_path": "/private/crop.jpg", "box": "[1,2,3,4]"}]
+    )
+    monkeypatch.setattr(api.db, "get_scans_df", lambda: scans)
+    monkeypatch.setattr(api.db, "get_items_df", lambda scan_id: items)
+
+    with TestClient(api.app) as client:
+        response = client.get("/api/scans/1")
+
+    assert response.status_code == 200
+    assert "image_path" not in response.json()["scan"]
+    assert "crop_path" not in response.json()["items"][0]
+
+
 def test_givenHumanVerdict_whenSubmittingFeedback_thenItIsSaved(monkeypatch):
     captured = {}
 
