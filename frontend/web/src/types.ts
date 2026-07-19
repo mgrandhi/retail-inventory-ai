@@ -72,3 +72,39 @@ export type Insights = {
     sku_incorrect: number
   }
 }
+
+export type AiProviderId = 'gemini' | 'openrouter'
+
+export type AiProviderConfig = {
+  id: AiProviderId
+  label: string
+  available: boolean
+  description: string
+  default_model: string
+  models: string[]
+  unavailable_reason: string
+}
+
+export type AiConfig = {
+  default_provider: AiProviderId
+  providers: AiProviderConfig[]
+}
+
+export type InsightChartId =
+  | 'category_frequency'
+  | 'shelf_composition'
+  | 'products_by_scan'
+  | 'empty_shelf_area'
+  | 'subcategory_breakdown'
+
+export type InsightSummary = {
+  overall_summary: string
+  charts: Partial<Record<InsightChartId, {
+    summary: string
+    admin_actions: string[]
+  }>>
+  source: 'llm' | 'deterministic'
+  provider: AiProviderId | null
+  model: string | null
+  warning: string
+}

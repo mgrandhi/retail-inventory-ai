@@ -128,19 +128,37 @@ Use this mapping as an allowlist. Copy/update files individually or use `rsync` 
 
 | Source | Target | Treatment |
 |---|---|---|
-| `backend/` | `mgrandhi/backend/` | Sync Python/schema files; adapt imports. |
+| `backend/api.py`, `backend/analysis_service.py`, `backend/inventory_db.py`, `backend/llm_service.py`, `backend/__init__.py` | `mgrandhi/backend/` | Sync Python/schema files, including the new server-side LLM service; adapt imports. |
 | `bi_interface/` | `mgrandhi/bi_interface/` | Sync package files; adapt imports if needed. |
 | `retrieval/pipeline.py`, `retrieval/swin_faiss.py`, `retrieval/__init__.py` | `mgrandhi/retrieval/` | Sync logic, then retain dense-root asset resolution. |
 | `frontend/app.py`, `frontend/gradio_app.py` | `mgrandhi/app.py`, `mgrandhi/gradio_app.py` | Sync legacy wrappers; adapt imports. |
 | `frontend/run_hybrid_ui.sh` | `mgrandhi/run_hybrid_ui.sh` | Sync and retain root-aware launch behavior. |
+| `frontend/deploy_hybrid_ui_gcp.sh` | `mgrandhi/deploy_hybrid_ui_gcp.sh` | Sync deployment updates, including stopped-VM restart; retain IAP-only defaults and dense-root assets. |
 | `frontend/run_web_dev.sh`, `frontend/run_web_ui.sh` | `mgrandhi/frontend/` | Sync; commands must import `mgrandhi.backend.api`. |
 | `frontend/web/` | `mgrandhi/frontend/web/` | Sync source/config/lockfile; exclude generated/dependency directories. |
 | Selected `autolabel/sku_vlm*` and open-VLM launcher scripts | `mgrandhi/autolabel/` | Update only the already integrated SKU/VLM files. |
-| `tests/test_{analysis_service,api,inventory_db}.py` | `mgrandhi/tests/` | Sync and change imports to `mgrandhi.*`. |
+| `tests/test_analysis_service.py`, `tests/test_api.py`, `tests/test_inventory_db.py` | `mgrandhi/tests/` | Sync new/updated backend tests and change imports to `mgrandhi.*`. |
+| `frontend/web/src/App.test.tsx`, `frontend/web/src/api.test.ts` | `mgrandhi/frontend/web/src/` | Sync routing, request-cancellation, and response-normalization regressions. |
 | `docs/database_schema.md`, `docs/open_vlm_sku_benchmark.md` | `mgrandhi/docs/` | Merge relevant documentation; preserve target-only runbooks. |
 | `demo/shelfsight-ui-demo.{png,webm}` | `mgrandhi/demo/` | Optional known UI documentation only; verify each is under 10 MiB. |
 | `.env.example` | `mgrandhi/.env.example` | Merge supported variable names only; never copy values or `.env`. |
 | `pyproject.toml` dependency declarations | `mgrandhi/requirements.txt` | Review and merge dependencies manually; do not copy `pyproject.toml`. |
+
+This append adds the current Insights-first experience; it does not replace the existing
+integration. `/` now canonicalizes to `/insights`, while upload and scan controls live on the
+separate `/scan` route and the Insights page has a prominent scan CTA. Insights includes a
+grounded overall inventory briefing plus a numeric narrative and data-supported administrator
+actions for each chart. Both Insights summaries and per-scan SKU/OCR expose server-advertised
+Gemini or OpenRouter provider/model choices, but they are separate requests and selections.
+
+The backend now validates provider/model selections against server allowlists, accepts per-request
+`sku_provider` and `sku_model` form fields, and uses `backend/llm_service.py` for provider
+configuration, grounded summary generation, strict response validation, and deterministic
+fallbacks. The frontend normalizes summary responses, treats absent or malformed action lists
+safely, and aborts stale Insights/config/summary requests when navigation or regeneration makes
+them obsolete. Include the scan-to-Insights regression fix: returning to Insights remounts the
+page, reloads current inventory, and generates a fresh briefing rather than allowing an aborted or
+older request to overwrite it.
 
 Selected autolabel files are:
 
@@ -197,6 +215,15 @@ from mgrandhi.config.paths import YOLO_WEIGHTS
 
 Convert source imports such as `from backend`, `from retrieval`, `from autolabel`, or
 `from bi_interface` to their `mgrandhi.*` equivalents, including tests and lazy imports.
+In particular, adapt the new service imports in both backend callers:
+
+```python
+from mgrandhi.backend import llm_service
+```
+
+`mgrandhi/backend/llm_service.py` itself has no source-package import to rewrite, but it must remain
+inside the `mgrandhi.backend` package so `api.py` and `analysis_service.py` share the same provider
+allowlist and validation.
 
 Retain `mgrandhi/config/paths.py` as the target boundary. Its defaults must resolve:
 
@@ -224,6 +251,12 @@ mgrandhi/frontend/web/dist/
 Ensure these generated paths remain ignored. Do not copy source package metadata: target setup is
 `pip install -r mgrandhi/requirements.txt`, and launch modules are
 `mgrandhi.backend.api:app`.
+
+Treat all provider credentials as server-only runtime secrets. Never copy `.env`, credential
+files, ADC material, tokens, or populated deployment configuration. Merge only variable names,
+safe placeholders, comments, and defaults documented by source `.env.example`. In particular,
+`OPENROUTER_API_KEY` must remain empty in tracked files and be injected only into the server/VM
+runtime; provider keys must never appear in Vite variables, browser payloads, logs, or SQLite.
 
 ## 5. Audit the source/target diff
 
@@ -291,8 +324,12 @@ test -s train_product_category_58.csv
 
 npm --prefix mgrandhi/frontend/web ci
 python -m compileall -q mgrandhi
-python -m pytest -q mgrandhi/tests
-npm --prefix mgrandhi/frontend/web test
+python -m pytest -q \
+  mgrandhi/tests/test_analysis_service.py \
+  mgrandhi/tests/test_api.py \
+  mgrandhi/tests/test_inventory_db.py
+npm --prefix mgrandhi/frontend/web test -- \
+  src/App.test.tsx src/api.test.ts
 npm --prefix mgrandhi/frontend/web run typecheck
 npm --prefix mgrandhi/frontend/web run lint
 npm --prefix mgrandhi/frontend/web run build
@@ -305,7 +342,7 @@ PRELOAD_MODELS=0 python -c \
 Optional smoke test without model preloading:
 
 ```bash
-PRELOAD_MODELS=0 SKU_BACKEND=dry-run \
+PRELOAD_MODELS=0 \
   uvicorn mgrandhi.backend.api:app --host 127.0.0.1 --port 8000
 ```
 
@@ -313,10 +350,29 @@ In another shell:
 
 ```bash
 curl --fail --silent http://127.0.0.1:8000/api/health
+curl --fail --silent http://127.0.0.1:8000/api/insights
+curl --fail --silent http://127.0.0.1:8000/api/ai-config
+curl --fail --silent http://127.0.0.1:8000/insights >/dev/null
+curl --fail --silent http://127.0.0.1:8000/scan >/dev/null
+
+# With Gemini configured, request a grounded briefing. Without credentials/provider access,
+# the same endpoint must return HTTP 200 with source=deterministic and a warning.
+curl --fail --silent \
+  -H 'Content-Type: application/json' \
+  -d '{"provider":"gemini","model":"gemini-2.5-flash"}' \
+  http://127.0.0.1:8000/api/insight-summaries
 ```
 
+Confirm the provider-options response contains no key or credential values. Confirm the summary
+contains `overall_summary` and all five chart IDs; for a successful provider call its `source` is
+`llm`, while unavailable, failed, or malformed provider output must yield `source=deterministic`
+with grounded chart narratives/actions and a warning. The React test suite verifies `/` becomes
+`/insights`, `/scan` remains separate, response normalization is defensive, stale requests are
+cancelled, and returning from Scan refreshes Insights.
+
 Stop the server with Ctrl-C. A real scan is a separate GPU/resource-sensitive check and requires
-the LFS assets.
+the LFS assets. If it is run, submit `sku_provider` and an allowlisted `sku_model`, poll the returned
+job, then navigate back to `/insights` and confirm the new scan appears without a hard refresh.
 
 ## 7. Conflicts and remote movement
 

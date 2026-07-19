@@ -246,11 +246,19 @@ class OpenAICompatibleBackend(BaseBackend):
 
     name = "openai-compatible"
 
-    def __init__(self, model: str, base_url: str, api_key: str = "", timeout: int = 180):
+    def __init__(
+        self,
+        model: str,
+        base_url: str,
+        api_key: str = "",
+        timeout: int = 180,
+        extra_headers: dict[str, str] | None = None,
+    ):
         super().__init__(model)
         self.base_url = normalize_openai_base_url(base_url)
         self.api_key = api_key
         self.timeout = timeout
+        self.extra_headers = extra_headers or {}
 
     def chat_completions_url(self) -> str:
         return f"{self.base_url}/chat/completions"
@@ -274,6 +282,7 @@ class OpenAICompatibleBackend(BaseBackend):
         headers = {"Content-Type": "application/json"}
         if self.api_key:
             headers["Authorization"] = f"Bearer {self.api_key}"
+        headers.update(self.extra_headers)
         url = self.chat_completions_url()
         req = urllib_request.Request(
             url,
@@ -304,6 +313,26 @@ class OpenAICompatibleBackend(BaseBackend):
                 round(time.time() - started, 4),
                 f"{exc} url={url} model={self.model}",
             )
+
+
+class OpenRouterBackend(OpenAICompatibleBackend):
+    """OpenRouter vision backend using only server-managed endpoint and credentials."""
+
+    name = "openrouter"
+
+    def __init__(self, model: str, timeout: int = 180):
+        base_url = os.getenv("OPENROUTER_BASE_URL", "https://openrouter.ai/api/v1").rstrip("/")
+        if base_url != "https://openrouter.ai/api/v1":
+            raise ValueError("OPENROUTER_BASE_URL must use the official OpenRouter API endpoint.")
+        api_key = os.getenv("OPENROUTER_API_KEY", "")
+        if not api_key:
+            raise ValueError("OPENROUTER_API_KEY is not configured on the server.")
+        headers = {}
+        if os.getenv("OPENROUTER_SITE_URL"):
+            headers["HTTP-Referer"] = os.environ["OPENROUTER_SITE_URL"]
+        if os.getenv("OPENROUTER_APP_NAME"):
+            headers["X-Title"] = os.environ["OPENROUTER_APP_NAME"]
+        super().__init__(model, base_url, api_key, timeout, headers)
 
 
 def normalize_openai_base_url(base_url: str) -> str:

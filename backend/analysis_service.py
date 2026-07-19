@@ -16,6 +16,7 @@ from PIL import Image
 
 from autolabel.sku_vlm import coerce_bool
 from backend import inventory_db as db
+from backend import llm_service
 from retrieval import pipeline
 
 ProgressCallback = Callable[[str, int, str], None]
@@ -42,28 +43,22 @@ def _empty_sku_fields() -> dict:
     }
 
 
-@lru_cache(maxsize=1)
-def get_sku_backend():
-    """Build the configured SKU reader once per inference process."""
-    from autolabel.sku_vlm import build_backend
+@lru_cache(maxsize=16)
+def get_sku_backend(provider: str = "gemini", model: str = ""):
+    """Build a SKU reader cached only by validated provider/model server configuration."""
+    from autolabel.sku_vlm import OpenRouterBackend, build_backend
 
-    backend = os.getenv("SKU_BACKEND", "gemini")
-    default_model = {
-        "dry-run": "dry-run",
-        "gemini": os.getenv("VERTEX_MODEL", "gemini-2.5-flash"),
-        "openai-compatible": os.getenv("VLM_MODEL", "Qwen/Qwen2.5-VL-3B-Instruct"),
-        "vertex-model-garden": os.getenv(
-            "VERTEX_MODEL_GARDEN_MODEL", "google/paligemma@paligemma-mix-448-float16"
-        ),
-    }.get(backend, os.getenv("VERTEX_MODEL", "gemini-2.5-flash"))
-    args = SimpleNamespace(
-        backend=backend,
-        model=os.getenv("SKU_MODEL", default_model),
-        endpoint=os.getenv(
-            "VLM_ENDPOINT_URL", os.getenv("VERTEX_MODEL_GARDEN_ENDPOINT_ID", "")
+    selected_provider, selected_model = llm_service.validate_selection(provider, model or None)
+    if selected_provider == "openrouter":
+        return OpenRouterBackend(
+            selected_model,
+            timeout=int(os.getenv("SKU_TIMEOUT_SECONDS", "180")),
         )
-        or None,
-        api_key=os.getenv("VLM_API_KEY", ""),
+    args = SimpleNamespace(
+        backend="gemini",
+        model=selected_model,
+        endpoint=None,
+        api_key="",
         project=os.getenv("PROJECT_ID", "") or None,
         location=os.getenv("REGION", "us-central1"),
         timeout=int(os.getenv("SKU_TIMEOUT_SECONDS", "180")),
@@ -79,7 +74,8 @@ def preload_models() -> dict:
     sku_ready = False
     if os.getenv("SKU_EXTRACT_DEFAULT", "1") == "1":
         try:
-            get_sku_backend()
+            default_provider = os.getenv("SKU_PROVIDER", "gemini")
+            get_sku_backend(default_provider)
             sku_ready = True
         except Exception:
             sku_ready = False
@@ -91,6 +87,8 @@ def _enrich_with_sku(
     image: Image.Image,
     callback: ProgressCallback | None,
     max_sku_crops: int | None = None,
+    sku_provider: str = "gemini",
+    sku_model: str = "",
 ) -> list[dict]:
     if not records:
         return records
@@ -98,7 +96,7 @@ def _enrich_with_sku(
     if max_sku_crops is None:
         max_sku_crops = int(os.getenv("MAX_SKU_CROPS", "5"))
     limit = len(records) if max_sku_crops <= 0 else min(max_sku_crops, len(records))
-    backend = get_sku_backend()
+    backend = get_sku_backend(sku_provider, sku_model)
 
     with tempfile.TemporaryDirectory(prefix="retail_sku_") as tmp:
         tmp_dir = Path(tmp)
@@ -172,6 +170,8 @@ def analyze_shelf(
     max_crops: int | None = None,
     max_sku_crops: int | None = None,
     extract_sku: bool | None = None,
+    sku_provider: str = "gemini",
+    sku_model: str = "",
 ) -> dict:
     """Run the complete scan while reporting operator-friendly progress."""
     image = image.convert("RGB")
@@ -215,7 +215,14 @@ def analyze_shelf(
     )
     if should_extract_sku:
         try:
-            records = _enrich_with_sku(records, image, callback, max_sku_crops)
+            records = _enrich_with_sku(
+                records,
+                image,
+                callback,
+                max_sku_crops,
+                sku_provider,
+                sku_model,
+            )
         except Exception as exc:
             sku_warning = "Some package details could not be read."
             for record in records:

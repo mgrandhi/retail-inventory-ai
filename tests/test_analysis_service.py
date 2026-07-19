@@ -88,7 +88,7 @@ def test_givenSkuBackendFailure_whenAnalyzingShelf_thenKeepsCategoryResultsAndWa
     monkeypatch.setattr(
         analysis_service,
         "get_sku_backend",
-        lambda: (_ for _ in ()).throw(RuntimeError("VLM unavailable")),
+        lambda *args: (_ for _ in ()).throw(RuntimeError("VLM unavailable")),
     )
     monkeypatch.setattr(analysis_service.db, "save_scan", lambda *args, **kwargs: 9)
     monkeypatch.setattr(analysis_service.db, "attach_scan_artifacts", lambda *args, **kwargs: None)

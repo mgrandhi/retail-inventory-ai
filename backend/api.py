@@ -21,6 +21,7 @@ from pydantic import BaseModel, Field
 
 from backend import analysis_service
 from backend import inventory_db as db
+from backend import llm_service
 from bi_interface import bi_engine
 
 logger = logging.getLogger(__name__)
@@ -62,6 +63,11 @@ class FeedbackRequest(BaseModel):
     verdict: Literal["correct", "incorrect"]
     correction: str = Field(default="", max_length=500)
     note: str = Field(default="", max_length=1000)
+
+
+class InsightSummaryRequest(BaseModel):
+    provider: Literal["gemini", "openrouter"] = "gemini"
+    model: str | None = Field(default=None, min_length=1, max_length=100)
 
 
 class _JobStore:
@@ -172,6 +178,8 @@ def _run_analysis(
     max_crops: int,
     max_sku_crops: int,
     extract_sku: bool,
+    sku_provider: str,
+    sku_model: str,
 ) -> None:
     def report(stage: str, progress: int, message: str) -> None:
         jobs.update(
@@ -198,6 +206,8 @@ def _run_analysis(
             max_crops=max_crops,
             max_sku_crops=max_sku_crops,
             extract_sku=extract_sku,
+            sku_provider=sku_provider,
+            sku_model=sku_model,
         )
         jobs.update(
             job_id,
@@ -231,6 +241,8 @@ async def create_analysis(
     max_crops: int = Form(default=60, ge=0, le=300),
     max_sku_crops: int = Form(default=5, ge=0, le=100),
     extract_sku: bool = Form(default=True),
+    sku_provider: Literal["gemini", "openrouter"] = Form(default="gemini"),
+    sku_model: str | None = Form(default=None, min_length=1, max_length=100),
 ) -> JobAccepted:
     if jobs.active_count() >= int(os.getenv("MAX_PENDING_SCANS", "3")):
         raise HTTPException(
@@ -258,6 +270,10 @@ async def create_analysis(
     if image_format not in ALLOWED_FORMATS:
         raise HTTPException(status_code=415, detail="Use a JPG, PNG, BMP, or WebP image.")
 
+    try:
+        selected_provider, selected_model = llm_service.validate_selection(sku_provider, sku_model)
+    except ValueError as exc:
+        raise HTTPException(status_code=422, detail=str(exc)) from exc
     job_id = jobs.create()
     inference_executor.submit(
         _run_analysis,
@@ -267,6 +283,8 @@ async def create_analysis(
         max_crops,
         max_sku_crops,
         extract_sku,
+        selected_provider,
+        selected_model,
     )
     return JobAccepted(job_id=job_id, status="queued")
 
@@ -299,6 +317,10 @@ def get_scan(scan_id: int) -> dict[str, Any]:
 
 @app.get("/api/insights")
 def insights() -> dict[str, Any]:
+    return _insights_payload()
+
+
+def _insights_payload() -> dict[str, Any]:
     items = db.get_items_df()
     scans = db.get_scans_df()
     feedback = db.get_feedback_df()
@@ -329,6 +351,24 @@ def insights() -> dict[str, Any]:
         "scans": _frame_records(scans.sort_values("id")) if not scans.empty else [],
         "feedback": feedback_summary,
     }
+
+
+@app.get("/api/ai-config")
+def ai_config() -> dict[str, Any]:
+    return llm_service.public_provider_config()
+
+
+@app.post("/api/insight-summaries")
+def insight_summaries(payload: InsightSummaryRequest) -> dict[str, Any]:
+    try:
+        llm_service.validate_selection(payload.provider, payload.model)
+    except ValueError as exc:
+        raise HTTPException(status_code=422, detail=str(exc)) from exc
+    return llm_service.generate_inventory_summary(
+        _insights_payload(),
+        payload.provider,
+        payload.model,
+    )
 
 
 @app.post("/api/feedback")

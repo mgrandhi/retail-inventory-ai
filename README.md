@@ -100,10 +100,15 @@ bash frontend/run_web_dev.sh
 bash frontend/run_web_ui.sh
 ```
 
-Primary destinations are **Scan Shelf**, **Insights**, **History**, and **Ask Inventory**. The
+The default route opens **Insights**; **Scan Shelf** remains a separate upload destination and is
+linked prominently from the Insights page. Primary destinations are **Insights**, **Scan Shelf**,
+**History**, and **Ask Inventory**. The
 operator can expand **Analysis settings** to choose the number of products categorized, enable
-SKU/package reading, and cap SKU crops. Model names, confidence thresholds, and endpoints remain
-server-side configuration. Each result row also accepts separate category and SKU verdicts;
+SKU/package reading, cap SKU crops, and choose a server-advertised Gemini or OpenRouter model.
+Insights has the same provider/model controls and generates a grounded overall briefing plus a
+narrative and administrator actions for every chart. Deterministic summaries remain available if
+an LLM cannot be reached. Credentials, endpoints, and allowlisted model names remain server-side
+configuration. Each result row also accepts separate category and SKU verdicts;
 corrections are stored in SQLite for later evaluation or retraining. Insights include category
 composition, subcategory breakdown, scan/empty-space trends, and human-feedback acceptance rates.
 The legacy Streamlit and Gradio entrypoints
@@ -148,8 +153,14 @@ Stop the VM when the demo is done:
 gcloud compute instances stop retail-inventory-ui-t4 --zone us-central1-a
 ```
 
-SKU/OCR is enabled with `SKU_EXTRACT_DEFAULT=1` (the default). Set `SKU_BACKEND`, `SKU_MODEL`, and
-the relevant Vertex or OpenAI-compatible endpoint environment variables on the service.
+SKU/OCR is enabled with `SKU_EXTRACT_DEFAULT=1` (the default). Gemini uses Google ADC and
+`PROJECT_ID`; configure its UI model list with `GEMINI_MODEL` and comma-separated `GEMINI_MODELS`.
+OpenRouter is optional and uses server-only `OPENROUTER_API_KEY`,
+`OPENROUTER_BASE_URL=https://openrouter.ai/api/v1`, `OPENROUTER_MODEL`, and comma-separated
+`OPENROUTER_MODELS`. Optional `OPENROUTER_SITE_URL` and `OPENROUTER_APP_NAME` provide attribution
+headers. Never place API keys in browser state, client payloads, Vite variables, logs, or SQLite.
+If OpenRouter is not configured, the UI marks it unavailable while Gemini and deterministic
+fallbacks continue to work.
 `MAX_CLASSIFICATION_CROPS` and `MAX_SKU_CROPS` provide server defaults; each scan can override
 the two limits from **Analysis settings**.
 

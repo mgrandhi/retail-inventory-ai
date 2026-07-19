@@ -19,12 +19,11 @@ import {
   MessageSquareCheck,
   SlidersHorizontal,
   Sparkles,
-  Store,
   ThumbsDown,
   ThumbsUp,
   Upload,
 } from 'lucide-react'
-import { BrowserRouter, NavLink, Route, Routes } from 'react-router-dom'
+import { BrowserRouter, Link, Navigate, NavLink, Route, Routes } from 'react-router-dom'
 import {
   Bar,
   BarChart,
@@ -39,8 +38,27 @@ import {
   XAxis,
   YAxis,
 } from 'recharts'
-import { askInventory, getAnalysis, getHistory, getInsights, sendDetectionFeedback, startAnalysis } from './api'
-import type { AnalysisJob, Detection, Insights, ScanHistory, ScanResult } from './types'
+import {
+  askInventory,
+  generateInsightSummary,
+  getAiConfig,
+  getAnalysis,
+  getHistory,
+  getInsights,
+  sendDetectionFeedback,
+  startAnalysis,
+} from './api'
+import type {
+  AiConfig,
+  AiProviderId,
+  AnalysisJob,
+  Detection,
+  Insights,
+  InsightChartId,
+  InsightSummary,
+  ScanHistory,
+  ScanResult,
+} from './types'
 import './App.css'
 
 const sleep = (milliseconds: number) => new Promise((resolve) => setTimeout(resolve, milliseconds))
@@ -54,8 +72,8 @@ function Shell() {
           <span><strong>ShelfSight</strong><small>Retail assistant</small></span>
         </div>
         <nav aria-label="Main navigation">
-          <NavLink to="/" end><Camera /><span>Scan shelf</span></NavLink>
           <NavLink to="/insights"><BarChart3 /><span>Insights</span></NavLink>
+          <NavLink to="/scan"><Camera /><span>Scan shelf</span></NavLink>
           <NavLink to="/history"><History /><span>History</span></NavLink>
           <NavLink to="/ask"><MessageCircleQuestion /><span>Ask inventory</span></NavLink>
         </nav>
@@ -67,11 +85,11 @@ function Shell() {
       <main>
         <header className="topbar">
           <div className="mobile-brand"><ScanLine /> ShelfSight</div>
-          <div className="store-chip"><Store /> Demo store <ChevronRight /></div>
         </header>
         <div className="page-wrap">
           <Routes>
-            <Route path="/" element={<ScanPage />} />
+            <Route path="/" element={<Navigate replace to="/insights" />} />
+            <Route path="/scan" element={<ScanPage />} />
             <Route path="/insights" element={<InsightsPage />} />
             <Route path="/history" element={<HistoryPage />} />
             <Route path="/ask" element={<AskPage />} />
@@ -103,7 +121,22 @@ function ScanPage() {
   const [maxCrops, setMaxCrops] = useState(60)
   const [maxSkuCrops, setMaxSkuCrops] = useState(5)
   const [extractSku, setExtractSku] = useState(true)
+  const [aiConfig, setAiConfig] = useState<AiConfig | null>(null)
+  const [skuProvider, setSkuProvider] = useState<AiProviderId>('gemini')
+  const [skuModel, setSkuModel] = useState('gemini-2.5-flash')
   const inputRef = useRef<HTMLInputElement>(null)
+  const selectedSkuProvider = aiConfig?.providers.find((provider) => provider.id === skuProvider)
+
+  useEffect(() => {
+    getAiConfig().then((config) => {
+      setAiConfig(config)
+      const provider = config.providers.find((item) => item.id === config.default_provider)
+      if (provider) {
+        setSkuProvider(provider.id)
+        setSkuModel(provider.default_model)
+      }
+    }).catch(() => setError('AI provider options could not be loaded. Refresh the page to retry.'))
+  }, [])
 
   useEffect(() => {
     if (!file) {
@@ -142,7 +175,13 @@ function ScanPage() {
     setJob({ job_id: '', status: 'queued', stage: 'uploading', progress: 1, message: 'Uploading your shelf photo' })
     try {
       const originalImage = await fileToDataUrl(file)
-      const jobId = await startAnalysis(file, { maxCrops, maxSkuCrops, extractSku })
+      const jobId = await startAnalysis(file, {
+        maxCrops,
+        maxSkuCrops,
+        extractSku,
+        skuProvider,
+        skuModel,
+      })
       for (;;) {
         const next = await getAnalysis(jobId)
         setJob(next)
@@ -220,6 +259,44 @@ function ScanPage() {
                 <span><strong>Read SKU and package text</strong><small>Uses the vision model after category matching.</small></span>
                 <input type="checkbox" checked={extractSku} onChange={(event) => setExtractSku(event.target.checked)} />
               </label>
+              <label className={`setting-row select-setting ${!extractSku ? 'disabled' : ''}`}>
+                <span><strong>OCR provider</strong><small>Credentials stay on the server and are never sent to this browser.</small></span>
+                <select
+                  aria-label="OCR provider"
+                  value={skuProvider}
+                  disabled={!extractSku || !aiConfig}
+                  onChange={(event) => {
+                    const provider = event.target.value as AiProviderId
+                    const selected = aiConfig?.providers.find((item) => item.id === provider)
+                    setSkuProvider(provider)
+                    if (selected) setSkuModel(selected.default_model)
+                  }}
+                >
+                  {aiConfig?.providers.map((provider) => (
+                    <option value={provider.id} key={provider.id}>
+                      {provider.label}{provider.available ? '' : ' (unavailable)'}
+                    </option>
+                  ))}
+                </select>
+              </label>
+              <label className={`setting-row select-setting ${!extractSku ? 'disabled' : ''}`}>
+                <span><strong>OCR model</strong><small>Choose from the models allowed by the server.</small></span>
+                <select
+                  aria-label="OCR model"
+                  value={skuModel}
+                  disabled={!extractSku || !aiConfig}
+                  onChange={(event) => setSkuModel(event.target.value)}
+                >
+                  {aiConfig?.providers.find((provider) => provider.id === skuProvider)?.models.map((model) => (
+                    <option value={model} key={model}>{model}</option>
+                  ))}
+                </select>
+              </label>
+              {aiConfig && !aiConfig.providers.find((provider) => provider.id === skuProvider)?.available && (
+                <p className="provider-warning" role="status">
+                  {aiConfig.providers.find((provider) => provider.id === skuProvider)?.unavailable_reason}
+                </p>
+              )}
               <label className={`setting-row ${!extractSku ? 'disabled' : ''}`}>
                 <span><strong>Products to read for SKU</strong><small>Each product is a separate vision request. Lower is faster.</small></span>
                 <output>{maxSkuCrops === 0 ? 'All' : maxSkuCrops}</output>
@@ -229,7 +306,11 @@ function ScanPage() {
             </div>
           </details>
           {error && <div className="alert error" role="alert"><AlertTriangle /> {error}</div>}
-          <button className="primary analyze-button" disabled={!file || !!job} onClick={analyze}>
+          <button
+            className="primary analyze-button"
+            disabled={!file || !!job || (extractSku && (!aiConfig || !selectedSkuProvider?.available))}
+            onClick={analyze}
+          >
             {job ? <><RefreshCw className="spin" /> Analyzing shelf…</> : <><Sparkles /> Analyze shelf <ArrowRight /></>}
           </button>
         </section>
@@ -480,19 +561,97 @@ function fileToDataUrl(file: File): Promise<string> {
   })
 }
 
+function isAbortError(reason: unknown) {
+  return reason instanceof Error && reason.name === 'AbortError'
+}
+
 function InsightsPage() {
   const [data, setData] = useState<Insights | null>(null)
+  const [aiConfig, setAiConfig] = useState<AiConfig | null>(null)
+  const [provider, setProvider] = useState<AiProviderId>('gemini')
+  const [model, setModel] = useState('gemini-2.5-flash')
+  const [summary, setSummary] = useState<InsightSummary | null>(null)
+  const [summaryLoading, setSummaryLoading] = useState(false)
   const [error, setError] = useState('')
-  useEffect(() => { getInsights().then(setData).catch((reason) => setError(reason.message)) }, [])
+  const [summaryError, setSummaryError] = useState('')
+  const summaryRequestRef = useRef<{ id: number; controller: AbortController } | null>(null)
+
+  const refreshSummary = async (nextProvider = provider, nextModel = model) => {
+    summaryRequestRef.current?.controller.abort()
+    const request = {
+      id: (summaryRequestRef.current?.id || 0) + 1,
+      controller: new AbortController(),
+    }
+    summaryRequestRef.current = request
+    setSummaryLoading(true)
+    setSummaryError('')
+    try {
+      const nextSummary = await generateInsightSummary(
+        nextProvider,
+        nextModel,
+        request.controller.signal,
+      )
+      if (summaryRequestRef.current?.id === request.id) setSummary(nextSummary)
+    } catch (reason) {
+      if (!isAbortError(reason) && summaryRequestRef.current?.id === request.id) {
+        setSummaryError(reason instanceof Error ? reason.message : 'Could not generate inventory summary.')
+      }
+    } finally {
+      if (summaryRequestRef.current?.id === request.id) setSummaryLoading(false)
+    }
+  }
+
+  useEffect(() => {
+    const controller = new AbortController()
+    let active = true
+    setError('')
+    getInsights(controller.signal)
+      .then((insights) => {
+        if (active) setData(insights)
+      })
+      .catch((reason) => {
+        if (active && !isAbortError(reason)) {
+          setError(reason instanceof Error ? reason.message : 'Could not refresh inventory insights.')
+        }
+      })
+    getAiConfig(controller.signal)
+      .then((config) => {
+        if (!active) return
+        setAiConfig(config)
+        const selected = config.providers.find((item) => item.id === config.default_provider)
+        if (selected) {
+          setProvider(selected.id)
+          setModel(selected.default_model)
+          void refreshSummary(selected.id, selected.default_model)
+        }
+      })
+      .catch((reason) => {
+        if (active && !isAbortError(reason)) {
+          setSummaryError(reason instanceof Error ? reason.message : 'AI options are unavailable.')
+        }
+      })
+    return () => {
+      active = false
+      controller.abort()
+      const summaryRequest = summaryRequestRef.current
+      summaryRequestRef.current = null
+      summaryRequest?.controller.abort()
+    }
+  }, [])
+
   const scanTrend = data?.scans.map((scan) => ({
     scan: `#${scan.id}`,
     products: scan.num_items,
     empty: Math.round(scan.empty_pct * 100),
   })) || []
+  const selectedProvider = aiConfig?.providers.find((item) => item.id === provider)
   const pieColors = ['#176b55', '#4b9c7f', '#8bc7ad', '#d3a044', '#6f7d77', '#b7d7c8', '#d47c50', '#86a69a']
   return (
     <>
-      <PageHeading eyebrow="Inventory overview" title="See what your shelves are telling you" copy="Simple trends from every saved shelf scan." />
+      <div className="insights-heading-row">
+        <PageHeading eyebrow="Inventory overview" title="See what your shelves are telling you" copy="Grounded trends and administrator next steps from every saved shelf scan." />
+        <Link className="primary scan-cta" to="/scan"><Camera /> Upload and scan a shelf <ArrowRight /></Link>
+      </div>
       {error && <div className="alert error"><AlertTriangle /> {error}</div>}
       {!data ? <LoadingCard /> : (
         <>
@@ -502,6 +661,67 @@ function InsightsPage() {
             <Metric label="Categories seen" value={data.summary.distinct_categories || 0} note="Known categories" />
             <Metric label="Needs review" value={data.summary.unknown_items || 0} note="Unmatched products" tone={data.summary.unknown_items ? 'warn' : 'good'} />
           </div>
+          <section className="card insight-summary-card" aria-labelledby="inventory-summary-title">
+            <div className="summary-card-head">
+              <div>
+                <span className="eyebrow">AI inventory briefing</span>
+                <h2 id="inventory-summary-title">Full inventory summary</h2>
+                <p>Generated only from aggregated inventory and feedback data.</p>
+              </div>
+              <div className="provider-controls">
+                <label>
+                  <span>Provider</span>
+                  <select
+                    value={provider}
+                    onChange={(event) => {
+                      const nextProvider = event.target.value as AiProviderId
+                      const selected = aiConfig?.providers.find((item) => item.id === nextProvider)
+                      setProvider(nextProvider)
+                      if (selected) setModel(selected.default_model)
+                    }}
+                  >
+                    {aiConfig?.providers.map((item) => (
+                      <option key={item.id} value={item.id}>
+                        {item.label}{item.available ? '' : ' (unavailable)'}
+                      </option>
+                    ))}
+                  </select>
+                </label>
+                <label>
+                  <span>Model</span>
+                  <select value={model} onChange={(event) => setModel(event.target.value)}>
+                    {selectedProvider?.models.map((item) => <option value={item} key={item}>{item}</option>)}
+                  </select>
+                </label>
+                <button
+                  className="secondary"
+                  disabled={summaryLoading || !selectedProvider?.available}
+                  onClick={() => refreshSummary()}
+                >
+                  <RefreshCw className={summaryLoading ? 'spin' : ''} /> {summaryLoading ? 'Generating…' : 'Generate'}
+                </button>
+              </div>
+            </div>
+            <p className="provider-description">{selectedProvider?.description}</p>
+            {selectedProvider && !selectedProvider.available && (
+              <div className="alert warning" role="status"><AlertTriangle /> {selectedProvider.unavailable_reason}</div>
+            )}
+            {summaryError && <div className="alert error" role="alert"><AlertTriangle /> {summaryError}</div>}
+            {summaryLoading && !summary ? <div className="summary-loading" role="status"><RefreshCw className="spin" /> Generating grounded summary…</div> : (
+              summary && (
+                <div className="overall-summary" aria-live="polite">
+                  <Sparkles />
+                  <div>
+                    <p>{summary.overall_summary}</p>
+                    <small>
+                      {summary.source === 'llm' ? `${summary.provider} · ${summary.model}` : 'Deterministic fallback'}
+                    </small>
+                  </div>
+                </div>
+              )
+            )}
+            {summary?.warning && <div className="alert warning" role="status"><AlertTriangle /> {summary.warning}</div>}
+          </section>
           <div className="analytics-grid">
             <div className="card chart-card"><h2>Most common categories</h2><p>Products recorded across all scans</p>
               {data.categories.length ? <ResponsiveContainer width="100%" height={360}>
@@ -513,6 +733,7 @@ function InsightsPage() {
                   <Bar dataKey="count" fill="#176b55" radius={[0, 6, 6, 0]} />
                 </BarChart>
               </ResponsiveContainer> : <EmptyState copy="Complete a shelf scan to see category insights." />}
+              <ChartNarrative chartId="category_frequency" summary={summary} />
             </div>
             <div className="card chart-card"><h2>Shelf composition</h2><p>Share of identified products by category</p>
               {data.categories.length ? <ResponsiveContainer width="100%" height={360}>
@@ -523,6 +744,7 @@ function InsightsPage() {
                   <Tooltip />
                 </PieChart>
               </ResponsiveContainer> : <EmptyState copy="Complete a shelf scan to see composition." />}
+              <ChartNarrative chartId="shelf_composition" summary={summary} />
             </div>
           </div>
           <div className="analytics-grid">
@@ -536,6 +758,7 @@ function InsightsPage() {
                   <Line type="monotone" dataKey="products" stroke="#176b55" strokeWidth={3} dot={{ r: 4 }} />
                 </LineChart>
               </ResponsiveContainer> : <EmptyState copy="Complete more scans to see a trend." />}
+              <ChartNarrative chartId="products_by_scan" summary={summary} />
             </div>
             <div className="card chart-card"><h2>Possible empty shelf area</h2><p>Uncovered image area by scan</p>
               {scanTrend.length ? <ResponsiveContainer width="100%" height={300}>
@@ -547,6 +770,7 @@ function InsightsPage() {
                   <Line type="monotone" dataKey="empty" stroke="#d08a2f" strokeWidth={3} dot={{ r: 4 }} />
                 </LineChart>
               </ResponsiveContainer> : <EmptyState copy="Complete a shelf scan to see empty-space trends." />}
+              <ChartNarrative chartId="empty_shelf_area" summary={summary} />
             </div>
           </div>
           <div className="analytics-grid">
@@ -560,6 +784,7 @@ function InsightsPage() {
                   <Bar dataKey="count" fill="#4b9c7f" radius={[0, 6, 6, 0]} />
                 </BarChart>
               </ResponsiveContainer> : <EmptyState copy="No subcategory information is available yet." />}
+              <ChartNarrative chartId="subcategory_breakdown" summary={summary} />
             </div>
             <FeedbackSummary data={data.feedback} />
           </div>
@@ -567,6 +792,23 @@ function InsightsPage() {
         </>
       )}
     </>
+  )
+}
+
+function ChartNarrative({ chartId, summary }: { chartId: InsightChartId; summary: InsightSummary | null }) {
+  const chart = summary?.charts[chartId]
+  if (!chart) return <div className="chart-narrative pending">Generate a summary for this chart.</div>
+  const adminActions = Array.isArray(chart.admin_actions) ? chart.admin_actions : []
+  return (
+    <div className="chart-narrative">
+      <p><Sparkles /> <span>{chart.summary}</span></p>
+      <div className="admin-actions">
+        <strong>Administrator actions</strong>
+        {adminActions.length ? (
+          <ul>{adminActions.map((action, index) => <li key={`${action}-${index}`}>{action}</li>)}</ul>
+        ) : <span className="no-action"><Check /> No immediate action</span>}
+      </div>
+    </div>
   )
 }
 

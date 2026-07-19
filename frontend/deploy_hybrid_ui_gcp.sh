@@ -172,6 +172,12 @@ if ! gcloud compute instances describe "$INSTANCE" --project "$PROJECT_ID" --zon
     --metadata install-nvidia-driver=True
 else
   echo "VM $INSTANCE already exists; reusing it."
+  INSTANCE_STATUS="$(gcloud compute instances describe "$INSTANCE" \
+    --project "$PROJECT_ID" --zone "$ZONE" --format='value(status)')"
+  if [[ "$INSTANCE_STATUS" != "RUNNING" ]]; then
+    echo "Starting existing VM $INSTANCE (current status: $INSTANCE_STATUS)..."
+    gcloud compute instances start "$INSTANCE" --project "$PROJECT_ID" --zone "$ZONE"
+  fi
 fi
 
 EXTERNAL_IP="$(gcloud compute instances describe "$INSTANCE" \
@@ -295,6 +301,15 @@ Environment=INVENTORY_DB=/var/lib/shelfsight/inventory.db
 Environment=FEEDBACK_ASSET_DIR=/var/lib/shelfsight/review_evidence
 Environment=SKU_BACKEND=${SKU_BACKEND:-gemini}
 Environment=SKU_MODEL=${SKU_MODEL:-}
+Environment=SKU_PROVIDER=${SKU_PROVIDER:-gemini}
+Environment=GEMINI_MODEL=${GEMINI_MODEL:-${VERTEX_MODEL:-gemini-2.5-flash}}
+Environment=GEMINI_MODELS=${GEMINI_MODELS:-${GEMINI_MODEL:-${VERTEX_MODEL:-gemini-2.5-flash}}}
+Environment=OPENROUTER_MODEL=${OPENROUTER_MODEL:-google/gemini-2.5-flash}
+Environment=OPENROUTER_MODELS=${OPENROUTER_MODELS:-${OPENROUTER_MODEL:-google/gemini-2.5-flash}}
+Environment=OPENROUTER_BASE_URL=${OPENROUTER_BASE_URL:-https://openrouter.ai/api/v1}
+Environment=OPENROUTER_API_KEY=${OPENROUTER_API_KEY:-}
+Environment=OPENROUTER_SITE_URL=${OPENROUTER_SITE_URL:-}
+Environment=OPENROUTER_APP_NAME=${OPENROUTER_APP_NAME:-ShelfSight}
 Environment=VERTEX_MODEL_GARDEN_MODEL=${VERTEX_MODEL_GARDEN_MODEL:-google/paligemma@paligemma-mix-448-float16}
 Environment=VERTEX_MODEL_GARDEN_ENDPOINT_ID=${VERTEX_MODEL_GARDEN_ENDPOINT_ID:-}
 Environment=VERTEX_MODEL_GARDEN_DEDICATED_DNS=${VERTEX_MODEL_GARDEN_DEDICATED_DNS:-}

@@ -12,6 +12,9 @@ from backend import api
 @pytest.fixture(autouse=True)
 def disableRealStartup(monkeypatch):
     monkeypatch.setenv("PRELOAD_MODELS", "0")
+    monkeypatch.setenv("PROJECT_ID", "test-project")
+    monkeypatch.setenv("GEMINI_MODEL", "gemini-2.5-flash")
+    monkeypatch.setenv("GEMINI_MODELS", "gemini-2.5-flash")
     monkeypatch.setattr(api.db, "init_db", lambda: None)
 
 
@@ -57,7 +60,13 @@ def test_givenValidShelfImage_whenSubmittingAnalysis_thenJobCompletes(monkeypatc
         accepted = client.post(
             "/api/analyses",
             files={"image": ("shelf.png", _png_bytes(), "image/png")},
-            data={"max_crops": "40", "max_sku_crops": "8", "extract_sku": "true"},
+            data={
+                "max_crops": "40",
+                "max_sku_crops": "8",
+                "extract_sku": "true",
+                "sku_provider": "gemini",
+                "sku_model": "gemini-2.5-flash",
+            },
         )
         assert accepted.status_code == 202
         job_id = accepted.json()["job_id"]
@@ -77,6 +86,8 @@ def test_givenValidShelfImage_whenSubmittingAnalysis_thenJobCompletes(monkeypatc
         "max_crops": 40,
         "max_sku_crops": 8,
         "extract_sku": True,
+        "sku_provider": "gemini",
+        "sku_model": "gemini-2.5-flash",
     }
 
 
@@ -123,6 +134,67 @@ def test_givenSavedInventory_whenRequestingInsights_thenReturnsChartReadyData(mo
     assert response.json()["categories"] == [{"category": "soft drinks", "count": 2}]
     assert response.json()["subcategories"] == [{"subcategory": "cola", "count": 2}]
     assert response.json()["summary"]["total_items"] == 2
+
+
+def test_givenLlmUnavailable_whenRequestingInsightSummary_thenReturnsEveryGroundedFallback(
+    monkeypatch,
+):
+    scans = pd.DataFrame(
+        [
+            {
+                "id": 1,
+                "ts": "2026-07-17T10:00:00",
+                "image_name": "shelf.jpg",
+                "num_items": 2,
+                "distinct_categories": 1,
+                "empty_pct": 0.3,
+                "shelf_type": "Category-specific",
+                "review_count": 1,
+            }
+        ]
+    )
+    items = pd.DataFrame(
+        [
+            {"category": "soft drinks", "subcategory": "cola"},
+            {"category": "unknown", "subcategory": "unknown"},
+        ]
+    )
+    monkeypatch.delenv("PROJECT_ID")
+    monkeypatch.delenv("GOOGLE_CLOUD_PROJECT", raising=False)
+    monkeypatch.setattr(api.db, "get_scans_df", lambda: scans)
+    monkeypatch.setattr(api.db, "get_items_df", lambda: items)
+    monkeypatch.setattr(api.db, "get_feedback_df", lambda: pd.DataFrame())
+
+    with TestClient(api.app) as client:
+        response = client.post(
+            "/api/insight-summaries",
+            json={"provider": "gemini", "model": "gemini-2.5-flash"},
+        )
+
+    assert response.status_code == 200
+    payload = response.json()
+    assert payload["source"] == "deterministic"
+    assert set(payload["charts"]) == {
+        "category_frequency",
+        "shelf_composition",
+        "products_by_scan",
+        "empty_shelf_area",
+        "subcategory_breakdown",
+    }
+    assert payload["charts"]["empty_shelf_area"]["admin_actions"]
+    assert "fallback" in payload["warning"].lower()
+
+
+def test_givenUnknownModel_whenSubmittingAnalysis_thenRequestIsRejected():
+    with TestClient(api.app) as client:
+        response = client.post(
+            "/api/analyses",
+            files={"image": ("shelf.png", _png_bytes(), "image/png")},
+            data={"sku_provider": "gemini", "sku_model": "attacker/model"},
+        )
+
+    assert response.status_code == 422
+    assert response.json()["detail"] == "Choose a model offered for this provider."
 
 
 def test_givenSavedEvidencePaths_whenRequestingScan_thenServerPathsAreNotExposed(monkeypatch):
